@@ -1,0 +1,15 @@
+/* ========================================================
+   PRIVACY POLICY STYLES (privacy.css)
+   ======================================================== */
+.privacy-section-title {
+  color: var(--med-navy);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.privacy-content-text {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: var(--med-text-muted);
+}

@@ -1,0 +1,25 @@
+/* ========================================================
+   PRACTICE ROOM STYLES (practice.css)
+   ======================================================== */
+.practice-reading-box {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.practice-text-display {
+  font-size: 21px;
+  line-height: 1.85;
+  color: var(--med-navy);
+  font-weight: 500;
+}
+
+.practice-record-console {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 36px 16px;
+  text-align: center;
+}

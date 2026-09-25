@@ -1,0 +1,17 @@
+/* ========================================================
+   SPECIALIST CONNECT STYLES (specialist-connect.css)
+   ======================================================== */
+.specialist-card-box {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+}
+
+.specialist-security-note {
+  border-left: 3px solid var(--med-primary);
+  background: #f8fafc;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--med-text-muted);
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Chi Tiết Phiên Đo Lường Lịch Sử</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/session-detail.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="med-topbar">
+  <div class="container" style="max-width: 900px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <span>TRA CỨU HỒ SƠ LƯU TRỮ PHIÊN ĐO LƯỜNG</span>
+        <span class="separator">|</span>
+        <span>MÃ BẢN GHI: SES-2026-0842-03</span>
+      </div>
+      <div>
+        <a href="progress.html">QUAY LẠI TIẾN TRÌNH</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="med-navbar">
+  <div class="container" style="max-width: 900px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="med-brand" href="index.html">
+        <span class="med-brand-title">FLUENTA</span>
+        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      </a>
+
+      <nav>
+        <ul class="med-nav-list">
+          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
+          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
+          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
+          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
+          <li><a class="med-nav-link active" href="progress.html">TIẾN TRÌNH</a></li>
+          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
+          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
+          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="med-container" style="max-width: 900px;">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h1 class="h5 fw-bold mb-0 text-dark">HỒ SƠ CHI TIẾT PHIÊN LUYỆN TẬP #SES-03</h1>
+      <div class="text-muted small">Thời điểm ghi âm: Hôm qua, lúc 08:10 | Thời lượng audio: 20.4 giây</div>
+    </div>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="progress.html" class="btn-med-secondary">QUAY LẠI TIẾN TRÌNH</a>
+      <a href="library.html" class="btn-med-secondary">TRA CỨU THƯ VIỆN</a>
+      <a href="practice.html?lesson=easy-onset" class="btn-med-primary">LUYỆN TẬP LẠI BÀI NÀY</a>
+    </div>
+  </div>
+
+  <!-- BẢNG CHỈ SỐ PHIÊN CŨ -->
+  <section class="mb-4">
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Tỷ lệ trôi chảy</div>
+          <div class="med-metric-val text-success">86.0%</div>
+          <div class="med-metric-note">Phiên trước đó: 85.0%</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Số sự kiện vấp</div>
+          <div class="med-metric-val text-warning">4 điểm</div>
+          <div class="med-metric-note">2 Block, 1 Lặp âm, 1 Kéo dài</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Tốc độ phát âm</div>
+          <div class="med-metric-val">115 wpm</div>
+          <div class="med-metric-note">Khoảng kiểm soát an toàn</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Thời lượng tắc nghẽn</div>
+          <div class="med-metric-val">0.44s</div>
+          <div class="med-metric-note">Thời gian ngắt quãng TB</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BẢN GHI SÓNG ÂM WAVEFORM ĐÃ LƯU -->
+  <section class="med-card mb-4">
+    <div class="med-card-header">
+      <span class="med-card-title">DẠNG SÓNG ÂM THANH TRÍCH XUẤT TỪ FILE AUDIO (WAVEFORM ARCHIVE)</span>
+      <span class="med-badge med-badge-neutral">Mã lưu trữ: RAW_0842_03.WAV</span>
+    </div>
+
+    <div class="med-waveform mb-2" id="waveform"></div>
+    <div class="small text-muted mt-2">
+      Dữ liệu phổ âm thanh được lưu trữ dưới dạng vector nén theo chuẩn bảo mật y tế.
+    </div>
+  </section>
+
+  <!-- BẢNG CHI TIẾT SỰ KIỆN -->
+  <section class="med-card mb-4">
+    <div class="med-card-header">
+      <span class="med-card-title">CÁC ĐIỂM NGẮT QUÃNG ĐÃ GHI NHẬN Ở PHIÊN NÀY</span>
+    </div>
+
+    <table class="med-table">
+      <thead>
+        <tr>
+          <th>THỜI GIAN</th>
+          <th>TỪ NGỮ BỊ NGẮT</th>
+          <th>PHÂN LOẠI ÂM HỌC</th>
+          <th>THỜI LƯỢNG</th>
+          <th>KỸ THUẬT CAN THIỆP GỢI Ý</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold">0:03</td>
+          <td>"Sáng"</td>
+          <td><span class="med-badge med-badge-warning">Block thanh quản</span></td>
+          <td>0.48 giây</td>
+          <td><a href="library.html?filter=block" class="text-primary fw-bold text-decoration-underline">Thở ra nhẹ nhàng trước âm 'S' (Easy Onset) ↗</a></td>
+        </tr>
+        <tr>
+          <td class="fw-bold">0:07</td>
+          <td>"tôi"</td>
+          <td><span class="med-badge med-badge-neutral">Lặp âm tắc (Repetition)</span></td>
+          <td>0.40 giây</td>
+          <td><a href="library.html?filter=contact" class="text-primary fw-bold text-decoration-underline">Chạm nhẹ đầu lưỡi (Light Contact) ↗</a></td>
+        </tr>
+        <tr>
+          <td class="fw-bold">0:12</td>
+          <td>"công viên"</td>
+          <td><span class="med-badge med-badge-warning">Block thanh quản</span></td>
+          <td>0.45 giây</td>
+          <td><a href="library.html?filter=block" class="text-primary fw-bold text-decoration-underline">Mở miệng đều, không siết cơ hàm ↗</a></td>
+        </tr>
+        <tr>
+          <td class="fw-bold">0:17</td>
+          <td>"mát mẻ"</td>
+          <td><span class="med-badge med-badge-neutral">Kéo dài âm</span></td>
+          <td>0.42 giây</td>
+          <td><a href="library.html?filter=block" class="text-primary fw-bold text-decoration-underline">Duy trì tốc độ nói thong thả (Prolongation) ↗</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+    <div class="d-flex flex-wrap gap-2">
+      <a href="progress.html" class="btn-med-secondary">QUAY LẠI TRANG TIẾN TRÌNH</a>
+      <a href="library.html" class="btn-med-secondary">TRA CỨU BÀI TẬP BỔ TRỢ</a>
+    </div>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="reports.html" class="btn-med-primary">XUẤT BÁO CÁO TỔNG HỢP</a>
+      <a href="specialist-connect.html" class="btn-med-secondary">GỬI CHO CHUYÊN GIA</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="med-footer">
+  <div class="container text-center">
+    <div>FLUENTA CLINICAL SYSTEM © 2026 — DỮ LIỆU LỊCH SỬ ĐÃ ĐƯỢC CHUẨN HÓA</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/session-detail.js"></script>
+</body>
+</html>

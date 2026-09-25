@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Bài Đo Lường Mốc Âm Học Ban Đầu (Baseline Test)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/baseline-test.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="med-topbar">
+  <div class="container" style="max-width: 760px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <span>ĐO LƯỜNG MỐC BAN ĐẦU (BASELINE ACOUSTIC EVALUATION)</span>
+      <span>HỒ SƠ: FL-2026-0842</span>
+    </div>
+  </div>
+</div>
+
+<header class="med-navbar">
+  <div class="container" style="max-width: 760px;">
+    <div class="text-center py-2">
+      <a class="med-brand d-inline-block" href="landing.html">
+        <span class="med-brand-title">FLUENTA</span>
+        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="med-container" style="max-width: 760px;">
+
+  <!-- TRACKER 3 BƯỚC -->
+  <div class="step-tracker">
+    <div class="step-item done">1. Tạo tài khoản</div>
+    <div class="step-item done">2. Khảo sát bệnh sử</div>
+    <div class="step-item active">3. Đo mốc âm học ban đầu</div>
+  </div>
+
+  <section class="med-card">
+    <div class="med-card-header">
+      <h1 class="med-card-title">BÀI THU ÂM THIẾT LẬP MỐC THAM CHIẾU (BASELINE TEST)</h1>
+      <span class="med-badge med-badge-warning">Bắt buộc</span>
+    </div>
+
+    <p class="text-muted small" style="line-height:1.7;">
+      Mục đích: Bản ghi âm này sẽ được mô hình AI phân tích để xác định tỷ lệ ngắt quãng âm tiết ban đầu (%SS cơ sở). Các phiên tập sau này sẽ đối chiếu với mốc này để định lượng mức độ phục hồi.
+    </p>
+
+    <!-- ĐOẠN VĂN MẪU CHUẨN ĐỂ ĐO ĐẦU VÀO -->
+    <div class="p-3 bg-light border rounded mb-4">
+      <div class="small text-muted text-uppercase fw-bold mb-2">Đoạn văn đánh giá chuẩn (Khoảng 45 từ):</div>
+      <div style="font-size: 18px; line-height: 1.8; color: var(--med-navy);">
+        "Mỗi buổi sáng thức dậy, tôi luôn dành thời gian hít thở sâu và uống một ly nước ấm. Cuộc sống xung quanh trôi qua thật bình yên và tươi đẹp. Tôi tin rằng sự kiên nhẫn mỗi ngày sẽ giúp giọng nói của mình ngày càng tự nhiên và lưu loát hơn."
+      </div>
+    </div>
+
+    <!-- KHU VỰC THU ÂM -->
+    <div class="text-center py-4 border rounded bg-white mb-3">
+      <button class="btn-clinical-record" id="baselineBtn" onclick="toggleBaselineRecord()">
+        BẮT ĐẦU ĐỌC BÀI ĐO MỐC
+      </button>
+
+      <div class="fw-bold fs-6 mt-3 text-dark" id="baselineStatus">
+        Trạng thái: Sẵn sàng ghi nhận âm thanh
+      </div>
+      <div class="text-muted small mt-1">
+        Hãy đọc với tốc độ bình thường bạn hay nói, không cần cố gắng nói quá chậm hay giấu đi các điểm vấp tự nhiên.
+      </div>
+    </div>
+
+    <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+      <a href="onboarding.html" class="btn-med-secondary">QUAY LẠI KHẢO SÁT</a>
+      <a href="index.html" class="btn-med-secondary">BỎ QUA ĐỂ VÀO HỆ THỐNG</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="med-footer">
+  <div class="container text-center">
+    <div>FLUENTA CLINICAL SYSTEM © 2026 — DỮ LIỆU ĐƯỢC LƯU LÀM MỐC SO SÁNH LÂM SÀNG</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/baseline-test.js"></script>
+</body>
+</html>

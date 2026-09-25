@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Hồ Sơ Cá Nhân &amp; Thiết Lập Hệ Thống</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/profile.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="med-topbar">
+  <div class="container" style="max-width: 900px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <span>CÀI ĐẶT HỒ SƠ HỌC VIÊN</span>
+      <span>MÃ SỐ: FL-2026-0842</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="med-navbar">
+  <div class="container" style="max-width: 900px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="med-brand" href="index.html">
+        <span class="med-brand-title">FLUENTA</span>
+        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      </a>
+
+      <nav>
+        <ul class="med-nav-list">
+          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
+          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
+          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
+          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
+          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
+          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
+          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
+          <li><a class="med-nav-link active" href="profile.html">HỒ SƠ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="med-container" style="max-width: 860px;">
+
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <div>
+      <h1 class="h5 fw-bold mb-0 text-dark">THIẾT LẬP HỒ SƠ &amp; LỊCH NHẮC LUYỆN TẬP</h1>
+      <div class="text-muted small">Quản lý thông tin cá nhân, mục tiêu điều trị và tùy chỉnh quyền riêng tư</div>
+    </div>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="index.html" class="btn-med-secondary py-1 px-3" style="font-size:13px;">VỀ TỔNG QUAN</a>
+      <a href="reports.html" class="btn-med-secondary py-1 px-3" style="font-size:13px;">HỒ SƠ BÁO CÁO</a>
+      <a href="login.html" class="btn-med-secondary py-1 px-3 text-danger" style="font-size:13px;">ĐĂNG XUẤT</a>
+    </div>
+  </div>
+
+  <!-- PHẦN 1: THÔNG TIN CƠ BẢN -->
+  <section class="med-card mb-4">
+    <div class="med-card-header">
+      <h2 class="med-card-title">1. THÔNG TIN HỌC VIÊN</h2>
+      <span class="med-badge med-badge-success">Hồ sơ đã xác thực</span>
+    </div>
+
+    <form id="profileForm">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="med-form-group">
+            <label class="med-label">Họ và tên</label>
+            <input type="text" class="med-input" value="Nguyễn Văn Minh" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="med-form-group">
+            <label class="med-label">Mã số hồ sơ (Không đổi)</label>
+            <input type="text" class="med-input bg-light" value="FL-2026-0842" readonly>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="med-form-group">
+            <label class="med-label">Email liên hệ</label>
+            <input type="email" class="med-input" value="minh.nguyen@example.com" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="med-form-group">
+            <label class="med-label">Năm sinh &amp; Độ tuổi</label>
+            <input type="text" class="med-input" value="2002 (24 tuổi)">
+          </div>
+        </div>
+      </div>
+
+      <div class="text-end pt-2 border-top">
+        <button type="submit" class="btn-med-primary">LƯU THAY ĐỔI THÔNG TIN</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- PHẦN 2: THIẾT LẬP NHẮC NHỞ HÀNG NGÀY -->
+  <section class="med-card mb-4">
+    <div class="med-card-header">
+      <h2 class="med-card-title">2. LỊCH NHẮC LUYỆN TẬP HÀNG NGÀY</h2>
+      <span class="med-badge med-badge-primary">Kỷ luật điều trị</span>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="med-form-group">
+          <label class="med-label">Khung giờ nhắc nhở mỗi ngày</label>
+          <select class="med-select">
+            <option value="08:00" selected>08:00 Sáng (Khuyến nghị: Buổi sáng trước khi bắt đầu ngày mới)</option>
+            <option value="12:30">12:30 Trưa (Sau giờ nghỉ trưa)</option>
+            <option value="20:00">20:00 Tối (Buổi tối trước khi nghỉ ngơi)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="med-form-group">
+          <label class="med-label">Kênh thông báo</label>
+          <div class="p-2 border rounded bg-light">
+            <label class="me-3"><input type="checkbox" checked> Thông báo trình duyệt</label>
+            <label><input type="checkbox" checked> Email tổng hợp hàng tuần</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHẦN 3: QUẢN LÝ DỮ LIỆU ÂM THANH Y TẾ -->
+  <section class="med-card">
+    <div class="med-card-header">
+      <h2 class="med-card-title">3. QUẢN LÝ DỮ LIỆU &amp; QUYỀN RIÊNG TƯ</h2>
+      <span class="med-badge med-badge-neutral">HIPAA Compliance</span>
+    </div>
+
+    <p class="text-muted small" style="line-height:1.7;">
+      Bạn có toàn quyền kiểm soát các tệp âm thanh luyện tập. Bạn có thể tải về gói dữ liệu của mình hoặc xóa toàn bộ lịch sử đo lường.
+    </p>
+
+    <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+      <button class="btn-med-secondary" onclick="exportAudioZip()">
+        TẢI VỀ TOÀN BỘ DỮ LIỆU ÂM HỌC (.ZIP)
+      </button>
+      <a href="privacy.html" class="btn-med-secondary">
+        CHÍNH SÁCH BẢO MẬT DỮ LIỆU Y TẾ
+      </a>
+      <button class="btn-med-secondary text-danger" onclick="requestDataDeletion()">
+        YÊU CẦU XÓA VĨNH VIỄN HỒ SƠ ÂM THANH
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="med-footer">
+  <div class="container text-center">
+    <div>FLUENTA CLINICAL SYSTEM © 2026 — THIẾT LẬP HỒ SƠ Y TẾ AN TOÀN</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/profile.js"></script>
+</body>
+</html>

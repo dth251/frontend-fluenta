@@ -1,0 +1,448 @@
+:root {
+  /* Bảng màu chuẩn y tế lâm sàng (Clinical Medical Standard) */
+  --med-primary: #0369a1;
+  --med-primary-dark: #0c4a6e;
+  --med-primary-light: #f0f9ff;
+  --med-navy: #0f2744;
+  --med-navy-soft: #334e68;
+  
+  --med-success: #15803d;
+  --med-success-bg: #f0fdf4;
+  --med-success-border: #bbf7d0;
+  
+  --med-warning: #b45309;
+  --med-warning-bg: #fffbeb;
+  --med-warning-border: #fde68a;
+  
+  --med-danger: #b91c1c;
+  --med-danger-bg: #fef2f2;
+  
+  --med-text-main: #102a43;
+  --med-text-muted: #486581;
+  --med-text-sub: #627d98;
+  
+  --med-bg: #f8fafc;
+  --med-card-bg: #ffffff;
+  --med-border: #d9e2ec;
+  --med-border-subtle: #e2e8f0;
+  
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--med-text-main);
+  background-color: var(--med-bg);
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================================================
+   THANH TIÊU CHUẨN Y TẾ TRÊN CÙNG (TOPBAR)
+   ======================================================== */
+.med-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--med-border);
+  padding: 8px 0;
+  font-size: 12px;
+  color: var(--med-text-sub);
+}
+
+.med-topbar .separator {
+  margin: 0 10px;
+  color: #bcccdc;
+}
+
+/* ========================================================
+   THANH ĐIỀU HƯỚNG CHUẨN Y KHOA (NAVBAR)
+   ======================================================== */
+.med-navbar {
+  background: #ffffff;
+  border-bottom: 2px solid var(--med-primary);
+  padding: 0;
+  box-shadow: 0 1px 3px rgba(15, 39, 68, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.med-brand {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+}
+
+.med-brand-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--med-navy);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.med-brand-sub {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--med-primary);
+  font-weight: 600;
+}
+
+.med-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2px;
+  flex-wrap: wrap;
+}
+
+.med-nav-link {
+  display: block;
+  padding: 16px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--med-navy-soft);
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.med-nav-link:hover {
+  color: var(--med-primary);
+  background-color: var(--med-primary-light);
+}
+
+.med-nav-link.active {
+  color: var(--med-primary);
+  border-bottom-color: var(--med-primary);
+  background-color: var(--med-primary-light);
+}
+
+/* ========================================================
+   BỐ CỤC CHÍNH (CONTAINER & CARDS)
+   ======================================================== */
+.med-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+}
+
+.med-card {
+  background: var(--med-card-bg);
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.med-card-header {
+  border-bottom: 1px solid var(--med-border);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.med-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--med-navy);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================================
+   NHÃN VÀ THẺ ĐỊNH DANH (BADGES)
+   ======================================================== */
+.med-badge {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border: 1px solid transparent;
+}
+
+.med-badge-primary {
+  background: var(--med-primary-light);
+  color: var(--med-primary);
+  border-color: #bae6fd;
+}
+
+.med-badge-success {
+  background: var(--med-success-bg);
+  color: var(--med-success);
+  border-color: var(--med-success-border);
+}
+
+.med-badge-warning {
+  background: var(--med-warning-bg);
+  color: var(--med-warning);
+  border-color: var(--med-warning-border);
+}
+
+.med-badge-neutral {
+  background: #f1f5f9;
+  color: var(--med-text-muted);
+  border-color: #cbd5e1;
+}
+
+/* ========================================================
+   BẢNG VÀ CHỈ SỐ LÂM SÀNG (TABLES & METRICS)
+   ======================================================== */
+.med-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.med-table th {
+  background: #f8fafc;
+  color: var(--med-navy);
+  font-weight: 600;
+  padding: 10px 14px;
+  border: 1px solid var(--med-border);
+  text-align: left;
+}
+
+.med-table td {
+  padding: 10px 14px;
+  border: 1px solid var(--med-border);
+  color: var(--med-text-main);
+}
+
+.med-metric-box {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: left;
+}
+
+.med-metric-label {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--med-text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.med-metric-val {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--med-navy);
+  line-height: 1.2;
+}
+
+.med-metric-note {
+  font-size: 12px;
+  color: var(--med-text-muted);
+  margin-top: 4px;
+}
+
+/* ========================================================
+   NÚT BẤM (BUTTONS) - KHÔNG DÙNG ICON
+   ======================================================== */
+.btn-med-primary {
+  background: var(--med-primary);
+  color: #ffffff !important;
+  border: 1px solid var(--med-primary-dark);
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.btn-med-primary:hover {
+  background: var(--med-primary-dark);
+}
+
+.btn-med-secondary {
+  background: #ffffff;
+  color: var(--med-navy) !important;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.btn-med-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.btn-clinical-record {
+  background: var(--med-primary);
+  color: #ffffff;
+  border: 2px solid var(--med-primary-dark);
+  border-radius: var(--radius-sm);
+  padding: 16px 36px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-clinical-record:hover {
+  background: var(--med-primary-dark);
+}
+
+.btn-clinical-record.recording {
+  background: var(--med-danger);
+  border-color: #7f1d1d;
+}
+
+/* ========================================================
+   FORM VÀ ĐIỀU KHIỂN NHẬP LIỆU (CLINICAL FORMS)
+   ======================================================== */
+.med-form-group {
+  margin-bottom: 18px;
+}
+
+.med-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--med-navy);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.med-input, .med-select, .med-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14.5px;
+  color: var(--med-text-main);
+  background-color: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease;
+}
+
+.med-input:focus, .med-select:focus, .med-textarea:focus {
+  outline: none;
+  border-color: var(--med-primary);
+  box-shadow: 0 0 0 2px rgba(3, 105, 161, 0.15);
+}
+
+/* ========================================================
+   TIẾN TRÌNH ONBOARDING & PROCESSING
+   ======================================================== */
+.step-tracker {
+  display: flex;
+  border-bottom: 1px solid var(--med-border);
+  margin-bottom: 24px;
+  background: #ffffff;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--med-text-sub);
+  border-bottom: 2px solid transparent;
+}
+
+.step-item.active {
+  color: var(--med-primary);
+  border-bottom-color: var(--med-primary);
+  background: var(--med-primary-light);
+}
+
+.step-item.done {
+  color: var(--med-success);
+}
+
+/* Thanh xử lý Processing */
+.processing-bar-wrap {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.processing-bar-fill {
+  height: 100%;
+  background: var(--med-primary);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Sóng âm */
+.med-waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 56px;
+  padding: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+}
+
+.med-waveform span {
+  width: 4px;
+  background: #94a3b8;
+  border-radius: 1px;
+}
+
+.med-waveform span.mark {
+  background: #d97706;
+}
+
+/* Disclaimer & Footer */
+.med-disclaimer-box {
+  background: #f8fafc;
+  border: 1px solid var(--med-border);
+  border-left: 4px solid var(--med-navy);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--med-text-muted);
+  line-height: 1.6;
+}
+
+.med-footer {
+  background: #ffffff;
+  border-top: 1px solid var(--med-border);
+  padding: 24px 0;
+  font-size: 13px;
+  color: var(--med-text-sub);
+  text-align: center;
+}

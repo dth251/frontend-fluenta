@@ -1,0 +1,12 @@
+/* ========================================================
+   PROGRESS TRACKING STYLES (progress.css)
+   ======================================================== */
+.progress-calendar-table th, 
+.progress-calendar-table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.progress-highlight-row td {
+  background-color: #f0fdf4;
+}

@@ -1,0 +1,569 @@
+:root {
+  /* BẢNG MÀU CHUẨN MEDICLOUD TELEHEALTH SAAS */
+  --med-accent: #f27a59;
+  --med-accent-hover: #e06341;
+  --med-accent-light: #fff2ed;
+  --med-accent-border: #fcd5c7;
+  
+  --med-teal-dark: #0b3c43;
+  --med-teal-deep: #06262b;
+  --med-teal-soft: #17545c;
+  
+  --med-primary: #0284c7;
+  --med-primary-dark: #0369a1;
+  --med-primary-light: #f0f9ff;
+  
+  --med-navy: #0f2744;
+  --med-navy-soft: #334e68;
+  
+  --med-success: #15803d;
+  --med-success-bg: #f0fdf4;
+  --med-success-border: #bbf7d0;
+  
+  --med-warning: #b45309;
+  --med-warning-bg: #fffbeb;
+  --med-warning-border: #fde68a;
+  
+  --med-danger: #b91c1c;
+  --med-danger-bg: #fef2f2;
+  
+  --med-text-main: #102a43;
+  --med-text-muted: #486581;
+  --med-text-sub: #627d98;
+  
+  --med-bg: #f8fafc;
+  --med-card-bg: #ffffff;
+  --med-border: #e2e8f0;
+  --med-border-subtle: #edf2f7;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(11, 60, 67, 0.05);
+  --shadow-md: 0 6px 18px rgba(11, 60, 67, 0.08);
+  --shadow-lg: 0 16px 36px rgba(11, 60, 67, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--med-text-main);
+  background-color: var(--med-bg);
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+/* ========================================================
+   MICRO-ANIMATIONS & CHUYỂN ĐỘNG (KHÔNG DÙNG ICON)
+   ======================================================== */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatDelay {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes clinicalPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Thẻ nổi có chuyển động lơ lửng (Floating Badge) */
+.floating-badge {
+  position: absolute;
+  z-index: 10;
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.floating-badge-delayed {
+  position: absolute;
+  z-index: 10;
+  animation: floatDelay 5s ease-in-out infinite;
+}
+
+/* Hiệu ứng nâng thẻ khi hover */
+.med-card-hover {
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
+}
+
+.med-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}
+
+/* ========================================================
+   THANH TIÊU CHUẨN Y TẾ TRÊN CÙNG (TOPBAR)
+   ======================================================== */
+.med-topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--med-border);
+  padding: 8px 0;
+  font-size: 12px;
+  color: var(--med-text-sub);
+}
+
+.med-topbar .separator {
+  margin: 0 10px;
+  color: #cbd5e1;
+}
+
+/* ========================================================
+   THANH ĐIỀU HƯỚNG CHUẨN MEDICLOUD (NAVBAR)
+   ======================================================== */
+.med-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--med-border);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.med-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.med-brand-mark {
+  background: var(--med-accent);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.med-brand-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--med-teal-dark);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+}
+
+.med-brand-sub {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--med-accent);
+  font-weight: 700;
+  display: block;
+}
+
+.med-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.med-nav-link {
+  display: block;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--med-navy-soft);
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.med-nav-link:hover {
+  color: var(--med-accent);
+  background-color: var(--med-accent-light);
+}
+
+.med-nav-link.active {
+  color: var(--med-accent);
+  background-color: var(--med-accent-light);
+  font-weight: 700;
+}
+
+/* ========================================================
+   CONTAINER & CARDS
+   ======================================================== */
+.med-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 36px 16px 64px;
+}
+
+.med-card {
+  background: var(--med-card-bg);
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.med-card-header {
+  border-bottom: 1px solid var(--med-border);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.med-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--med-teal-dark);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================================
+   PILL BADGES (ĐẶC TRƯNG MEDICLOUD)
+   ======================================================== */
+.med-badge {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.med-badge-accent {
+  background: var(--med-accent-light);
+  color: var(--med-accent);
+  border-color: var(--med-accent-border);
+}
+
+.med-badge-teal {
+  background: #e6f3f5;
+  color: var(--med-teal-dark);
+  border-color: #bcdde2;
+}
+
+.med-badge-success {
+  background: var(--med-success-bg);
+  color: var(--med-success);
+  border-color: var(--med-success-border);
+}
+
+.med-badge-warning {
+  background: var(--med-warning-bg);
+  color: var(--med-warning);
+  border-color: var(--med-warning-border);
+}
+
+.med-badge-neutral {
+  background: #f1f5f9;
+  color: var(--med-text-muted);
+  border-color: #cbd5e1;
+}
+
+/* ========================================================
+   NÚT BẤM (BUTTONS) - KHÔNG DÙNG ICON
+   ======================================================== */
+.btn-med-primary {
+  background: var(--med-accent);
+  color: #ffffff !important;
+  border: 1px solid var(--med-accent-hover);
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(242, 122, 89, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-med-primary:hover {
+  background: var(--med-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(242, 122, 89, 0.35);
+}
+
+.btn-med-secondary {
+  background: #ffffff;
+  color: var(--med-teal-dark) !important;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn-med-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.btn-med-teal {
+  background: var(--med-teal-dark);
+  color: #ffffff !important;
+  border: 1px solid var(--med-teal-deep);
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn-med-teal:hover {
+  background: var(--med-teal-deep);
+  transform: translateY(-2px);
+}
+
+.btn-clinical-record {
+  background: var(--med-accent);
+  color: #ffffff;
+  border: 2px solid var(--med-accent-hover);
+  border-radius: var(--radius-pill);
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(242, 122, 89, 0.3);
+}
+
+.btn-clinical-record:hover {
+  background: var(--med-accent-hover);
+  transform: scale(1.03);
+}
+
+.btn-clinical-record.recording {
+  background: var(--med-danger);
+  border-color: #991b1b;
+  animation: clinicalPulse 1.6s infinite;
+}
+
+/* ========================================================
+   TABLES & METRICS
+   ======================================================== */
+.med-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.med-table th {
+  background: #f8fafc;
+  color: var(--med-teal-dark);
+  font-weight: 700;
+  padding: 11px 14px;
+  border: 1px solid var(--med-border);
+  text-align: left;
+}
+
+.med-table td {
+  padding: 11px 14px;
+  border: 1px solid var(--med-border);
+  color: var(--med-text-main);
+}
+
+.med-metric-box {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.med-metric-box:hover {
+  border-color: var(--med-accent-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.med-metric-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--med-text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 4px;
+}
+
+.med-metric-val {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--med-teal-dark);
+  line-height: 1.15;
+}
+
+.med-metric-note {
+  font-size: 12px;
+  color: var(--med-text-muted);
+  margin-top: 4px;
+}
+
+/* ========================================================
+   FORM VÀ ĐIỀU KHIỂN NHẬP LIỆU
+   ======================================================== */
+.med-form-group {
+  margin-bottom: 18px;
+}
+
+.med-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--med-teal-dark);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.med-input, .med-select, .med-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14.5px;
+  color: var(--med-text-main);
+  background-color: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.med-input:focus, .med-select:focus, .med-textarea:focus {
+  outline: none;
+  border-color: var(--med-accent);
+  box-shadow: 0 0 0 3px rgba(242, 122, 89, 0.18);
+}
+
+/* ========================================================
+   CHÂN TRANG CHUẨN MEDICLOUD (DEEP TEAL FOOTER)
+   ======================================================== */
+.med-footer {
+  background: var(--med-teal-dark);
+  color: rgba(255, 255, 255, 0.75);
+  border-top: 3px solid var(--med-accent);
+  padding: 36px 0 24px;
+  font-size: 13.5px;
+}
+
+.med-footer a {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.med-footer a:hover {
+  color: var(--med-accent);
+}
+
+.med-footer-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 11.5px;
+  color: #4ade80;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================================
+   THANH TIẾN TRÌNH 3 BƯỚC (ONBOARDING / ASSESSMENT TRACKER)
+   ======================================================== */
+.step-tracker {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.step-item {
+  flex: 1;
+  text-align: center;
+  padding: 12px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--med-navy-soft);
+  border-bottom: 3px solid transparent;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.step-item.active {
+  color: var(--med-teal-dark);
+  border-bottom-color: var(--med-accent);
+  background: var(--med-accent-light);
+  font-weight: 700;
+}
+
+.step-item.done {
+  color: #15803d;
+  background: #f0fdf4;
+}
+

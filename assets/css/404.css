@@ -1,0 +1,9 @@
+/* ========================================================
+   404 ERROR PAGE STYLES (404.css)
+   ======================================================== */
+.error-card {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 24px;
+}

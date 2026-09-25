@@ -1,0 +1,20 @@
+/* ========================================================
+   BASELINE TEST STYLES (baseline-test.css)
+   ======================================================== */
+.baseline-passage-box {
+  background: #f8fafc;
+  border: 1px solid var(--med-border);
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--med-navy);
+}
+
+.baseline-action-area {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 32px 16px;
+  text-align: center;
+}

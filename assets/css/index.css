@@ -1,0 +1,18 @@
+/* ========================================================
+   DASHBOARD INDEX STYLES (index.css)
+   ======================================================== */
+.dashboard-overview-card {
+  border-left: 4px solid var(--med-primary);
+  background: #ffffff;
+}
+
+.dashboard-user-meta {
+  background: #f8fafc;
+  border: 1px solid var(--med-border);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.protocol-table tr:hover td {
+  background-color: #f8fafc;
+}

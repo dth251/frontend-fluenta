@@ -1,0 +1,20 @@
+/* ========================================================
+   LIBRARY PAGE STYLES (library.css)
+   ======================================================== */
+.library-filter-wrap {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+
+.med-lib-btn.active {
+  background: var(--med-primary) !important;
+  color: #ffffff !important;
+  border-color: var(--med-primary-dark) !important;
+}
+
+.library-item {
+  transition: all 0.15s ease;
+}

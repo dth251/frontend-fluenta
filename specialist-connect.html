@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Kết Nối &amp; Chuyển Giao Báo Cáo Cho Chuyên Gia SLP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/specialist-connect.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="med-topbar">
+  <div class="container" style="max-width: 900px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <span>CỔNG KẾT NỐI CHUYÊN VIÊN ÂM NGỮ TRỊ LIỆU (SLP PORTAL)</span>
+      <span>GIAO THỨC CHIA SẺ BẢO MẬT DỮ LIỆU</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="med-navbar">
+  <div class="container" style="max-width: 900px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="med-brand" href="index.html">
+        <span class="med-brand-title">FLUENTA</span>
+        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      </a>
+
+      <nav>
+        <ul class="med-nav-list">
+          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
+          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
+          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
+          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
+          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
+          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
+          <li><a class="med-nav-link active" href="specialist-connect.html">KẾT NỐI BS</a></li>
+          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="med-container" style="max-width: 860px;">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h1 class="h5 fw-bold mb-0 text-dark">KẾT NỐI VÀ CHUYỂN GIAO BÁO CÁO CHO CHUYÊN GIA</h1>
+      <div class="text-muted small">Cung cấp dữ liệu âm học định lượng hỗ trợ bác sĩ điều chỉnh phác đồ can thiệp</div>
+    </div>
+    <div class="d-flex gap-2">
+      <a href="progress.html" class="btn-med-secondary">TIẾN TRÌNH</a>
+      <a href="reports.html" class="btn-med-secondary">XEM BẢN IN BÁO CÁO</a>
+    </div>
+  </div>
+
+  <div id="connectAlert" class="alert alert-success py-2 mb-3 small" style="display:none;"></div>
+
+  <section class="med-card">
+    <div class="med-card-header">
+      <h2 class="med-card-title">PHIẾU CHUYỂN TIẾP HỒ SƠ ÂM HỌC ĐIỆN TỬ</h2>
+      <span class="med-badge med-badge-primary">Mã hồ sơ: FL-2026-0842</span>
+    </div>
+
+    <form onsubmit="sendSpecialistReport(event)">
+      
+      <!-- CHỌN CHUYÊN GIA -->
+      <div class="med-form-group">
+        <label class="med-label">1. Chọn Chuyên gia Âm ngữ Trị liệu tiếp nhận:</label>
+        <select class="med-select" required>
+          <option value="doc1" selected>TS. BS. Nguyễn Minh Anh — Khoa Phục hồi Chức năng &amp; Âm ngữ Trị liệu</option>
+          <option value="doc2">ThS. Sarah Jenkins (SLP) — Ban Cố vấn Chuyên môn ASHA</option>
+          <option value="doc3">TS. BS. Bryce Butler — Cố vấn Thần kinh Vận động Lời nói</option>
+          <option value="other">Gửi chuyên gia khác qua mã định danh / Email chuyên môn...</option>
+        </select>
+      </div>
+
+      <!-- KỲ BÁO CÁO CẦN TRÍCH XUẤT -->
+      <div class="med-form-group">
+        <label class="med-label">2. Kỳ dữ liệu âm học đính kèm:</label>
+        <div class="p-3 bg-light border rounded">
+          <div class="mb-2">
+            <label><input type="radio" name="reportRange" checked> <strong>Toàn bộ 30 ngày gần nhất:</strong> Gồm 28 buổi tập, biểu đồ giảm %SS (19% $\rightarrow$ 12%), dữ liệu phổ Block đầu câu.</label>
+          </div>
+          <div>
+            <label><input type="radio" name="reportRange"> <strong>Chỉ 7 ngày gần nhất:</strong> Phản ánh tiến độ thích nghi với kỹ thuật Khởi âm êm dịu (Easy Onset).</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- LỜI NHẮN CỦA HỌC VIÊN -->
+      <div class="med-form-group">
+        <label class="med-label">3. Ghi chú cá nhân gửi Chuyên gia (nếu có):</label>
+        <textarea class="med-textarea" rows="4" placeholder="Ví dụ: Em cảm thấy đã đỡ nghẽn hơi ở các từ mở đầu bằng 'S', nhưng khi đọc từ ghép dài vẫn còn hồi hộp..."></textarea>
+      </div>
+
+      <div class="med-disclaimer-box mb-4">
+        <strong>LƯU Ý BẢO MẬT:</strong> Dữ liệu âm thanh và kết quả đo lường sẽ được mã hóa chuẩn y tế (AES-256) trước khi gửi. Chỉ tài khoản chuyên viên có chứng chỉ hành nghề được cấp quyền mới có thể giải mã và xem hồ sơ.
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3 border-top">
+        <div class="d-flex gap-2">
+          <a href="reports.html" class="btn-med-secondary">QUAY LẠI BÁO CÁO</a>
+          <a href="index.html" class="btn-med-secondary">VỀ TỔNG QUAN</a>
+        </div>
+        <button type="submit" class="btn-med-primary">XÁC NHẬN GỬI MÃ HÓA HỒ SƠ Y TẾ</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="med-footer">
+  <div class="container text-center">
+    <div>FLUENTA CLINICAL SYSTEM © 2026 — KẾT NỐI BÁC SĨ &amp; CHUYÊN VIÊN ÂM NGỮ TRỊ LIỆU</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/specialist-connect.js"></script>
+</body>
+</html>

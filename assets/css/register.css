@@ -1,0 +1,16 @@
+/* ========================================================
+   REGISTER PAGE STYLES (register.css)
+   ======================================================== */
+.register-box {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.register-consent-box {
+  background: #f8fafc;
+  border: 1px solid var(--med-border);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--med-text-muted);
+}

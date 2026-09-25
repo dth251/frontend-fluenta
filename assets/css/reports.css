@@ -1,0 +1,30 @@
+/* ========================================================
+   REPORTS PAGE STYLES (reports.css)
+   ======================================================== */
+.report-sheet-card {
+  border: 2px solid var(--med-navy);
+  background: #ffffff;
+  padding: 32px 24px;
+}
+
+.report-header-emblem {
+  letter-spacing: 1px;
+  color: var(--med-navy);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media print {
+  .med-topbar, .med-navbar, .med-footer, .btn-med-primary, .btn-med-secondary {
+    display: none !important;
+  }
+  .med-container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .report-sheet-card {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

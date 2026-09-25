@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Phòng Thu Âm &amp; Đo Lường Lâm Sàng</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/practice.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- THANH TIÊU CHUẨN Y KHOA TRÊN CÙNG -->
+<div class="med-topbar">
+  <div class="container" style="max-width: 980px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <span>PHÒNG THU ÂM HỌC &amp; ĐO LƯỜNG LÂM SÀNG</span>
+        <span class="separator">|</span>
+        <span>MÃ BÀI ĐỌC: SLP-EX-04</span>
+      </div>
+      <div>
+        <span>TẦNG 1: STUTTERNET WAV2VEC2</span>
+        <span class="separator">|</span>
+        <span>KHỬ NHIỄU TỰ ĐỘNG</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THANH ĐIỀU HƯỚNG CHUẨN Y TẾ -->
+<header class="med-navbar">
+  <div class="container" style="max-width: 980px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="med-brand" href="index.html">
+        <span class="med-brand-title">FLUENTA</span>
+        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      </a>
+
+      <nav>
+        <ul class="med-nav-list">
+          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
+          <li><a class="med-nav-link active" href="practice.html">PHÒNG TẬP</a></li>
+          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
+          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
+          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
+          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
+          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
+          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="med-container" style="max-width: 860px;">
+
+  <!-- THÔNG TIN PHIÊN ĐO LƯỜNG -->
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+    <div>
+      <h1 class="h5 fw-bold mb-0 text-dark">PHIÊN THU ÂM &amp; ĐO LƯỜNG PHÁT ÂM</h1>
+      <div class="text-muted small">Thời lượng ghi âm tiêu chuẩn: 15 — 30 giây</div>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span class="med-badge med-badge-primary" id="practiceTechniqueBadge">Kỹ thuật: Easy Onset</span>
+      <a href="library.html" class="btn-med-secondary py-1 px-3" style="font-size:12.5px;">ĐỔI BÀI TẬP →</a>
+      <a href="progress.html" class="btn-med-secondary py-1 px-3" style="font-size:12.5px;">LỊCH SỬ →</a>
+    </div>
+  </div>
+
+  <!-- VĂN BẢN MẪU CHỈ ĐỊNH ĐỌC KIỂM TRA -->
+  <section class="med-card">
+    <div class="med-card-header">
+      <span class="med-card-title">VĂN BẢN MẪU CHỈ ĐỊNH (NGỮ LIỆU ĐÁNH GIÁ)</span>
+      <span class="med-badge med-badge-neutral" id="practiceCodeBadge">Mã số: TXT-01</span>
+    </div>
+
+    <div class="p-4 bg-light border rounded mb-3" id="practicePassage" style="font-size: 21px; line-height: 1.85; color: var(--med-navy); font-weight: 500;">
+      "Sáng nay trời trong xanh, tôi ra công viên đi bộ và nghe chim hót. Không khí mát mẻ khiến tôi cảm thấy dễ chịu và tràn đầy năng lượng."
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="small text-muted" id="practiceInstruction">
+        <strong>Chỉ định kỹ thuật:</strong> Áp dụng kỹ thuật thở ra nhẹ trước âm xát /s/ ở từ "Sáng" và tiếp xúc nhẹ nhàng môi ở âm tắc /b/ trong từ "bộ".
+      </div>
+      <a href="library.html" class="small fw-bold text-primary text-decoration-underline">Tra cứu cơ chế trong Thư viện phác đồ</a>
+    </div>
+  </section>
+
+  <!-- KHU VỰC ĐIỀU KHIỂN GHI ÂM CHUẨN LÂM SÀNG -->
+  <section class="med-card text-center py-5">
+    <div class="mb-3">
+      <button class="btn-clinical-record" id="recBtn" onclick="toggleRecord()">
+        BẮT ĐẦU GHI ÂM
+      </button>
+    </div>
+
+    <div class="fw-bold fs-6 mt-3" id="recStatus" style="color: var(--med-navy);">
+      Trạng thái: Sẵn sàng tiếp nhận tín hiệu âm học
+    </div>
+
+    <div class="text-muted small mt-1" id="recSubStatus">
+      Nhấn nút trên để thu âm. Sau khi đọc xong, nhấn lần nữa để chuyển sang Tầng 1 phân tích mô hình AI.
+    </div>
+  </section>
+
+  <!-- QUY TRÌNH THỰC HIỆN 3 BƯỚC -->
+  <section class="med-card">
+    <div class="med-card-header">
+      <span class="med-card-title">HƯỚNG DẪN THỰC HÀNH CHUẨN TRỊ LIỆU</span>
+    </div>
+
+    <table class="med-table">
+      <tbody>
+        <tr>
+          <td style="width: 20%;" class="fw-bold">Bước 1: Tư thế</td>
+          <td>Ngồi thẳng lưng, thả lỏng hoàn toàn cơ vai, cơ hàm dưới và vùng cổ họng.</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Bước 2: Hô hấp</td>
+          <td>Hít một hơi sâu bằng cơ hoành (bụng nở ra), không nâng vai khi lấy hơi.</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">Bước 3: Phát âm</td>
+          <td>Bắt đầu cất tiếng ngay khi luồng hơi bắt đầu đi ra, duy trì tốc độ đọc đều đặn.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="med-footer">
+  <div class="container" style="max-width: 980px;">
+    <div>FLUENTA CLINICAL SYSTEM © 2026 — QUY TRÌNH THU ÂM CHUẨN LÂM SÀNG</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/practice.js"></script>
+</body>
+</html>

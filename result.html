@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Báo cáo Kết quả Đo lường Âm học</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/result.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- THANH TIÊU CHUẨN Y KHOA TRÊN CÙNG -->
+<div class="med-topbar">
+  <div class="container" style="max-width: 980px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <span>KẾT QUẢ ĐO LƯỜNG ÂM HỌC LÂM SÀNG</span>
+        <span class="separator">|</span>
+        <span>MÃ BẢN GHI: RES-2026-0842-04</span>
+      </div>
+      <div>
+        <span>TẦNG 1: DEEP LEARNING PHÂN TÍCH TÍN HIỆU</span>
+        <span class="separator">|</span>
+        <span>TẦNG 2: LLM GUIDANCE</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- THANH ĐIỀU HƯỚNG CHUẨN Y TẾ -->
+<header class="med-navbar">
+  <div class="container" style="max-width: 980px;">
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="med-brand" href="index.html">
+        <span class="med-brand-title">FLUENTA</span>
+        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      </a>
+
+      <nav>
+        <ul class="med-nav-list">
+          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
+          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
+          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
+          <li><a class="med-nav-link active" href="result.html">KẾT QUẢ</a></li>
+          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
+          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
+          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
+          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="med-container" style="max-width: 900px;">
+
+  <!-- TIÊU ĐỀ KẾT QUẢ & THAO TÁC XUẤT -->
+  <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+    <div>
+      <h1 class="h5 fw-bold mb-0 text-dark">BÁO CÁO KẾT QUẢ PHÂN TÍCH ÂM HỌC</h1>
+      <div class="text-muted small">Thời điểm ghi nhận: Hôm nay, 08:32:15 | Thời lượng mẫu: 18.2 giây</div>
+    </div>
+    <div class="d-flex gap-2 mt-2 mt-sm-0">
+      <a href="practice.html" class="btn-med-secondary">THỰC HIỆN LẠI</a>
+      <a href="reports.html" class="btn-med-primary">LƯU VÀO HỒ SƠ</a>
+    </div>
+  </div>
+
+  <!-- BẢNG CHỈ SỐ ÂM HỌC ĐỊNH LƯỢNG (TẦNG 1) -->
+  <section class="mb-4">
+    <div class="row g-3">
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Tỷ lệ trôi chảy</div>
+          <div class="med-metric-val text-success">88.0%</div>
+          <div class="med-metric-note">Mức độ kiểm soát: Tốt</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Số điểm vấp</div>
+          <div class="med-metric-val text-warning">3 điểm</div>
+          <div class="med-metric-note">Giảm 1 sự kiện so với phiên trước</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Tốc độ phát âm</div>
+          <div class="med-metric-val">118 wpm</div>
+          <div class="med-metric-note">Khoảng chuẩn: 110 - 140 wpm</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="med-metric-box">
+          <div class="med-metric-label">Thời lượng tắc nghẽn</div>
+          <div class="med-metric-val">0.38s</div>
+          <div class="med-metric-note">Thời gian ngắt quãng trung bình</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ĐỒ THỊ BIÊN ĐỘ ÂM HỌC WAVEFORM -->
+  <section class="med-card mb-4">
+    <div class="med-card-header">
+      <span class="med-card-title">BIỂU ĐỒ BIÊN ĐỘ TÍN HIỆU ÂM HỌC (WAVEFORM &amp; EVENT DETECTION)</span>
+      <span class="med-badge med-badge-warning">3 vị trí phát hiện</span>
+    </div>
+
+    <div class="med-waveform mb-2" id="waveform"></div>
+
+    <div class="small text-muted mt-2">
+      Ghi chú: Vạch màu vàng cam biểu thị thời điểm mô hình AI ghi nhận hiện tượng ngắt quãng cơ học (Block, lặp âm, kéo dài âm).
+    </div>
+  </section>
+
+  <!-- BẢNG CHI TIẾT CÁC ĐIỂM NGẮT QUÃNG PHÁT HIỆN ĐƯỢC -->
+  <section class="med-card mb-4">
+    <div class="med-card-header">
+      <span class="med-card-title">BẢNG CHI TIẾT SỰ KIỆN NÓI LẮP (DETAILED EVENT LOG)</span>
+      <span class="med-badge med-badge-neutral">Phân loại Tầng 1</span>
+    </div>
+
+    <table class="med-table">
+      <thead>
+        <tr>
+          <th>TỌA ĐỘ THỜI GIAN</th>
+          <th>TỪ NGỮ BỊ ẢNH HƯỞNG</th>
+          <th>PHÂN LOẠI HIỆN TƯỢNG</th>
+          <th>THỜI LƯỢNG NGHẼN</th>
+          <th>CHỈ ĐỊNH PHỤC HỒI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fw-bold">0:04</td>
+          <td>"Sáng"</td>
+          <td><span class="med-badge med-badge-warning">Block thanh quản</span></td>
+          <td>0.42 giây</td>
+          <td>Kỹ thuật Khởi âm êm dịu (Easy Onset)</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">0:09</td>
+          <td>"trong"</td>
+          <td><span class="med-badge med-badge-neutral">Kéo dài âm (Prolongation)</span></td>
+          <td>0.35 giây</td>
+          <td>Kỹ thuật Chạm nhẹ cấu âm (Light Contact)</td>
+        </tr>
+        <tr>
+          <td class="fw-bold">0:14</td>
+          <td>"bộ"</td>
+          <td><span class="med-badge med-badge-neutral">Áp lực môi quá mức</span></td>
+          <td>0.37 giây</td>
+          <td>Kỹ thuật Thả lỏng cơ môi</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- HƯỚNG DẪN KỸ THUẬT LÂM SÀNG TỪNG TẦNG (TẦNG 2 - LLM GUIDANCE) -->
+  <section class="med-card">
+    <div class="med-card-header">
+      <span class="med-card-title">HƯỚNG DẪN TRỊ LIỆU CÁ NHÂN HÓA (TẦNG 2: LLM GUIDANCE)</span>
+      <span class="med-badge med-badge-primary">Phác đồ đề xuất</span>
+    </div>
+
+    <div class="mb-3">
+      <div class="fw-bold text-dark mb-1">1. Đánh giá chuyên môn lâm sàng:</div>
+      <p class="text-muted small mb-3">
+        Mẫu ghi âm cho thấy phản xạ khởi động luồng hơi ở âm xát đầu câu (/s/) vẫn còn hiện tượng kẹt áp lực thanh môn nhẹ. Không phát hiện hành vi cử động phụ (secondary behaviors) hay căng thẳng cơ mặt nghiêm trọng.
+      </p>
+
+      <div class="fw-bold text-dark mb-1">2. Bài tập cá nhân hóa được chỉ định cho buổi tiếp theo:</div>
+      <p class="text-muted small mb-2">Thực hành danh sách từ vựng mục tiêu theo nguyên tắc giải mẫn cảm có hệ thống:</p>
+      
+      <div class="d-flex flex-wrap gap-2">
+        <span class="border rounded p-2 px-3 small bg-light text-dark fw-bold">sáng</span>
+        <span class="border rounded p-2 px-3 small bg-light text-dark fw-bold">sông</span>
+        <span class="border rounded p-2 px-3 small bg-light text-dark fw-bold">sương mai</span>
+        <span class="border rounded p-2 px-3 small bg-light text-dark fw-bold">trong xanh</span>
+        <span class="border rounded p-2 px-3 small bg-light text-dark fw-bold">bình an</span>
+      </div>
+    </div>
+    
+    <div class="pt-3 border-top mt-3 d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex flex-wrap gap-2">
+        <a href="session-detail.html" class="btn-med-secondary">CHI TIẾT TỌA ĐỘ ÂM HỌC</a>
+        <a href="library.html" class="btn-med-secondary">TRA CỨU BÀI TẬP BỔ TRỢ</a>
+      </div>
+      <div class="d-flex flex-wrap gap-2">
+        <a href="progress.html" class="btn-med-secondary">XEM BIỂU ĐỒ TIẾN TRÌNH</a>
+        <a href="reports.html" class="btn-med-primary">XUẤT PHIẾU BÁO CÁO LÂM SÀNG</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="med-footer">
+  <div class="container" style="max-width: 980px;">
+    <div>FLUENTA CLINICAL SYSTEM © 2026 — DỮ LIỆU ĐO LƯỜNG ĐÃ ĐƯỢC CHUẨN HÓA</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/result.js"></script>
+</body>
+</html>

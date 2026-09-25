@@ -1,0 +1,33 @@
+/* ========================================================
+   PROCESSING PAGE STYLES (processing.css)
+   ======================================================== */
+.processing-card {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.processing-bar-wrap {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin: 24px 0;
+  border: 1px solid var(--med-border);
+}
+
+.processing-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--med-accent) 0%, #e06341 100%);
+  width: 0%;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--radius-pill);
+}
+
+.processing-stage-title {
+  color: var(--med-teal-dark);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}

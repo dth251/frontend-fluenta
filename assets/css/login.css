@@ -1,0 +1,13 @@
+/* ========================================================
+   LOGIN PAGE STYLES (login.css)
+   ======================================================== */
+.login-box {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.login-auth-footer {
+  border-top: 1px solid var(--med-border);
+  padding-top: 14px;
+  margin-top: 14px;
+}

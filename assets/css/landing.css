@@ -1,0 +1,155 @@
+/* ========================================================
+   LANDING PAGE MEDICLOUD THEME (landing.css)
+   ======================================================== */
+.hero-medicloud {
+  padding: 48px 0 64px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: visible;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+/* 3 Thẻ nổi lơ lửng xung quanh hình ảnh Hero (Không dùng icon) */
+.hero-floating-1 {
+  top: 12%;
+  left: -20px;
+}
+
+.hero-floating-2 {
+  bottom: 25%;
+  left: -24px;
+}
+
+.hero-floating-3 {
+  top: 20%;
+  right: -20px;
+}
+
+.floating-pill {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--med-border);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px rgba(11, 60, 67, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--med-teal-dark);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-left: 3px solid var(--med-accent);
+}
+
+.floating-pill-teal {
+  background: rgba(11, 60, 67, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 25px rgba(11, 60, 67, 0.2);
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Dải đối tác y tế */
+.trusted-strip {
+  background: #f1f5f9;
+  border-top: 1px solid var(--med-border);
+  border-bottom: 1px solid var(--med-border);
+  padding: 24px 0;
+}
+
+.partner-box {
+  background: #ffffff;
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--med-text-muted);
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Khối Quy Trình 3 Bước Toàn Màn Hình (Deep Teal MediCloud signature) */
+.how-it-works-teal {
+  background: var(--med-teal-dark);
+  color: #ffffff;
+  padding: 64px 0;
+  position: relative;
+}
+
+.step-card-teal {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 28px 22px;
+  height: 100%;
+  transition: all 0.24s ease;
+}
+
+.step-card-teal:hover {
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-4px);
+  border-color: var(--med-accent);
+}
+
+.step-number-pill {
+  display: inline-block;
+  background: var(--med-accent);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+/* Accordion FAQ kiểu MediCloud */
+.faq-box {
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.faq-box:hover {
+  border-color: #cbd5e1;
+}
+
+.faq-header {
+  padding: 18px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--med-teal-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-body {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--med-text-muted);
+  line-height: 1.7;
+}
