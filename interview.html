@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fluenta — Phòng Phỏng Vấn Tương Tác 1-1 Cùng AI</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/common.css" rel="stylesheet">
+  <link href="assets/css/interview.css" rel="stylesheet">
+</head>
+
+<body class="app-body">
+
+  <a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
+
+  <div class="app-shell">
+    <!-- THANH ĐIỀU HƯỚNG NGANG: LOGO + MENU + AVATAR HỒ SƠ -->
+    <header class="app-header">
+      <div class="app-bar-inner">
+        <a class="med-brand" href="index.html" aria-label="Fluenta - Trang chủ">
+          <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
+        </a>
+
+        <nav class="app-topnav" aria-label="Điều hướng chính">
+          <ul class="app-nav">
+            <li><a class="app-nav-link" href="index.html">Tổng quan</a></li>
+            <li><a class="app-nav-link" href="practice.html">Luyện tập</a></li>
+            <li><a class="app-nav-link active" href="interview.html" aria-current="page">Phỏng vấn</a></li>
+            <li><a class="app-nav-link" href="progress.html">Tiến trình</a></li>
+            <li><a class="app-nav-link" href="library.html">Thư viện</a></li>
+            <li><a class="app-nav-link" href="specialist-connect.html">Kết nối</a></li>
+          </ul>
+        </nav>
+
+        <div class="dropdown app-user">
+          <button class="app-user-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            aria-label="Tài khoản: Nguyễn Văn Minh">
+            <span class="app-avatar"><svg class="app-avatar-icon" viewBox="0 0 24 24" aria-hidden="true"
+                focusable="false">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5z" />
+              </svg></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end app-user-menu">
+            <li class="app-user-info">
+              <span class="app-user-info-name">Nguyễn Văn Minh</span>
+              <span class="app-user-info-id">Mã hồ sơ: FL-2026-0842</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+            <li><a class="dropdown-item" href="settings.html">Cài đặt</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-danger" href="login.html">Đăng xuất</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="med-container med-w-2xl interview-container">
+
+      <!-- TIÊU ĐỀ PHÒNG TƯƠNG TÁC -->
+      <div class="interview-header">
+        <div class="interview-header-top mb-0">
+          <div class="interview-title-area">
+            <h1>Phòng tương tác trực tiếp với AI</h1>
+          </div>
+          <div>
+            <a href="practice.html" class="btn-med-secondary btn-med-sm">Về phòng luyện tập</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== BỐ CỤC 2 CỘT CHÍNH (HIỂN THỊ AVATAR TRỰC TIẾP) ==================== -->
+      <div class="interview-grid">
+
+        <!-- CỘT TRÁI: NHÂN VẬT AI ĐỨNG MẤP MÁY MÔI -->
+        <div class="ai-character-card">
+          <div class="ai-character-view" id="aiCharacterView">
+
+            <div class="ai-coach-badge">
+              <span class="coach-status-dot"></span>
+              <span>Giáo viên Fluenta</span>
+            </div>
+
+            <button type="button" class="btn-replay-question" id="btnReplayQ" title="Nghe lại câu hỏi">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              </svg>
+              Nghe lại
+            </button>
+
+            <!-- Vòng hào quang âm thanh phát sáng khi AI phát âm -->
+            <div class="ai-voice-halo"></div>
+
+            <!-- NHÂN VẬT SVG ĐỨNG VỚI CƠ CHẾ MẤP MÁY MÔI -->
+            <div class="character-svg-wrapper">
+              <svg class="standing-character-svg" viewBox="0 0 270 340" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <defs>
+                  <linearGradient id="charSkin" x1="135" y1="40" x2="135" y2="180" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FED7AA" />
+                    <stop offset="1" stop-color="#FDBA74" />
+                  </linearGradient>
+                  <linearGradient id="charHair" x1="80" y1="30" x2="190" y2="120" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1E293B" />
+                    <stop offset="1" stop-color="#0F172A" />
+                  </linearGradient>
+                  <linearGradient id="charSuit" x1="135" y1="180" x2="135" y2="340" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#088B9C" />
+                    <stop offset="1" stop-color="#066E7C" />
+                  </linearGradient>
+                </defs>
+
+                <!-- THÂN ÁO CÔNG SỞ LỊCH THIỆP -->
+                <g id="charBody">
+                  <path d="M45 340C45 225 80 190 135 190C190 190 225 225 225 340H45Z" fill="url(#charSuit)" />
+                  <!-- Áo sơ mi & cà vạt -->
+                  <path d="M105 190L135 240L165 190H105Z" fill="#FFFFFF" />
+                  <path d="M128 210L135 290L142 210H128Z" fill="#009CB0" />
+                  <!-- Đường nét áo vest -->
+                  <path d="M85 220L115 340" stroke="#055B66" stroke-width="2" />
+                  <path d="M185 220L155 340" stroke="#055B66" stroke-width="2" />
+                </g>
+
+                <!-- CỔ -->
+                <rect x="118" y="145" width="34" height="50" rx="8" fill="#FDBA74" />
+
+                <!-- ĐẦU & KHUÔN MẶT -->
+                <g id="charHead">
+                  <path
+                    d="M75 95C75 45 102 20 135 20C168 20 195 45 195 95C195 142 165 170 135 170C105 170 75 142 75 95Z"
+                    fill="url(#charSkin)" />
+
+                  <!-- TÓC -->
+                  <path
+                    d="M68 85C65 50 82 15 135 12C188 15 205 50 202 85C198 70 190 52 178 48C165 44 148 46 135 46C120 46 95 42 84 54C76 62 72 74 68 85Z"
+                    fill="url(#charHair)" />
+
+                  <!-- TAI -->
+                  <circle cx="75" cy="105" r="10" fill="#FDBA74" />
+                  <circle cx="195" cy="105" r="10" fill="#FDBA74" />
+
+                  <!-- MẮT CÓ CHỚP MẮT TỰ NHIÊN -->
+                  <g class="char-eye-blink">
+                    <ellipse cx="108" cy="98" rx="10" ry="8" fill="#FFFFFF" />
+                    <ellipse cx="162" cy="98" rx="10" ry="8" fill="#FFFFFF" />
+
+                    <g class="char-pupils">
+                      <circle cx="108" cy="98" r="5" fill="#0F172A" />
+                      <circle cx="106" cy="96" r="1.8" fill="#FFFFFF" />
+                      <circle cx="162" cy="98" r="5" fill="#0F172A" />
+                      <circle cx="160" cy="96" r="1.8" fill="#FFFFFF" />
+                    </g>
+
+                    <!-- Mí mắt -->
+                    <path d="M96 94C102 89 114 89 120 94" stroke="#475569" stroke-width="2" stroke-linecap="round" />
+                    <path d="M150 94C156 89 168 89 174 94" stroke="#475569" stroke-width="2" stroke-linecap="round" />
+                  </g>
+
+                  <!-- LÔNG MÀY -->
+                  <path d="M96 84C104 80 114 81 120 85" stroke="#334155" stroke-width="2.5" stroke-linecap="round" />
+                  <path d="M150 85C156 81 166 80 174 84" stroke="#334155" stroke-width="2.5" stroke-linecap="round" />
+
+                  <!-- MŨI -->
+                  <path d="M133 105V118C133 121 136 122 138 121" stroke="#EA580C" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+
+                  <!-- BỘ PHẬN MÔI MẤP MÁY (LIP-SYNC CHUẨN XÁC) -->
+                  <g id="charMouthGroup">
+                    <!-- Khi nghỉ (khép miệng mỉm cười nhẹ) -->
+                    <g class="char-mouth-idle">
+                      <path d="M120 144C128 150 142 150 150 144" stroke="#C2410C" stroke-width="3"
+                        stroke-linecap="round" />
+                    </g>
+
+                    <!-- Khi AI nói (môi mấp máy liên tục rồi ngắt khi xong) -->
+                    <g class="char-mouth-active">
+                      <path id="charMouthCavity" class="char-mouth-cavity"
+                        d="M118 143C118 138 152 138 152 143C152 155 118 155 118 143Z" fill="#881337" />
+                      <rect x="123" y="139" width="24" height="4" rx="1.5" fill="#FFFFFF" />
+                      <ellipse cx="135" cy="151" rx="9" ry="4" fill="#F43F5E" />
+                      <path id="charLipUpper" class="char-lip-upper" d="M117 142C125 137 145 137 153 142"
+                        stroke="#C2410C" stroke-width="2.5" stroke-linecap="round" />
+                      <path id="charLipLower" class="char-lip-lower" d="M119 151C126 157 144 157 151 151"
+                        stroke="#C2410C" stroke-width="2.5" stroke-linecap="round" />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <!-- TRẠNG THÁI AI GỌN GÀNG -->
+            <div class="ai-status-pill" id="aiCoachStatus">
+              AI đang chờ bạn bắt đầu...
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CỘT PHẢI: KHU VỰC NGƯỜI DÙNG TRẢ LỜI & NÚT TIẾP TỤC -->
+        <div class="user-interaction-card">
+
+          <div class="interaction-head">
+            <h2 class="interaction-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="text-success">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              </svg>
+              Phần tương tác của bạn
+            </h2>
+            <div class="timer-pill" title="Thời gian trả lời">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              <span id="answerTimer">00:00</span>
+            </div>
+          </div>
+
+          <!-- KHỐI CHỜ BAN ĐẦU: NÚT BẮT ĐẦU PHỎNG VẤN RÕ RÀNG NẰM NGAY CẠNH AVATAR -->
+          <div class="initial-ready-box" id="initialReadyBox">
+            <div class="initial-ready-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <h3 class="fw-bold fs-5 text-dark mb-2">Bắt đầu phiên phỏng vấn</h3>
+            <p class="small text-muted mb-4" style="max-width: 360px;">
+              Bấm nút bên dưới để AI bắt đầu đặt câu hỏi đầu tiên bằng giọng nói và mấp máy môi.
+            </p>
+            <button type="button" class="btn-start-interview-action" id="btnStartInterview">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Bắt đầu phỏng vấn
+            </button>
+          </div>
+
+          <!-- KHUNG NHẬN DIỆN GIỌNG NÓI & SÓNG ÂM (KÍCH HOẠT SAU KHI BẤM BẮT ĐẦU) -->
+          <div class="speech-record-box" id="speechRecordBox" hidden>
+            <!-- SÓNG ÂM MICRO -->
+            <div class="audio-waves-meter" aria-hidden="true">
+              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span
+                class="wave-bar"></span>
+              <span class="wave-bar"></span><span class="wave-bar"></span><span class="wave-bar"></span><span
+                class="wave-bar"></span>
+            </div>
+
+            <!-- NỘI DUNG GIỌNG NÓI ĐƯỢC CHUYỂN THÀNH TEXT -->
+            <div class="transcript-area" id="transcriptArea">
+              <span class="transcript-placeholder">Câu trả lời bằng giọng nói của bạn sẽ hiển thị tại đây khi nhấn Ghi
+                âm...</span>
+            </div>
+
+            <!-- NÚT GHI ÂM -->
+            <div class="record-actions-row">
+              <button type="button" class="btn-record-main" id="btnRecordMain" disabled>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                  <line x1="12" y1="19" x2="12" y2="22" />
+                </svg>
+                Ghi âm câu trả lời
+              </button>
+              <span class="record-tip-text" id="recordTipText">Lắng nghe AI hỏi xong, sau đó bấm nút Ghi âm để trả
+                lời.</span>
+            </div>
+          </div>
+
+          <!-- 2 NÚT: 1. TIẾP TỤC  2. KẾT THÚC VÀ NHẬN ĐÁNH GIÁ -->
+          <div class="next-step-box mt-3" id="nextStepBox" hidden>
+            <div class="d-flex flex-column flex-sm-row gap-2">
+              <button type="button"
+                class="btn-med-primary flex-grow-1 py-2_5 d-flex align-items-center justify-content-center gap-2 fw-bold fs-6 shadow-sm"
+                id="btnNextFlow">
+                Tiếp tục
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </button>
+              <button type="button"
+                class="btn-med-finish flex-grow-1 py-2_5 d-flex align-items-center justify-content-center gap-2 fw-bold fs-6 shadow-sm"
+                id="btnFinishInterview">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                Kết thúc và nhận đánh giá
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ==================== BẢNG TỔNG KẾT TOÀN DIỆN PHIÊN PHỎNG VẤN ==================== -->
+      <section class="interview-summary-card" id="interviewSummaryCard" hidden>
+        <div class="summary-score-hero" id="summaryAvgFluency">93%</div>
+        <h2 class="text-center fw-bold mb-1">Hoàn thành phiên tương tác cùng AI!</h2>
+        <p class="text-center text-muted small mb-4">Dữ liệu phân tích luồng hơi và nhịp điệu phát âm theo phác đồ ASHA lâm sàng</p>
+
+        <div class="row g-3 text-center mb-4">
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-3 border">
+              <div class="small text-muted mb-1">Độ trôi chảy trung bình</div>
+              <div class="fw-bold fs-4 text-success">93% (Mức Tự Tin)</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-3 border">
+              <div class="small text-muted mb-1">Tốc độ phát âm trung bình</div>
+              <div class="fw-bold fs-4 text-primary" id="summaryAvgWpm">116 từ/phút</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 bg-light rounded-3 border">
+              <div class="small text-muted mb-1">Kỹ thuật chủ đạo</div>
+              <div class="fw-bold fs-4 text-dark">Easy Onset &amp; Pausing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DANH SÁCH TỪNG CÂU VÀ NHẬN XÉT -->
+        <h3 class="fw-bold fs-6 mb-3">Chi tiết từng câu hỏi &amp; Đánh giá phản xạ:</h3>
+        <div id="summaryQuestionsList" class="mb-4"></div>
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-3 border-top">
+          <a href="progress.html" class="btn-med-secondary">Xem biểu đồ tiến trình</a>
+          <div class="d-flex gap-2">
+            <a href="index.html" class="btn-med-secondary">Về trang chủ</a>
+            <button type="button" class="btn-med-primary" id="btnRestartInterview">Luyện tập lại lượt mới</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER CHUẨN TOÀN BỘ TRANG HỆ THỐNG -->
+    <footer class="med-footer">
+      <div class="container med-w-2xl">
+        <div class="row g-4 mb-4">
+          <div class="col-md-5">
+            <a class="med-brand d-inline-block mb-3 p-1 px-2 bg-white rounded-2 shadow-sm" href="landing.html"
+              aria-label="Fluenta">
+              <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions"
+                style="height: 36px; display: block;">
+            </a>
+            <p class="small text-white-50 mb-0 lh-relaxed">
+              Nền tảng hỗ trợ phục hồi giọng nói và âm ngữ trị liệu trực tuyến ứng dụng công nghệ Deep Learning và phác
+              đồ ASHA chuẩn mực.
+            </p>
+          </div>
+
+          <div class="col-md-3">
+            <div class="fw-bold text-white text-uppercase small mb-3">CHỨC NĂNG HỆ THỐNG</div>
+            <ul class="list-unstyled small lh-lg">
+              <li><a href="onboarding.html">Đo mốc ban đầu (Baseline)</a></li>
+              <li><a href="practice.html">Phòng luyện tập tương tác</a></li>
+              <li><a href="interview.html">Phỏng vấn giả lập AI</a></li>
+              <li><a href="library.html">Thư viện phác đồ can thiệp</a></li>
+              <li><a href="reports.html">Mẫu báo cáo lâm sàng</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <div class="fw-bold text-white text-uppercase small mb-3">QUY ĐỊNH &amp; PHÁP LÝ</div>
+            <ul class="list-unstyled small lh-lg">
+              <li><a href="privacy.html">Chính sách bảo mật dữ liệu âm thanh</a></li>
+              <li><a href="privacy.html">Tiêu chuẩn đạo đức dữ liệu y tế</a></li>
+              <li><a href="specialist-connect.html">Kênh chuyển giao bác sĩ SLP</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-3 border-top border-secondary text-center small text-white-50">
+          Fluenta Clinical Telehealth SaaS © 2026 — dành cho mục đích hỗ trợ luyện tập âm ngữ tại nhà
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- ĐIỀU HƯỚNG DƯỚI ĐÁY (MOBILE & TABLET < 992px) -->
+  <nav class="app-bottom-nav" aria-label="Điều hướng chính">
+    <a class="app-bottom-link" href="index.html">Tổng quan</a>
+    <a class="app-bottom-link" href="practice.html">Luyện tập</a>
+    <a class="app-bottom-link active" href="interview.html" aria-current="page">Phỏng vấn</a>
+    <a class="app-bottom-link" href="progress.html">Tiến trình</a>
+    <a class="app-bottom-link" href="library.html">Thư viện</a>
+    <a class="app-bottom-link" href="specialist-connect.html">Kết nối</a>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/interview.js"></script>
+</body>
+
+</html>

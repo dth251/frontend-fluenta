@@ -65,7 +65,7 @@
 }
 
 .trend-bar-current path {
-  fill: var(--med-teal-dark);
+  fill: var(--med-primary);
 }
 
 .trend-hit {

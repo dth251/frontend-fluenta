@@ -4,32 +4,32 @@
    Độ tương phản chữ/nền đều đạt WCAG AA (>= 4.5:1).
    ======================================================== */
 :root {
-  /* ---------- MÀU CHÍNH: SAN HÔ (ấm áp, khích lệ) ---------- */
-  --med-primary: #b93f28;        /* nút chính, link, menu đang chọn — 5.5:1 với chữ trắng */
-  --med-primary-dark: #9a3320;   /* hover — 7.3:1 */
-  --med-primary-light: #fef3ef;  /* nền nhạt — chữ san hô trên nền này 5.1:1 */
-  --med-primary-border: #f6cfc3;
+  /* ---------- MÀU CHÍNH: MEDICAL CYAN / TURQUOISE (chuẩn lâm sàng, hiện đại) ---------- */
+  --med-primary: #088b9c;        /* nút chính, link, menu đang chọn — đạt chuẩn WCAG AA với chữ trắng */
+  --med-primary-dark: #066e7c;   /* hover */
+  --med-primary-light: #e6f7f9;  /* nền nhạt — badge, highlight */
+  --med-primary-border: #bce9ef;
 
-  /* ---------- NAVY: tiêu đề, footer, khối nhấn tối ----------
+  /* ---------- NAVY / TEAL TỐI: tiêu đề, footer, khối nhấn tối ----------
      (giữ tên biến --med-teal-* để không phải sửa các file trang) */
-  --med-teal-dark: #1b2d45;      /* tiêu đề, footer — 13.9:1 với trắng */
-  --med-teal-deep: #12203a;
-  --med-teal-soft: #5a7394;      /* cột biểu đồ các tuần trước, dạng sóng */
-  --med-teal-light: #e8eef6;
-  --med-teal-border: #c5d3e6;
+  --med-teal-dark: #123043;      /* tiêu đề, footer — 13.8:1 với trắng */
+  --med-teal-deep: #0a202e;
+  --med-teal-soft: #4a778e;      /* cột biểu đồ các tuần trước, dạng sóng */
+  --med-teal-light: #edf6f8;
+  --med-teal-border: #c8e4eb;
   --med-mint-bg: var(--med-primary-light);
   --med-mint-border: var(--med-primary-border);
 
-  /* ---------- MÀU NHẤN: NAVY (logo, nút ghi âm, từ cần chú ý) ---------- */
-  --med-accent: #1f3a5f;         /* 11.5:1 với chữ trắng */
-  --med-accent-hover: #172d4a;
-  --med-accent-dark: #1f3a5f;    /* chữ trên nền nhấn nhạt — 9.8:1 */
-  --med-accent-light: #e8eef6;
-  --med-accent-border: #c5d3e6;
+  /* ---------- MÀU NHẤN: VIBRANT CYAN & TEAL (logo, nút ghi âm, marker) ---------- */
+  --med-accent: #009cb0;         /* điểm nhấn tươi sáng chuẩn Medikal */
+  --med-accent-hover: #008294;
+  --med-accent-dark: #086d7c;    /* chữ trên nền nhấn nhạt */
+  --med-accent-light: #e3f7fa;
+  --med-accent-border: #b3e7f0;
 
   /* Mực đậm cho chữ nhấn mạnh */
-  --med-navy: #1b2d45;
-  --med-navy-soft: #43546b;      /* chữ menu — 7.7:1 */
+  --med-navy: #123043;
+  --med-navy-soft: #38576c;      /* chữ menu */
 
   /* ---------- MÀU TRẠNG THÁI ---------- */
   --med-success: #15803d;
@@ -49,17 +49,17 @@
   /* ---------- CHỮ ---------- */
   --med-text-main: #1f2937;      /* 14.7:1 */
   --med-text-muted: #4b5563;     /* 7.6:1 */
-  --med-text-sub: #5b6778;       /* 5.4:1 trên nền trang */
+  --med-text-sub: #546577;       /* 5.4:1 trên nền trang */
 
   /* ---------- NỀN & VIỀN ---------- */
   --med-white: #ffffff;
-  --med-bg: #f6f7f9;
-  --med-surface-muted: #eff1f5;
+  --med-bg: #f4f8fa;            /* nền trang ánh xanh y tế rất nhẹ, mát mẻ */
+  --med-surface-muted: #e9f2f5;
   --med-card-bg: #ffffff;
-  --med-border: #e3e6ea;
-  --med-border-subtle: #eef0f3;
-  --med-border-strong: #cfd6dc;
-  --med-border-hover: #9aa4b0;
+  --med-border: #dbe6ec;
+  --med-border-subtle: #ebf2f5;
+  --med-border-strong: #c2d4dc;
+  --med-border-hover: #8da6b4;
 
   /* ---------- CONTAINER ---------- */
   --container-xs: 520px;   /* Đăng nhập */
@@ -141,12 +141,12 @@
   --bs-body-font-size: var(--fs-body);
   --bs-body-color: var(--med-text-main);
   --bs-secondary-color: var(--med-text-muted);
-  --bs-primary-rgb: 185, 63, 40;
-  --bs-dark-rgb: 27, 45, 69;
+  --bs-primary-rgb: 8, 139, 156;
+  --bs-dark-rgb: 18, 48, 67;
   --bs-link-color: var(--med-primary);
-  --bs-link-color-rgb: 185, 63, 40;
+  --bs-link-color-rgb: 8, 139, 156;
   --bs-link-hover-color: var(--med-primary-dark);
-  --bs-link-hover-color-rgb: 154, 51, 32;
+  --bs-link-hover-color-rgb: 6, 110, 124;
   --bs-border-color: var(--med-border);
 }
 
@@ -474,6 +474,8 @@ a {
   font-weight: var(--fw-semibold);
   line-height: 1.4;
   text-align: center;
+  white-space: nowrap; /* Đảm bảo chữ bên trong nút luôn trên 1 hàng duy nhất */
+  flex-shrink: 0;
   cursor: pointer;
   transition: var(--transition-base);
 }
@@ -1058,6 +1060,11 @@ textarea:focus-visible {
 }
 
 /* Checkbox / radio: cả dòng nhãn là vùng bấm */
+.med-check-text {
+  flex: 1;
+  line-height: 1.5;
+}
+
 .med-check {
   display: flex;
   align-items: flex-start;
@@ -1223,7 +1230,7 @@ input[type="radio"] {
     inset: auto 0 0 0;
     z-index: 1030;
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     height: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
     padding-bottom: env(safe-area-inset-bottom, 0px);
     background: var(--med-white);
@@ -1236,9 +1243,9 @@ input[type="radio"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 var(--space-1);
+    padding: 0 2px;
     text-align: center;
-    font-size: var(--fs-caption);
+    font-size: var(--fs-label);
     font-weight: var(--fw-medium);
     line-height: var(--lh-tight);
     color: var(--med-text-sub);

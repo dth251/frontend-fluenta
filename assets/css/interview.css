@@ -1,0 +1,597 @@
+/* ========================================================
+   FLUENTA — AI INTERVIEW INTERACTIVE SUITE (interview.css)
+   Giao diện phỏng vấn đàm thoại 1-1 với nhân vật AI đứng mấp máy môi
+   Hỏi đáp theo luồng câu chuyện thực tế & đánh giá âm học lâm sàng
+   ======================================================== */
+
+:root {
+  --color-primary: #088b9c;
+  --color-primary-dark: #066e7c;
+  --color-primary-light: #e6f7f9;
+  --color-navy: #123043;
+}
+
+.interview-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* ---------- 1. TIÊU ĐỀ & TIẾN TRÌNH PHỎNG VẤN ---------- */
+.interview-header {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 16px 24px;
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.interview-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: 0;
+}
+
+.interview-title-area h1 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.interview-steps-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.step-node {
+  flex: 1;
+  min-width: 50px;
+  height: 6px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-node.completed {
+  background: #10b981;
+}
+
+.step-node.active {
+  background: var(--color-primary);
+  box-shadow: 0 0 8px rgba(8, 139, 156, 0.45);
+}
+
+/* ---------- 2. BỐ CỤC CHÍNH 2 CỘT (HIỂN THỊ TRỰC TIẾP AVATAR) ---------- */
+.interview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.2fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+/* ---------- CỘT TRÁI: NHÂN VẬT AI ĐỨNG MẤP MÁY MÔI ---------- */
+.ai-character-view {
+  background: radial-gradient(circle at 50% 30%, #f0fdfa 0%, #e0f2fe 50%, #ccebf1 100%);
+  position: relative;
+  flex: 1;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 24px 20px 24px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.ai-status-pill {
+  position: relative;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(8, 139, 156, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #123043;
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Huy hiệu nhân vật AI */
+.ai-coach-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(8, 139, 156, 0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 5;
+}
+
+.coach-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+/* Nút nghe lại câu hỏi */
+.btn-replay-question {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.btn-replay-question:hover {
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+/* Sóng âm tỏa ra sau lưng nhân vật khi nói */
+.ai-voice-halo {
+  position: absolute;
+  top: 80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px solid rgba(8, 139, 156, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ai-character-view.is-speaking .ai-voice-halo {
+  opacity: 1;
+  animation: haloPulse 1.6s infinite cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+
+@keyframes haloPulse {
+  0% { transform: scale(0.85); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* SVG NHÂN VẬT ĐỨNG */
+.character-svg-wrapper {
+  position: relative;
+  width: 270px;
+  height: 330px;
+  z-index: 2;
+  transform-origin: bottom center;
+}
+
+.standing-character-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: gentleBreathing 4.5s infinite ease-in-out;
+  transform-origin: bottom center;
+}
+
+@keyframes gentleBreathing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Mắt chớp tự nhiên */
+.char-eye-blink {
+  animation: charBlink 4.2s infinite ease-in-out;
+  transform-origin: center;
+}
+
+@keyframes charBlink {
+  0%, 94%, 100% { transform: scaleY(1); }
+  96% { transform: scaleY(0.08); }
+  98% { transform: scaleY(1); }
+}
+
+/* Con ngươi lướt nhẹ */
+.char-pupils {
+  animation: charPupils 7s infinite ease-in-out;
+}
+
+@keyframes charPupils {
+  0%, 40%, 100% { transform: translate(0, 0); }
+  45%, 65% { transform: translate(-2px, 1px); }
+  70%, 90% { transform: translate(2px, -1px); }
+}
+
+/* HOẠT HỌA MÔI MẤP MÁY */
+.char-mouth-idle {
+  display: block;
+}
+
+.char-mouth-active {
+  display: none;
+}
+
+/* Khi AI phát âm */
+.ai-character-view.is-speaking .char-mouth-idle {
+  display: none;
+}
+
+.ai-character-view.is-speaking .char-mouth-active {
+  display: block;
+}
+
+.ai-character-view.is-speaking .char-mouth-cavity {
+  animation: mouthSpeakCycle 0.22s infinite alternate ease-in-out;
+  transform-origin: 135px 145px;
+}
+
+.ai-character-view.is-speaking .char-lip-upper {
+  animation: lipUpperCycle 0.22s infinite alternate ease-in-out;
+  transform-origin: 135px 142px;
+}
+
+.ai-character-view.is-speaking .char-lip-lower {
+  animation: lipLowerCycle 0.22s infinite alternate ease-in-out;
+  transform-origin: 135px 150px;
+}
+
+@keyframes mouthSpeakCycle {
+  0% { transform: scale(0.9, 0.4); }
+  40% { transform: scale(1.15, 1.25); }
+  70% { transform: scale(0.85, 0.7); }
+  100% { transform: scale(1.2, 1.45); }
+}
+
+@keyframes lipUpperCycle {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3.5px) scaleX(1.05); }
+}
+
+@keyframes lipLowerCycle {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4.5px) scaleX(0.95); }
+}
+
+
+
+/* ---------- CỘT PHẢI: KHU VỰC NGƯỜI DÙNG TRẢ LỜI & ĐÁNH GIÁ ---------- */
+.user-interaction-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.interaction-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.interaction-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timer-pill {
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* KHỐI SẴN SÀNG BẮT ĐẦU (NẰM NGAY TRÊN KHUNG TƯƠNG TÁC) */
+.initial-ready-box {
+  background: #f0fdfa;
+  border: 2px dashed #99f6e4;
+  border-radius: 16px;
+  padding: 36px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.initial-ready-box[hidden] {
+  display: none !important;
+}
+
+.initial-ready-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ccfbf1;
+  color: #0f766e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+/* NÚT BẮT ĐẦU PHỎNG VẤN RÕ RÀNG, ĐẸP, MÀU CHUẨN FLUENTA */
+.btn-start-interview-action {
+  background: #088b9c !important;
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 13px 34px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(8, 139, 156, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-start-interview-action:hover {
+  background: #066e7c !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(8, 139, 156, 0.5);
+}
+
+.btn-start-interview-action:active {
+  transform: scale(0.98);
+}
+
+/* KHUNG GHI ÂM & NHẬN DIỆN VĂN BẢN TRỰC TIẾP */
+.speech-record-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.speech-record-box[hidden] {
+  display: none !important;
+}
+
+.speech-record-box.is-recording {
+  border-color: #22c55e;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+  background: #f0fdf4;
+}
+
+.transcript-area {
+  min-height: 90px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-bottom: 14px;
+}
+
+.transcript-placeholder {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* SÓNG ÂM MICRO KHI GHI ÂM */
+.audio-waves-meter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 24px;
+  margin-bottom: 16px;
+}
+
+.wave-bar {
+  width: 4px;
+  height: 6px;
+  background: #cbd5e1;
+  border-radius: 2px;
+  transition: height 0.15s ease, background 0.15s ease;
+}
+
+.speech-record-box.is-recording .wave-bar {
+  background: #22c55e;
+  animation: waveDance 0.6s infinite alternate ease-in-out;
+}
+
+.speech-record-box.is-recording .wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.speech-record-box.is-recording .wave-bar:nth-child(3) { animation-delay: 0.25s; }
+.speech-record-box.is-recording .wave-bar:nth-child(4) { animation-delay: 0.05s; }
+.speech-record-box.is-recording .wave-bar:nth-child(5) { animation-delay: 0.3s; }
+.speech-record-box.is-recording .wave-bar:nth-child(6) { animation-delay: 0.15s; }
+.speech-record-box.is-recording .wave-bar:nth-child(7) { animation-delay: 0.2s; }
+.speech-record-box.is-recording .wave-bar:nth-child(8) { animation-delay: 0.35s; }
+
+@keyframes waveDance {
+  0% { height: 4px; }
+  100% { height: 22px; }
+}
+
+/* BỘ NÚT ĐIỀU KHIỂN GHI ÂM */
+.record-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-record-main {
+  background: #088b9c;
+  color: #ffffff;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(8, 139, 156, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-record-main:hover {
+  background: #066e7c;
+  transform: translateY(-1px);
+}
+
+.btn-record-main.is-recording {
+  background: #ef4444;
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4);
+  animation: pulseRecording 1.4s infinite alternate;
+}
+
+@keyframes pulseRecording {
+  from { transform: scale(1); }
+  to { transform: scale(1.03); }
+}
+
+.record-tip-text {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* ---------- 3. BỘ 2 NÚT ĐIỀU HƯỚNG: TIẾP TỤC & KẾT THÚC NHẬN ĐÁNH GIÁ ---------- */
+.next-step-box {
+  margin-top: 16px;
+}
+
+.next-step-box[hidden] {
+  display: none !important;
+}
+
+.next-step-box .btn-med-primary {
+  background: #088b9c !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(8, 139, 156, 0.3);
+}
+
+.next-step-box .btn-med-primary:hover {
+  background: #066e7c !important;
+  transform: translateY(-1px);
+}
+
+.next-step-box .btn-med-finish {
+  background: #ffffff !important;
+  color: #088b9c !important;
+  border: 2px solid #088b9c !important;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.next-step-box .btn-med-finish:hover {
+  background: #f0fdfa !important;
+  color: #066e7c !important;
+  border-color: #066e7c !important;
+  transform: translateY(-1px);
+}
+
+/* ---------- 4. BẢNG TỔNG KẾT TOÀN DIỆN BUỔI PHỎNG VẤN ---------- */
+.interview-summary-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--space-5);
+  animation: fadeIn 0.4s ease;
+}
+
+.interview-summary-card[hidden] {
+  display: none !important;
+}
+
+.summary-score-hero {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  border: 4px solid #10b981;
+  color: #059669;
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .interview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-character-view {
+    min-height: 320px;
+  }
+
+  .character-svg-wrapper {
+    width: 220px;
+    height: 280px;
+  }
+}

@@ -131,7 +131,7 @@
   }
 
   .text-primary {
-    color: #b93f28 !important;
+    color: var(--med-primary, #088b9c) !important;
     font-weight: 700 !important;
   }
 
