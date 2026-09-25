@@ -4,89 +4,173 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Cổng Thông tin Âm ngữ Trị liệu Lâm sàng</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/index.css" rel="stylesheet">
 </head>
-<body>
+<body class="app-body">
 
-<!-- THANH TIÊU CHUẨN Y KHOA TRÊN CÙNG -->
-<div class="med-topbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <span>HỆ THỐNG ÂM NGỮ TRỊ LIỆU &amp; PHỤC HỒI PHÁT ÂM</span>
-        <span class="separator">|</span>
-        <span>TIÊU CHUẨN HIỆP HỘI ASHA</span>
-      </div>
-      <div>
-        <span>MÃ ĐƠN VỊ: SLP-VN-2026</span>
-        <span class="separator">|</span>
-        <span>BẢO MẬT DỮ LIỆU Y TẾ</span>
-      </div>
-    </div>
-  </div>
-</div>
+<a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
 
-<!-- THANH ĐIỀU HƯỚNG CHUẨN Y TẾ (KHÔNG DÙNG ICON) -->
-<header class="med-navbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <a class="med-brand" href="index.html">
-        <span class="med-brand-title">FLUENTA</span>
-        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+<div class="app-shell">
+  <!-- THANH ĐIỀU HƯỚNG NGANG: LOGO + MENU + AVATAR HỒ SƠ -->
+  <header class="app-header">
+    <div class="app-bar-inner">
+      <a class="med-brand" href="index.html" aria-label="Fluenta - Trang chủ">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
 
-      <nav>
-        <ul class="med-nav-list">
-          <li><a class="med-nav-link active" href="index.html">TỔNG QUAN</a></li>
-          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
-          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
-          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
-          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
-          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
-          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
-          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+      <nav class="app-topnav" aria-label="Điều hướng chính">
+        <ul class="app-nav">
+          <li><a class="app-nav-link active" href="index.html" aria-current="page">Tổng quan</a></li>
+          <li><a class="app-nav-link" href="practice.html">Luyện tập</a></li>
+          <li><a class="app-nav-link" href="progress.html">Tiến trình</a></li>
+          <li><a class="app-nav-link" href="library.html">Thư viện</a></li>
+          <li><a class="app-nav-link" href="specialist-connect.html">Kết nối</a></li>
         </ul>
       </nav>
+
+      <div class="dropdown app-user">
+        <button class="app-user-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Tài khoản: Nguyễn Văn Minh">
+          <span class="app-avatar"><svg class="app-avatar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5z"/></svg></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end app-user-menu">
+          <li class="app-user-info">
+            <span class="app-user-info-name">Nguyễn Văn Minh</span>
+            <span class="app-user-info-id">Mã hồ sơ: FL-2026-0842</span>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+          <li><a class="dropdown-item" href="settings.html">Cài đặt</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Đăng xuất</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="med-container">
+<main id="main-content" class="med-container">
 
-  <!-- HỒ SƠ HỌC VIÊN / NGƯỜI LUYỆN TẬP -->
-  <section class="med-card">
+  <!-- 1. LỜI CHÀO & HÀNH ĐỘNG CHÍNH -->
+  <section class="dashboard-hero">
+    <div>
+      <h1 class="med-page-title" id="dashboardGreeting">Xin chào, Minh</h1>
+      <p class="dashboard-hero-sub">Bạn đã luyện tập 6 ngày liên tiếp. Hoàn thành bài hôm nay để giữ chuỗi 7 ngày.</p>
+    </div>
+    <a href="practice.html?lesson=easy-onset" class="btn-med-primary dashboard-hero-cta">Bắt đầu luyện tập</a>
+  </section>
+
+  <!-- 2. BIỂU ĐỒ TIẾN TRÌNH 4 TUẦN -->
+  <section class="med-card" aria-labelledby="trendTitle">
     <div class="med-card-header">
-      <h1 class="med-card-title">HỒ SƠ THEO DÕI ĐIỀU TRỊ</h1>
-      <div class="d-flex align-items-center gap-2">
-        <span class="med-badge med-badge-success">Đang hoạt động</span>
-        <a href="profile.html" class="btn-med-secondary py-1 px-2" style="font-size:12px;">HỒ SƠ &amp; CÀI ĐẶT →</a>
-      </div>
+      <h2 class="med-card-title" id="trendTitle">Tỷ lệ vấp (%SS) trong 4 tuần</h2>
+      <a href="progress.html" class="btn-med-secondary btn-med-sm">Xem tiến trình chi tiết →</a>
     </div>
-    
-    <div class="row g-3">
-      <div class="col-md-4">
-        <div class="small text-muted">HỌ VÀ TÊN</div>
-        <div class="fw-bold fs-6">Nguyễn Văn Minh (24 tuổi)</div>
-      </div>
-      <div class="col-md-4">
-        <div class="small text-muted">MÃ BỆNH ÁN / HỒ SƠ</div>
-        <div class="fw-bold fs-6">FL-2026-0842</div>
-      </div>
-      <div class="col-md-4">
-        <div class="small text-muted">CHẨN ĐOÁN PHÂN LOẠI</div>
-        <div class="fw-bold fs-6">Nói lắp thể co cứng (Block dạng tắc nghẽn thanh môn)</div>
+
+    <div class="dashboard-trend">
+      <figure class="trend-chart">
+        <svg viewBox="0 0 360 214" role="img" aria-labelledby="trendSvgTitle trendSvgDesc">
+          <title id="trendSvgTitle">Tỷ lệ vấp theo tuần</title>
+          <desc id="trendSvgDesc">Tuần 1: 19.0%, tuần 2: 16.0%, tuần 3: 14.0%, tuần 4: 12.0%. Càng thấp càng tốt.</desc>
+
+          <!-- Lưới & trục Y (0–20%) -->
+          <g class="trend-grid">
+            <line x1="40" x2="352" y1="20" y2="20"/>
+            <line x1="40" x2="352" y1="60" y2="60"/>
+            <line x1="40" x2="352" y1="100" y2="100"/>
+            <line x1="40" x2="352" y1="140" y2="140"/>
+          </g>
+          <line class="trend-baseline" x1="40" x2="352" y1="180" y2="180"/>
+          <g class="trend-axis" text-anchor="end">
+            <text x="32" y="24">20%</text>
+            <text x="32" y="64">15%</text>
+            <text x="32" y="104">10%</text>
+            <text x="32" y="144">5%</text>
+            <text x="32" y="184">0%</text>
+          </g>
+
+          <!-- Cột dữ liệu: cao = %SS × 8, đầu bo 4px, neo ở đường 0% -->
+          <g class="trend-bar" tabindex="0">
+            <title>Tuần 1 (đầu vào): 19.0%</title>
+            <rect class="trend-hit" x="40" y="20" width="78" height="160"/>
+            <path d="M57 180V32Q57 28 61 28H97Q101 28 101 32V180Z"/>
+            <text class="trend-value" x="79" y="20" text-anchor="middle">19.0%</text>
+          </g>
+          <g class="trend-bar" tabindex="0">
+            <title>Tuần 2: 16.0%</title>
+            <rect class="trend-hit" x="118" y="20" width="78" height="160"/>
+            <path d="M135 180V56Q135 52 139 52H175Q179 52 179 56V180Z"/>
+          </g>
+          <g class="trend-bar" tabindex="0">
+            <title>Tuần 3: 14.0%</title>
+            <rect class="trend-hit" x="196" y="20" width="78" height="160"/>
+            <path d="M213 180V72Q213 68 217 68H253Q257 68 257 72V180Z"/>
+          </g>
+          <g class="trend-bar trend-bar-current" tabindex="0">
+            <title>Tuần 4 (hiện tại): 12.0%</title>
+            <rect class="trend-hit" x="274" y="20" width="78" height="160"/>
+            <path d="M291 180V88Q291 84 295 84H331Q335 84 335 88V180Z"/>
+            <text class="trend-value" x="313" y="76" text-anchor="middle">12.0%</text>
+          </g>
+
+          <g class="trend-axis" text-anchor="middle">
+            <text x="79" y="202">Tuần 1</text>
+            <text x="157" y="202">Tuần 2</text>
+            <text x="235" y="202">Tuần 3</text>
+            <text x="313" y="202">Tuần 4</text>
+          </g>
+        </svg>
+
+        <table class="visually-hidden">
+          <caption>Tỷ lệ vấp (%SS) theo tuần</caption>
+          <thead><tr><th scope="col">Tuần</th><th scope="col">%SS</th></tr></thead>
+          <tbody>
+            <tr><td>Tuần 1 (đầu vào)</td><td>19.0%</td></tr>
+            <tr><td>Tuần 2</td><td>16.0%</td></tr>
+            <tr><td>Tuần 3</td><td>14.0%</td></tr>
+            <tr><td>Tuần 4 (hiện tại)</td><td>12.0%</td></tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <div class="trend-summary">
+        <div class="med-eyebrow">Tiến triển qua 4 tuần</div>
+        <div class="trend-summary-value">Cải thiện 37%</div>
+        <p class="trend-summary-note">Tỷ lệ vấp giảm 7.0 điểm so với tuần đầu (từ 19.0% xuống 12.0%). Chỉ số càng thấp, giọng nói càng lưu loát.</p>
+        <span class="med-badge med-badge-success">Đáp ứng tốt phác đồ</span>
       </div>
     </div>
   </section>
 
-  <!-- CHỈ SỐ LÂM SÀNG TỔNG HỢP (NHẤP ĐỂ XEM TIẾN TRÌNH CHI TIẾT) -->
-  <section class="mb-4">
-    <div class="row g-3">
-      <div class="col-6 col-md-3">
+  <!-- 3. BÀI TẬP ĐỀ XUẤT HÔM NAY -->
+  <section class="med-card dashboard-overview-card" aria-labelledby="todayTitle">
+    <div class="med-card-header">
+      <h2 class="med-card-title" id="todayTitle">Bài tập đề xuất hôm nay</h2>
+    </div>
+    <div class="dashboard-exercise">
+      <div>
+        <h3 class="dashboard-exercise-name">Khởi âm êm dịu (Easy Onset) — bài số 04</h3>
+        <p class="dashboard-exercise-desc">Luyện khởi âm êm dịu trên các cụm từ bắt đầu bằng phụ âm xát thanh hầu. Được đề xuất vì phiên gần nhất ghi nhận 3 điểm nghẽn ở âm đầu câu.</p>
+      </div>
+      <div class="d-flex flex-wrap gap-2 med-actions">
+        <a href="library.html" class="btn-med-secondary">Xem hướng dẫn kỹ thuật</a>
+        <a href="practice.html?lesson=easy-onset" class="btn-med-primary">Bắt đầu bài này</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BỐN CHỈ SỐ CHÍNH -->
+  <section class="mb-4" aria-labelledby="metricsTitle">
+    <h2 class="dashboard-section-title" id="metricsTitle">Chỉ số chính</h2>
+    <div class="med-metric-grid">
+      <div class="med-metric-item">
         <a href="progress.html" class="text-decoration-none d-block">
-          <div class="med-metric-box" style="cursor:pointer;" title="Bấm để xem phân tích biểu đồ tiến trình">
+          <div class="med-metric-box" title="Bấm để xem phân tích biểu đồ tiến trình">
             <div class="med-metric-label">Tỷ lệ vấp (%SS) ↗</div>
             <div class="med-metric-val text-success">12.0%</div>
             <div class="med-metric-note">Giảm 7.0% so với ban đầu</div>
@@ -94,9 +178,9 @@
         </a>
       </div>
 
-      <div class="col-6 col-md-3">
+      <div class="med-metric-item">
         <a href="progress.html" class="text-decoration-none d-block">
-          <div class="med-metric-box" style="cursor:pointer;" title="Bấm để xem lịch sử tuần">
+          <div class="med-metric-box" title="Bấm để xem lịch sử tuần">
             <div class="med-metric-label">Chuỗi ngày tập ↗</div>
             <div class="med-metric-val">6 ngày</div>
             <div class="med-metric-note">Mục tiêu: 7 ngày / tuần</div>
@@ -104,9 +188,9 @@
         </a>
       </div>
 
-      <div class="col-6 col-md-3">
+      <div class="med-metric-item">
         <a href="progress.html" class="text-decoration-none d-block">
-          <div class="med-metric-box" style="cursor:pointer;" title="Bấm để xem chi tiết tốc độ">
+          <div class="med-metric-box" title="Bấm để xem chi tiết tốc độ">
             <div class="med-metric-label">Tốc độ phát âm ↗</div>
             <div class="med-metric-val">118 từ/phút</div>
             <div class="med-metric-note">Ngưỡng thư giãn khuyến nghị</div>
@@ -114,11 +198,11 @@
         </a>
       </div>
 
-      <div class="col-6 col-md-3">
+      <div class="med-metric-item">
         <a href="progress.html" class="text-decoration-none d-block">
-          <div class="med-metric-box" style="cursor:pointer;" title="Bấm để xem mức độ tuân thủ">
+          <div class="med-metric-box" title="Bấm để xem mức độ tuân thủ">
             <div class="med-metric-label">Tuân thủ kỹ thuật ↗</div>
-            <div class="med-metric-val text-primary">86%</div>
+            <div class="med-metric-val">86%</div>
             <div class="med-metric-note">Kỹ thuật Easy Onset</div>
           </div>
         </a>
@@ -126,67 +210,49 @@
     </div>
   </section>
 
-  <!-- KHỐI HÀNH ĐỘNG THỰC HIỆN BUỔI TẬP -->
-  <section class="med-card" style="border-left: 4px solid var(--med-primary);">
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-      <div>
-        <h2 class="h5 fw-bold mb-1" style="color:var(--med-navy);">BUỔI ĐO LƯỜNG &amp; LUYỆN TẬP HÔM NAY</h2>
-        <div class="text-muted" style="font-size:14px;">
-          Bài tập số 04: Luyện khởi âm êm dịu trên các cụm từ bắt đầu bằng phụ âm xát thanh hầu.
-        </div>
-      </div>
-      <div class="d-flex flex-wrap gap-2">
-        <a href="reports.html" class="btn-med-secondary">
-          XEM BÁO CÁO GẦN NHẤT
-        </a>
-        <a href="practice.html" class="btn-med-primary">
-          BẮT ĐẦU BUỔI TẬP
-        </a>
-      </div>
+  <!-- 5. CÁC PHIÊN GẦN ĐÂY (KẾT QUẢ MỞ TỪ ĐÂY) -->
+  <section class="med-card" aria-labelledby="sessionsTitle">
+    <div class="med-card-header">
+      <h2 class="med-card-title" id="sessionsTitle">Các phiên gần đây</h2>
+      <a href="progress.html" class="btn-med-secondary btn-med-sm">Tất cả phiên →</a>
     </div>
+    <ul class="session-list">
+      <li class="session-item">
+        <div class="session-main">
+          <div class="session-time">Hôm nay, 08:32</div>
+          <div class="session-meta">TXT-01 · Easy Onset · 3 điểm nghẽn · 118 từ/phút</div>
+        </div>
+        <div class="session-score text-success">88.0%<span>trôi chảy</span></div>
+        <a href="result.html" class="btn-med-secondary btn-med-sm session-link">Xem kết quả</a>
+      </li>
+      <li class="session-item">
+        <div class="session-main">
+          <div class="session-time">Hôm qua, 08:10</div>
+          <div class="session-meta">TXT-01 · Easy Onset · 4 điểm nghẽn · 115 từ/phút</div>
+        </div>
+        <div class="session-score text-success">86.0%<span>trôi chảy</span></div>
+        <a href="session-detail.html" class="btn-med-secondary btn-med-sm session-link">Xem chi tiết</a>
+      </li>
+      <li class="session-item">
+        <div class="session-main">
+          <div class="session-time">2 ngày trước, 07:55</div>
+          <div class="session-meta">TXT-02 · Light Contact · 5 điểm nghẽn · 112 từ/phút</div>
+        </div>
+        <div class="session-score">85.0%<span>trôi chảy</span></div>
+        <a href="session-detail.html" class="btn-med-secondary btn-med-sm session-link">Xem chi tiết</a>
+      </li>
+    </ul>
   </section>
 
-  <!-- PHÁC ĐỒ KỸ THUẬT CAN THIỆP LÂM SÀNG THEO CHUẨN ASHA -->
-  <section class="med-card">
-    <div class="med-card-header">
-      <h3 class="med-card-title">PHÁC ĐỒ CAN THIỆP ÂM NGỮ TRỊ LIỆU (CLINICAL PROTOCOLS)</h3>
-      <span class="med-badge med-badge-primary">Phác đồ chuẩn hóa</span>
+  <!-- 6. KẾT NỐI CHUYÊN GIA -->
+  <section class="med-card dashboard-connect" aria-labelledby="connectTitle">
+    <div>
+      <h2 class="med-card-title" id="connectTitle">Kết nối chuyên viên âm ngữ trị liệu</h2>
+      <p class="dashboard-connect-text">Gửi báo cáo 4 tuần đã mã hóa cho chuyên viên SLP để được điều chỉnh phác đồ phù hợp với tiến triển của bạn.</p>
     </div>
-
-    <table class="med-table">
-      <thead>
-        <tr>
-          <th style="width: 25%;">KỸ THUẬT CAN THIỆP</th>
-          <th style="width: 30%;">CHỈ ĐỊNH LÂM SÀNG</th>
-          <th>CƠ CHẾ TÁC ĐỘNG &amp; HƯỚNG DẪN THỰC HIỆN</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fw-bold">1. Khởi âm êm dịu (Easy Onset)</td>
-          <td><span class="med-badge med-badge-warning">Block thanh quản</span></td>
-          <td>Thả lỏng dây thanh âm, phóng thích luồng khí thở nhẹ nhàng trước khi bắt đầu tạo rung động thanh môn. Ngăn chặn hiện tượng đóng chặt nếp thanh âm.</td>
-        </tr>
-        <tr>
-          <td class="fw-bold">2. Tiếp xúc cấu âm nhẹ (Light Contact)</td>
-          <td><span class="med-badge med-badge-warning">Kẹt môi / cằm / lưỡi</span></td>
-          <td>Giảm lực tiếp xúc tại môi và vòm miệng đối với phụ âm tắc (/b/, /p/, /t/, /d/). Duy trì chuyển động cấu âm mềm mại, không ghì ép cơ học.</td>
-        </tr>
-        <tr>
-          <td class="fw-bold">3. Kéo dài âm chủ động (Prolongation)</td>
-          <td><span class="med-badge med-badge-neutral">Mất nhịp / Lặp âm</span></td>
-          <td>Kéo dãn trường độ nguyên âm có kiểm soát nhằm làm mịn dòng chảy lời nói, cho phép hệ thần kinh trung ương điều phối tuần tự các lệnh vận động.</td>
-        </tr>
-        <tr>
-          <td class="fw-bold">4. Kiểm soát hô hấp cơ hoành (Diaphragmatic Breath)</td>
-          <td><span class="med-badge med-badge-neutral">Hơi thở nông / Co cứng vai</span></td>
-          <td>Hít sâu bằng bụng dưới nhằm ổn định áp lực dưới thanh môn, đồng thời kích hoạt hệ thần kinh phó giao cảm giúp triệt tiêu phản ứng lo âu.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="mt-3 text-end">
-      <a href="library.html" class="btn-med-secondary me-2">TRA CỨU TOÀN BỘ TRONG THƯ VIỆN</a>
-      <a href="practice.html" class="btn-med-primary">BẮT ĐẦU LUYỆN TẬP PHÁC ĐỒ NÀY</a>
+    <div class="d-flex flex-wrap gap-2 med-actions">
+      <a href="reports.html" class="btn-med-secondary">Xem báo cáo</a>
+      <a href="specialist-connect.html" class="btn-med-teal">Kết nối chuyên gia</a>
     </div>
   </section>
 
@@ -197,12 +263,24 @@
 
 </main>
 
-<footer class="med-footer">
-  <div class="container" style="max-width: 980px;">
-    <div>FLUENTA CLINICAL SYSTEM © 2026 — DỮ LIỆU ĐƯỢC MÃ HÓA THEO QUY CHUẨN Y TẾ</div>
-    <div class="small text-muted mt-1">Nền tảng ứng dụng mô hình Deep Learning nhận diện âm học và xử lý ngôn ngữ tự nhiên</div>
-  </div>
-</footer>
+  <footer class="med-footer">
+    <div class="container med-w-xl">
+      <div>Fluenta Clinical System © 2026 — dữ liệu được mã hóa theo quy chuẩn y tế</div>
+      <div class="small text-muted mt-1">Nền tảng ứng dụng mô hình Deep Learning nhận diện âm học và xử lý ngôn ngữ tự nhiên</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ĐIỀU HƯỚNG DƯỚI ĐÁY (MOBILE & TABLET < 992px) -->
+<nav class="app-bottom-nav" aria-label="Điều hướng chính">
+  <a class="app-bottom-link active" href="index.html" aria-current="page">Tổng quan</a>
+  <a class="app-bottom-link" href="practice.html">Luyện tập</a>
+  <a class="app-bottom-link" href="progress.html">Tiến trình</a>
+  <a class="app-bottom-link" href="library.html">Thư viện</a>
+  <a class="app-bottom-link" href="specialist-connect.html">Kết nối</a>
+</nav>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/index.js"></script>

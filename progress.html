@@ -4,202 +4,246 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Theo Dõi Tiến Trình Lâm Sàng</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/progress.css" rel="stylesheet">
 </head>
-<body>
+<body class="app-body">
 
-<!-- THANH TIÊU CHUẨN Y KHOA TRÊN CÙNG -->
-<div class="med-topbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <span>THEO DÕI TIẾN TRÌNH ÂM HỌC ĐỊNH LƯỢNG</span>
-        <span class="separator">|</span>
-        <span>HỒ SƠ: FL-2026-0842</span>
-      </div>
-      <div>
-        <span>GIAI ĐOẠN: CAN THIỆP DUY TRÌ TẠI NHÀ</span>
-      </div>
-    </div>
-  </div>
-</div>
+<a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
 
-<!-- THANH ĐIỀU HƯỚNG CHUẨN Y TẾ -->
-<header class="med-navbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <a class="med-brand" href="index.html">
-        <span class="med-brand-title">FLUENTA</span>
-        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+<div class="app-shell">
+  <!-- THANH ĐIỀU HƯỚNG NGANG: LOGO + MENU + AVATAR HỒ SƠ -->
+  <header class="app-header">
+    <div class="app-bar-inner">
+      <a class="med-brand" href="index.html" aria-label="Fluenta - Trang chủ">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
 
-      <nav>
-        <ul class="med-nav-list">
-          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
-          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
-          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
-          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
-          <li><a class="med-nav-link active" href="progress.html">TIẾN TRÌNH</a></li>
-          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
-          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
-          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+      <nav class="app-topnav" aria-label="Điều hướng chính">
+        <ul class="app-nav">
+          <li><a class="app-nav-link" href="index.html">Tổng quan</a></li>
+          <li><a class="app-nav-link" href="practice.html">Luyện tập</a></li>
+          <li><a class="app-nav-link active" href="progress.html" aria-current="page">Tiến trình</a></li>
+          <li><a class="app-nav-link" href="library.html">Thư viện</a></li>
+          <li><a class="app-nav-link" href="specialist-connect.html">Kết nối</a></li>
         </ul>
       </nav>
+
+      <div class="dropdown app-user">
+        <button class="app-user-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Tài khoản: Nguyễn Văn Minh">
+          <span class="app-avatar"><svg class="app-avatar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5z"/></svg></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end app-user-menu">
+          <li class="app-user-info">
+            <span class="app-user-info-name">Nguyễn Văn Minh</span>
+            <span class="app-user-info-id">Mã hồ sơ: FL-2026-0842</span>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+          <li><a class="dropdown-item" href="settings.html">Cài đặt</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Đăng xuất</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="med-container" style="max-width: 900px;">
+<main id="main-content" class="med-container med-w-lg">
 
-  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+  <div class="progress-head">
     <div>
-      <h1 class="h5 fw-bold mb-1 text-dark">BIỂU ĐỒ TIẾN TRIỂN ÂM HỌC THEO THỜI GIAN</h1>
-      <div class="text-muted small">Đánh giá tỷ lệ ngắt quãng âm tiết (%SS) và sự tuân thủ bài tập can thiệp</div>
+      <h1 class="med-page-title mb-1">Tiến trình</h1>
+      <p class="progress-head-sub mb-0">Tỷ lệ vấp (%SS) và mức độ đều đặn luyện tập của bạn.</p>
     </div>
-    <div class="d-flex gap-2">
-      <a href="practice.html" class="btn-med-primary py-1 px-3" style="font-size:13px;">+ VÀO PHÒNG TẬP</a>
-      <a href="reports.html" class="btn-med-secondary py-1 px-3" style="font-size:13px;">BÁO CÁO ASHA</a>
+    <div class="d-flex flex-wrap gap-2 med-actions">
+      <a href="result.html" class="btn-med-secondary btn-med-sm">Kết quả gần nhất</a>
+      <a href="reports.html" class="btn-med-secondary btn-med-sm">Xem báo cáo</a>
     </div>
   </div>
 
-  <!-- BẢNG THEO DÕI LỊCH TẬP 7 NGÀY -->
-  <section class="med-card mb-4">
+  <!-- LINE CHART %SS 4 TUẦN -->
+  <section class="med-card" aria-labelledby="ssTitle">
     <div class="med-card-header">
-      <span class="med-card-title">TẦN SUẤT THỰC HÀNH TRONG TUẦN HIỆN TẠI</span>
-      <span class="med-badge med-badge-success">Đạt 4 / 7 buổi</span>
+      <h2 class="med-card-title" id="ssTitle">Tỷ lệ vấp (%SS) qua 4 tuần</h2>
+      <span class="med-badge med-badge-success">Giảm 37%</span>
     </div>
 
-    <table class="med-table text-center">
-      <thead>
-        <tr>
-          <th>THỨ HAI</th>
-          <th>THỨ BA</th>
-          <th>THỨ TƯ</th>
-          <th>THỨ NĂM</th>
-          <th>THỨ SÁU (HÔM NAY)</th>
-          <th>THỨ BẢY</th>
-          <th>CHỦ NHẬT</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="med-badge med-badge-success">HOÀN THÀNH</span></td>
-          <td><span class="med-badge med-badge-success">HOÀN THÀNH</span></td>
-          <td><span class="med-badge med-badge-success">HOÀN THÀNH</span></td>
-          <td><span class="med-badge med-badge-success">HOÀN THÀNH</span></td>
-          <td><span class="med-badge med-badge-primary">ĐANG THỰC HIỆN</span></td>
-          <td><span class="med-badge med-badge-neutral">CHƯA TỚI</span></td>
-          <td><span class="med-badge med-badge-neutral">CHƯA TỚI</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <figure class="ss-chart">
+      <svg viewBox="0 0 640 256" role="img" aria-labelledby="ssSvgTitle ssSvgDesc">
+        <title id="ssSvgTitle">Tỷ lệ vấp theo tuần</title>
+        <desc id="ssSvgDesc">Mốc ban đầu tuần 1: 19,0%. Tuần 2: 16,0%. Tuần 3: 14,0%. Hiện tại tuần 4: 12,0%. Vùng mục tiêu là dưới 5%.</desc>
+
+        <!-- Vùng mục tiêu 0–5% -->
+        <rect class="ss-target" x="56" y="170" width="560" height="50"/>
+        <text class="ss-target-label" x="68" y="201">Vùng mục tiêu: dưới 5%</text>
+
+        <!-- Lưới & trục -->
+        <g class="ss-grid">
+          <line x1="56" x2="616" y1="20" y2="20"/>
+          <line x1="56" x2="616" y1="70" y2="70"/>
+          <line x1="56" x2="616" y1="120" y2="120"/>
+          <line x1="56" x2="616" y1="170" y2="170"/>
+        </g>
+        <line class="ss-baseline-axis" x1="56" x2="616" y1="220" y2="220"/>
+        <g class="ss-axis" text-anchor="end">
+          <text x="46" y="24">20%</text>
+          <text x="46" y="74">15%</text>
+          <text x="46" y="124">10%</text>
+          <text x="46" y="174">5%</text>
+          <text x="46" y="224">0%</text>
+        </g>
+        <g class="ss-axis" text-anchor="middle">
+          <text x="96" y="244">Tuần 1</text>
+          <text x="256" y="244">Tuần 2</text>
+          <text x="416" y="244">Tuần 3</text>
+          <text x="576" y="244">Tuần 4</text>
+        </g>
+
+        <!-- Mốc ban đầu -->
+        <line class="ss-ref" x1="56" x2="616" y1="30" y2="30"/>
+        <text class="ss-ref-label" x="612" y="23" text-anchor="end">Mốc ban đầu 19,0%</text>
+
+        <!-- Đường dữ liệu -->
+        <path class="ss-line" d="M96 30L256 60L416 80L576 100"/>
+
+        <g class="ss-point" tabindex="0"><title>Tuần 1 (mốc ban đầu): 19,0%</title><circle cx="96" cy="30" r="14" class="ss-hit"/><circle cx="96" cy="30" r="5"/></g>
+        <g class="ss-point" tabindex="0"><title>Tuần 2: 16,0%</title><circle cx="256" cy="60" r="14" class="ss-hit"/><circle cx="256" cy="60" r="5"/></g>
+        <g class="ss-point" tabindex="0"><title>Tuần 3: 14,0%</title><circle cx="416" cy="80" r="14" class="ss-hit"/><circle cx="416" cy="80" r="5"/></g>
+        <g class="ss-point ss-point-current" tabindex="0"><title>Tuần 4 (hiện tại): 12,0%</title><circle cx="576" cy="100" r="14" class="ss-hit"/><circle cx="576" cy="100" r="7"/></g>
+        <text class="ss-current-label" x="590" y="130" text-anchor="end">Hiện tại 12,0%</text>
+      </svg>
+
+      <table class="visually-hidden">
+        <caption>Tỷ lệ vấp (%SS) theo tuần</caption>
+        <thead><tr><th scope="col">Tuần</th><th scope="col">%SS</th></tr></thead>
+        <tbody>
+          <tr><td>Tuần 1 (mốc ban đầu)</td><td>19,0%</td></tr>
+          <tr><td>Tuần 2</td><td>16,0%</td></tr>
+          <tr><td>Tuần 3</td><td>14,0%</td></tr>
+          <tr><td>Tuần 4 (hiện tại)</td><td>12,0%</td></tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <dl class="ss-summary">
+      <div><dt>Mốc ban đầu</dt><dd>19,0%</dd></div>
+      <div><dt>Hiện tại</dt><dd>12,0%</dd></div>
+      <div><dt>Mục tiêu</dt><dd>dưới 5%</dd></div>
+    </dl>
   </section>
 
-  <!-- TIẾN TRIỂN THEO 4 TUẦN -->
-  <section class="med-card mb-4">
+  <!-- 7 NGÀY TRONG TUẦN -->
+  <section class="med-card" aria-labelledby="weekTitle">
     <div class="med-card-header">
-      <span class="med-card-title">MỨC ĐỘ THAY ĐỔI TỶ LỆ VẤP TRUNG BÌNH (%SS QUA CÁC TUẦN)</span>
-      <span class="med-badge med-badge-primary">Chỉ số lâm sàng cốt lõi</span>
+      <h2 class="med-card-title" id="weekTitle">Tuần này</h2>
+      <span class="week-count">4 / 7 buổi</span>
     </div>
-
-    <table class="med-table">
-      <thead>
-        <tr>
-          <th style="width: 25%;">KỲ ĐÁNH GIÁ</th>
-          <th style="width: 25%;">TỶ LỆ VẤP (%SS)</th>
-          <th>TIẾN TRIỂN SO VỚI MỐC BAN ĐẦU</th>
-          <th style="width: 20%;">ĐÁNH GIÁ CHUYÊN MÔN</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="fw-bold">Tuần 1 (Khảo sát đầu vào)</td>
-          <td>19.0%</td>
-          <td>Mốc tham chiếu ban đầu</td>
-          <td><span class="med-badge med-badge-warning">Mức trung bình</span></td>
-        </tr>
-        <tr>
-          <td class="fw-bold">Tuần 2</td>
-          <td>16.0%</td>
-          <td>Giảm 3.0%</td>
-          <td><span class="med-badge med-badge-neutral">Cải thiện bước đầu</span></td>
-        </tr>
-        <tr>
-          <td class="fw-bold">Tuần 3</td>
-          <td>14.0%</td>
-          <td>Giảm 5.0%</td>
-          <td><span class="med-badge med-badge-neutral">Tiến triển ổn định</span></td>
-        </tr>
-        <tr>
-          <td class="fw-bold text-success">Tuần 4 (Hiện tại)</td>
-          <td class="fw-bold text-success">12.0%</td>
-          <td class="fw-bold text-success">Giảm tổng cộng 7.0% (Giảm 37% mức độ vấp)</td>
-          <td><span class="med-badge med-badge-success">Đáp ứng tốt phác đồ</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <ol class="week-strip">
+      <li class="week-day" data-status="done"><span class="week-day-name">T2</span><span class="week-day-icon" aria-hidden="true">✓</span><span class="week-day-status">Đã tập</span></li>
+      <li class="week-day" data-status="done"><span class="week-day-name">T3</span><span class="week-day-icon" aria-hidden="true">✓</span><span class="week-day-status">Đã tập</span></li>
+      <li class="week-day" data-status="done"><span class="week-day-name">T4</span><span class="week-day-icon" aria-hidden="true">✓</span><span class="week-day-status">Đã tập</span></li>
+      <li class="week-day" data-status="done"><span class="week-day-name">T5</span><span class="week-day-icon" aria-hidden="true">✓</span><span class="week-day-status">Đã tập</span></li>
+      <li class="week-day" data-status="today" aria-current="date"><span class="week-day-name">T6</span><span class="week-day-icon" aria-hidden="true">●</span><span class="week-day-status">Hôm nay</span></li>
+      <li class="week-day" data-status="upcoming"><span class="week-day-name">T7</span><span class="week-day-icon" aria-hidden="true">–</span><span class="week-day-status">Chưa tới</span></li>
+      <li class="week-day" data-status="upcoming"><span class="week-day-name">CN</span><span class="week-day-icon" aria-hidden="true">–</span><span class="week-day-status">Chưa tới</span></li>
+    </ol>
   </section>
 
-  <!-- LỊCH SỬ BẢN GHI PHIÊN TẬP GẦN NHẤT -->
-  <section class="med-card">
+  <!-- PHIÊN GẦN ĐÂY -->
+  <section class="med-card" aria-labelledby="sessionsTitle">
     <div class="med-card-header">
-      <span class="med-card-title">NHẬT KÝ 3 PHIÊN ĐO LƯỜNG GẦN NHẤT</span>
+      <h2 class="med-card-title" id="sessionsTitle">Phiên gần đây</h2>
     </div>
 
-    <table class="med-table">
-      <thead>
-        <tr>
-          <th>THỜI GIAN</th>
-          <th>MÃ BÀI ĐỌC</th>
-          <th>TỶ LỆ TRÔI CHẢY</th>
-          <th>SỰ KIỆN NGHẼN</th>
-          <th>TỐC ĐỘ PHÁT ÂM</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href="session-detail.html" class="fw-bold text-primary">Hôm nay, 08:32 (Xem chi tiết)</a></td>
-          <td>TXT-01 (Easy Onset)</td>
-          <td class="text-success fw-bold">88.0%</td>
-          <td>3 điểm</td>
-          <td>118 từ/phút</td>
-        </tr>
-        <tr>
-          <td><a href="session-detail.html" class="fw-bold text-primary">Hôm qua, 08:10 (Xem chi tiết)</a></td>
-          <td>TXT-01 (Easy Onset)</td>
-          <td class="text-success fw-bold">86.0%</td>
-          <td>4 điểm</td>
-          <td>115 từ/phút</td>
-        </tr>
-        <tr>
-          <td><a href="session-detail.html" class="fw-bold text-primary">2 ngày trước, 07:55 (Xem chi tiết)</a></td>
-          <td>TXT-02 (Light Contact)</td>
-          <td class="text-secondary fw-bold">85.0%</td>
-          <td>5 điểm</td>
-          <td>112 từ/phút</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="mt-4 pt-3 border-top d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div class="d-flex flex-wrap gap-2">
-        <a href="practice.html" class="btn-med-primary">LUYỆN TẬP PHIÊN HÔM NAY</a>
-        <a href="reports.html" class="btn-med-secondary">XUẤT BÁO CÁO LÂM SÀNG ASHA</a>
-      </div>
-      <div>
-        <a href="specialist-connect.html" class="btn-med-secondary">GỬI BÁO CÁO TIẾN TRÌNH CHO CHUYÊN GIA →</a>
-      </div>
+    <ul class="session-rows" id="sessionRows">
+      <li class="session-row">
+        <div class="session-row-main">
+          <div>
+            <div class="session-row-time">Hôm nay, 08:32</div>
+            <div class="session-row-sub">TXT-01 · Easy Onset</div>
+          </div>
+          <div class="session-row-score">88%<span>trôi chảy</span></div>
+          <button type="button" class="session-toggle" aria-expanded="false" aria-controls="session1">Chi tiết</button>
+        </div>
+        <div class="session-row-detail" id="session1">
+          <dl class="session-facts">
+            <div><dt>Điểm nghẽn</dt><dd>3</dd></div>
+            <div><dt>Tốc độ</dt><dd>118 từ/phút</dd></div>
+          </dl>
+          <a href="result.html" class="btn-med-secondary btn-med-sm">Xem kết quả</a>
+        </div>
+      </li>
+      <li class="session-row">
+        <div class="session-row-main">
+          <div>
+            <div class="session-row-time">Hôm qua, 08:10</div>
+            <div class="session-row-sub">TXT-01 · Easy Onset</div>
+          </div>
+          <div class="session-row-score">86%<span>trôi chảy</span></div>
+          <button type="button" class="session-toggle" aria-expanded="false" aria-controls="session2">Chi tiết</button>
+        </div>
+        <div class="session-row-detail" id="session2">
+          <dl class="session-facts">
+            <div><dt>Điểm nghẽn</dt><dd>4</dd></div>
+            <div><dt>Tốc độ</dt><dd>115 từ/phút</dd></div>
+          </dl>
+          <a href="session-detail.html" class="btn-med-secondary btn-med-sm">Chi tiết phiên</a>
+        </div>
+      </li>
+      <li class="session-row">
+        <div class="session-row-main">
+          <div>
+            <div class="session-row-time">2 ngày trước, 07:55</div>
+            <div class="session-row-sub">TXT-02 · Light Contact</div>
+          </div>
+          <div class="session-row-score">85%<span>trôi chảy</span></div>
+          <button type="button" class="session-toggle" aria-expanded="false" aria-controls="session3">Chi tiết</button>
+        </div>
+        <div class="session-row-detail" id="session3">
+          <dl class="session-facts">
+            <div><dt>Điểm nghẽn</dt><dd>5</dd></div>
+            <div><dt>Tốc độ</dt><dd>112 từ/phút</dd></div>
+          </dl>
+          <a href="session-detail.html" class="btn-med-secondary btn-med-sm">Chi tiết phiên</a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CHIA SẺ VỚI CHUYÊN GIA -->
+  <section class="progress-share">
+    <p class="mb-0">Chia sẻ tiến trình 4 tuần với chuyên viên để được điều chỉnh phác đồ.</p>
+    <div class="d-flex flex-wrap gap-2 med-actions">
+      <a href="reports.html" class="btn-med-secondary">Xuất báo cáo ASHA</a>
+      <a href="specialist-connect.html" class="btn-med-primary">Gửi cho chuyên gia</a>
     </div>
   </section>
 
 </main>
 
-<footer class="med-footer">
-  <div class="container" style="max-width: 980px;">
-    <div>FLUENTA CLINICAL SYSTEM © 2026 — DỮ LIỆU ĐO LƯỜNG LÂM SÀNG LIÊN TỤC</div>
-  </div>
-</footer>
+  <footer class="med-footer">
+    <div class="container med-w-xl">
+      <div>Fluenta Clinical System © 2026 — dữ liệu đo lường lâm sàng liên tục</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ĐIỀU HƯỚNG DƯỚI ĐÁY (MOBILE & TABLET < 992px) -->
+<nav class="app-bottom-nav" aria-label="Điều hướng chính">
+  <a class="app-bottom-link" href="index.html">Tổng quan</a>
+  <a class="app-bottom-link" href="practice.html">Luyện tập</a>
+  <a class="app-bottom-link active" href="progress.html" aria-current="page">Tiến trình</a>
+  <a class="app-bottom-link" href="library.html">Thư viện</a>
+  <a class="app-bottom-link" href="specialist-connect.html">Kết nối</a>
+</nav>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/progress.js"></script>

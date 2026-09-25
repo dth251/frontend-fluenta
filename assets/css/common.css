@@ -1,49 +1,153 @@
+/* ========================================================
+   DESIGN TOKENS — BIẾN DÙNG CHUNG TOÀN DỰ ÁN
+   Mọi màu, container, khoảng cách, font, shadow đều lấy từ đây.
+   Độ tương phản chữ/nền đều đạt WCAG AA (>= 4.5:1).
+   ======================================================== */
 :root {
-  /* BẢNG MÀU CHUẨN MEDICLOUD TELEHEALTH SAAS */
-  --med-accent: #f27a59;
-  --med-accent-hover: #e06341;
-  --med-accent-light: #fff2ed;
-  --med-accent-border: #fcd5c7;
-  
-  --med-teal-dark: #0b3c43;
-  --med-teal-deep: #06262b;
-  --med-teal-soft: #17545c;
-  
-  --med-primary: #0284c7;
-  --med-primary-dark: #0369a1;
-  --med-primary-light: #f0f9ff;
-  
-  --med-navy: #0f2744;
-  --med-navy-soft: #334e68;
-  
+  /* ---------- MÀU CHÍNH: SAN HÔ (ấm áp, khích lệ) ---------- */
+  --med-primary: #b93f28;        /* nút chính, link, menu đang chọn — 5.5:1 với chữ trắng */
+  --med-primary-dark: #9a3320;   /* hover — 7.3:1 */
+  --med-primary-light: #fef3ef;  /* nền nhạt — chữ san hô trên nền này 5.1:1 */
+  --med-primary-border: #f6cfc3;
+
+  /* ---------- NAVY: tiêu đề, footer, khối nhấn tối ----------
+     (giữ tên biến --med-teal-* để không phải sửa các file trang) */
+  --med-teal-dark: #1b2d45;      /* tiêu đề, footer — 13.9:1 với trắng */
+  --med-teal-deep: #12203a;
+  --med-teal-soft: #5a7394;      /* cột biểu đồ các tuần trước, dạng sóng */
+  --med-teal-light: #e8eef6;
+  --med-teal-border: #c5d3e6;
+  --med-mint-bg: var(--med-primary-light);
+  --med-mint-border: var(--med-primary-border);
+
+  /* ---------- MÀU NHẤN: NAVY (logo, nút ghi âm, từ cần chú ý) ---------- */
+  --med-accent: #1f3a5f;         /* 11.5:1 với chữ trắng */
+  --med-accent-hover: #172d4a;
+  --med-accent-dark: #1f3a5f;    /* chữ trên nền nhấn nhạt — 9.8:1 */
+  --med-accent-light: #e8eef6;
+  --med-accent-border: #c5d3e6;
+
+  /* Mực đậm cho chữ nhấn mạnh */
+  --med-navy: #1b2d45;
+  --med-navy-soft: #43546b;      /* chữ menu — 7.7:1 */
+
+  /* ---------- MÀU TRẠNG THÁI ---------- */
   --med-success: #15803d;
   --med-success-bg: #f0fdf4;
   --med-success-border: #bbf7d0;
-  
+  --med-online: #4ade80;
+
   --med-warning: #b45309;
   --med-warning-bg: #fffbeb;
   --med-warning-border: #fde68a;
-  
+  --med-highlight: #d97706;
+
   --med-danger: #b91c1c;
+  --med-danger-dark: #991b1b;
   --med-danger-bg: #fef2f2;
-  
-  --med-text-main: #102a43;
-  --med-text-muted: #486581;
-  --med-text-sub: #627d98;
-  
-  --med-bg: #f8fafc;
+
+  /* ---------- CHỮ ---------- */
+  --med-text-main: #1f2937;      /* 14.7:1 */
+  --med-text-muted: #4b5563;     /* 7.6:1 */
+  --med-text-sub: #5b6778;       /* 5.4:1 trên nền trang */
+
+  /* ---------- NỀN & VIỀN ---------- */
+  --med-white: #ffffff;
+  --med-bg: #f6f7f9;
+  --med-surface-muted: #eff1f5;
   --med-card-bg: #ffffff;
-  --med-border: #e2e8f0;
-  --med-border-subtle: #edf2f7;
-  
+  --med-border: #e3e6ea;
+  --med-border-subtle: #eef0f3;
+  --med-border-strong: #cfd6dc;
+  --med-border-hover: #9aa4b0;
+
+  /* ---------- CONTAINER ---------- */
+  --container-xs: 520px;   /* Đăng nhập */
+  --container-sm: 600px;   /* Đăng ký, 404, khối chữ hẹp */
+  --container-md: 720px;   /* Onboarding, baseline, processing */
+  --container-lg: 900px;   /* Trang nội dung / biểu mẫu */
+  --container-xl: 980px;   /* Header & footer ứng dụng */
+  --container-2xl: 1040px; /* Landing & nội dung mặc định */
+  --container-gutter: 16px;
+
+  /* ---------- KHOẢNG CÁCH (thang 4px) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ---------- FONT ---------- */
+  --font-sans: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  /* Thang cỡ chữ chuẩn */
+  --fs-page-title: clamp(1.75rem, 1.45rem + 1vw, 2rem);   /* 28–32px: tiêu đề trang */
+  --fs-card-title: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem); /* 18–20px: tiêu đề card */
+  --fs-body: 1rem;          /* 16px: nội dung chính */
+  --fs-body-sm: 0.9375rem;  /* 15px: nội dung phụ */
+  --fs-meta: 0.875rem;      /* 14px: chú thích, bảng phụ */
+  --fs-caption: 0.8125rem;  /* 13px: topbar, ghi chú nhỏ */
+  --fs-label: 0.75rem;      /* 12px: badge & nhãn ngắn in hoa */
+  --fs-metric: 1.75rem;     /* 28px: số liệu nổi bật */
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --lh-tight: 1.25;
+  --lh-base: 1.6;
+  --lh-relaxed: 1.7;
+  --lh-loose: 1.8;
+
+  --tracking-tight: -0.01em;
+  --tracking-label: 0.04em;  /* chỉ cho chữ in hoa (badge, nhãn ngắn) */
+
+  /* ---------- BO GÓC ---------- */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 18px;
   --radius-pill: 9999px;
-  
-  --shadow-sm: 0 1px 3px rgba(11, 60, 67, 0.05);
-  --shadow-md: 0 6px 18px rgba(11, 60, 67, 0.08);
-  --shadow-lg: 0 16px 36px rgba(11, 60, 67, 0.12);
+
+  /* ---------- SHADOW ---------- */
+  --shadow-sm: 0 1px 3px rgba(27, 45, 69, 0.06);
+  --shadow-md: 0 6px 18px rgba(27, 45, 69, 0.08);
+  --shadow-lg: 0 16px 36px rgba(27, 45, 69, 0.12);
+  --shadow-floating: 0 10px 25px rgba(27, 45, 69, 0.12);
+  --shadow-primary: 0 4px 14px rgba(185, 63, 40, 0.22);
+  --shadow-primary-hover: 0 6px 18px rgba(185, 63, 40, 0.3);
+  --shadow-accent: 0 4px 16px rgba(31, 58, 95, 0.28);
+  --shadow-focus: 0 0 0 3px rgba(185, 63, 40, 0.2);
+
+  /* ---------- KHUNG ỨNG DỤNG ---------- */
+  --app-header-height: 60px;
+  --bottom-nav-height: 64px;
+  /* Breakpoint (CSS chưa cho dùng biến trong @media, ghi lại để tham chiếu):
+     desktop >= 992px | tablet 576–991px | mobile <= 575px | rất nhỏ < 360px */
+
+  /* ---------- CHUYỂN ĐỘNG ---------- */
+  --transition-base: all 0.2s ease;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---------- ĐỒNG BỘ BOOTSTRAP VỚI TOKEN ---------- */
+  --bs-font-sans-serif: var(--font-sans);
+  --bs-body-font-family: var(--font-sans);
+  --bs-body-font-size: var(--fs-body);
+  --bs-body-color: var(--med-text-main);
+  --bs-secondary-color: var(--med-text-muted);
+  --bs-primary-rgb: 185, 63, 40;
+  --bs-dark-rgb: 27, 45, 69;
+  --bs-link-color: var(--med-primary);
+  --bs-link-color-rgb: 185, 63, 40;
+  --bs-link-hover-color: var(--med-primary-dark);
+  --bs-link-hover-color-rgb: 154, 51, 32;
+  --bs-border-color: var(--med-border);
 }
 
 * {
@@ -51,20 +155,31 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-sans);
   color: var(--med-text-main);
   background-color: var(--med-bg);
   margin: 0;
   padding: 0;
-  font-size: 15px;
-  line-height: 1.6;
-  overflow-x: hidden;
+  font-size: var(--fs-body);
+  line-height: var(--lh-base);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--med-teal-dark);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Bootstrap .small = 14px -> nâng lên 15px để nội dung dễ đọc */
+.small, small {
+  font-size: var(--fs-body-sm);
 }
 
 a {
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
+  transition: var(--transition-base);
 }
 
 /* ========================================================
@@ -126,36 +241,37 @@ a {
 
 /* Hiệu ứng nâng thẻ khi hover */
 .med-card-hover {
-  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.24s ease;
+  transition: transform 0.24s var(--ease-out-expo), box-shadow 0.24s var(--ease-out-expo), border-color 0.24s ease;
 }
 
 .med-card-hover:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
-  border-color: #cbd5e1;
+  border-color: var(--med-border-strong);
 }
 
 /* ========================================================
    THANH TIÊU CHUẨN Y TẾ TRÊN CÙNG (TOPBAR)
    ======================================================== */
 .med-topbar {
-  background: #ffffff;
+  display: none !important;
+  background: var(--med-white);
   border-bottom: 1px solid var(--med-border);
-  padding: 8px 0;
-  font-size: 12px;
+  padding: var(--space-2) 0;
+  font-size: var(--fs-caption);
   color: var(--med-text-sub);
 }
 
 .med-topbar .separator {
   margin: 0 10px;
-  color: #cbd5e1;
+  color: var(--med-border-strong);
 }
 
 /* ========================================================
-   THANH ĐIỀU HƯỚNG CHUẨN MEDICLOUD (NAVBAR)
+   THANH ĐIỀU HƯỚNG (NAVBAR)
    ======================================================== */
 .med-navbar {
-  background: #ffffff;
+  background: var(--med-white);
   border-bottom: 1px solid var(--med-border);
   padding: 0;
   box-shadow: var(--shadow-sm);
@@ -164,37 +280,50 @@ a {
   z-index: 1000;
 }
 
+.med-brand-logo {
+  height: 42px;
+  width: auto;
+  display: inline-block;
+  object-fit: contain;
+  vertical-align: middle;
+  transition: opacity 0.15s ease;
+}
+
+.med-brand:hover .med-brand-logo {
+  opacity: 0.92;
+}
+
 .med-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-3);
   padding: 14px 0;
 }
 
 .med-brand-mark {
   background: var(--med-accent);
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  padding: 4px 10px;
+  color: var(--med-white);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-body-sm);
+  padding: var(--space-1) 10px;
   border-radius: var(--radius-sm);
 }
 
 .med-brand-title {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 1.25rem;
+  font-weight: var(--fw-extrabold);
   color: var(--med-teal-dark);
-  letter-spacing: -0.4px;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
+/* Nhãn ngắn -> giữ in hoa */
 .med-brand-sub {
-  font-size: 10.5px;
+  font-size: 0.65625rem;
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.08em;
   color: var(--med-accent);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   display: block;
 }
 
@@ -203,95 +332,112 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 4px;
+  gap: var(--space-1);
   flex-wrap: wrap;
 }
 
 .med-nav-link {
+  position: relative;
   display: block;
-  padding: 12px 14px;
-  font-size: 13.5px;
-  font-weight: 600;
+  padding: 10px 12px;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
   color: var(--med-navy-soft);
-  border-radius: var(--radius-pill);
-  transition: all 0.2s ease;
+  transition: color 0.15s ease;
   white-space: nowrap;
 }
 
 .med-nav-link:hover {
-  color: var(--med-accent);
-  background-color: var(--med-accent-light);
+  color: var(--med-primary);
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 .med-nav-link.active {
-  color: var(--med-accent);
-  background-color: var(--med-accent-light);
-  font-weight: 700;
+  color: var(--med-primary-dark);
+  font-weight: var(--fw-semibold);
 }
 
 /* ========================================================
-   CONTAINER & CARDS
+   CONTAINER, TIÊU ĐỀ TRANG & CARDS
    ======================================================== */
 .med-container {
-  max-width: 1040px;
+  max-width: var(--container-2xl);
   margin: 0 auto;
-  padding: 36px 16px 64px;
+  padding: var(--space-9) var(--container-gutter) var(--space-16);
+}
+
+/* Tiêu đề trang: 28–32px */
+.med-page-title {
+  font-size: var(--fs-page-title);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--med-teal-dark);
+  margin: 0;
 }
 
 .med-card {
   background: var(--med-card-bg);
   border: 1px solid var(--med-border);
   border-radius: var(--radius-md);
-  padding: 24px;
-  margin-bottom: 24px;
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
   box-shadow: var(--shadow-sm);
 }
 
 .med-card-header {
   border-bottom: 1px solid var(--med-border);
-  padding-bottom: 14px;
-  margin-bottom: 18px;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-3);
 }
 
+/* Tiêu đề card: 18–20px, không in hoa */
 .med-card-title {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
   color: var(--med-teal-dark);
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 /* ========================================================
-   PILL BADGES (ĐẶC TRƯNG MEDICLOUD)
+   PILL BADGES — nhãn ngắn, giữ in hoa
    ======================================================== */
 .med-badge {
   display: inline-block;
-  font-size: 11.5px;
-  font-weight: 700;
-  padding: 4px 12px;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+  padding: 3px var(--space-3);
   border-radius: var(--radius-pill);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--tracking-label);
   border: 1px solid transparent;
-  transition: all 0.2s ease;
+  transition: var(--transition-base);
+}
+
+.med-badge-primary {
+  background: var(--med-primary-light);
+  color: var(--med-primary-dark);
+  border-color: var(--med-primary-border);
 }
 
 .med-badge-accent {
   background: var(--med-accent-light);
-  color: var(--med-accent);
+  color: var(--med-accent-dark);
   border-color: var(--med-accent-border);
 }
 
 .med-badge-teal {
-  background: #e6f3f5;
+  background: var(--med-teal-light);
   color: var(--med-teal-dark);
-  border-color: #bcdde2;
+  border-color: var(--med-teal-border);
 }
 
 .med-badge-success {
@@ -307,70 +453,60 @@ a {
 }
 
 .med-badge-neutral {
-  background: #f1f5f9;
+  background: var(--med-surface-muted);
   color: var(--med-text-muted);
-  border-color: #cbd5e1;
+  border-color: var(--med-border-strong);
 }
 
 /* ========================================================
-   NÚT BẤM (BUTTONS) - KHÔNG DÙNG ICON
+   NÚT BẤM (BUTTONS) — không in hoa
    ======================================================== */
-.btn-med-primary {
-  background: var(--med-accent);
-  color: #ffffff !important;
-  border: 1px solid var(--med-accent-hover);
-  border-radius: var(--radius-pill);
+.btn-med-primary,
+.btn-med-secondary,
+.btn-med-teal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* vùng bấm tối thiểu 44×44px */
   padding: 10px 22px;
-  font-weight: 700;
-  font-size: 13.5px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: inline-block;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  line-height: 1.4;
   text-align: center;
-  box-shadow: 0 4px 14px rgba(242, 122, 89, 0.25);
-  transition: all 0.2s ease;
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.btn-med-primary {
+  background: var(--med-primary);
+  color: var(--med-white) !important;
+  border: 1px solid var(--med-primary-dark);
+  box-shadow: var(--shadow-primary);
 }
 
 .btn-med-primary:hover {
-  background: var(--med-accent-hover);
+  background: var(--med-primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(242, 122, 89, 0.35);
+  box-shadow: var(--shadow-primary-hover);
 }
 
 .btn-med-secondary {
-  background: #ffffff;
+  background: var(--med-white);
   color: var(--med-teal-dark) !important;
-  border: 1px solid var(--med-border);
-  border-radius: var(--radius-pill);
-  padding: 10px 22px;
-  font-weight: 600;
-  font-size: 13.5px;
-  letter-spacing: 0.4px;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  transition: all 0.2s ease;
+  border: 1px solid var(--med-border-strong);
 }
 
 .btn-med-secondary:hover {
-  background: #f8fafc;
-  border-color: #94a3b8;
+  background: var(--med-primary-light);
+  border-color: var(--med-primary);
   transform: translateY(-1px);
 }
 
 .btn-med-teal {
   background: var(--med-teal-dark);
-  color: #ffffff !important;
+  color: var(--med-white) !important;
   border: 1px solid var(--med-teal-deep);
-  border-radius: var(--radius-pill);
-  padding: 10px 22px;
-  font-weight: 700;
-  font-size: 13.5px;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  transition: all 0.2s ease;
 }
 
 .btn-med-teal:hover {
@@ -378,19 +514,24 @@ a {
   transform: translateY(-2px);
 }
 
+
+/* Kích thước nhỏ, dùng kèm .btn-med-primary / .btn-med-secondary */
+.btn-med-sm {
+  padding: 6px 14px;
+  font-size: var(--fs-meta);
+}
+
 .btn-clinical-record {
   background: var(--med-accent);
-  color: #ffffff;
+  color: var(--med-white);
   border: 2px solid var(--med-accent-hover);
   border-radius: var(--radius-pill);
-  padding: 16px 36px;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
+  padding: var(--space-4) var(--space-9);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 16px rgba(242, 122, 89, 0.3);
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-accent);
 }
 
 .btn-clinical-record:hover {
@@ -400,7 +541,7 @@ a {
 
 .btn-clinical-record.recording {
   background: var(--med-danger);
-  border-color: #991b1b;
+  border-color: var(--med-danger-dark);
   animation: clinicalPulse 1.6s infinite;
 }
 
@@ -410,13 +551,14 @@ a {
 .med-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: var(--fs-body-sm);
 }
 
 .med-table th {
-  background: #f8fafc;
+  background: var(--med-bg);
   color: var(--med-teal-dark);
-  font-weight: 700;
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-semibold);
   padding: 11px 14px;
   border: 1px solid var(--med-border);
   text-align: left;
@@ -429,106 +571,151 @@ a {
 }
 
 .med-metric-box {
-  background: #ffffff;
+  background: var(--med-white);
   border: 1px solid var(--med-border);
   border-radius: var(--radius-md);
   padding: 18px;
   text-align: left;
-  transition: all 0.2s ease;
+  transition: var(--transition-base);
 }
 
 .med-metric-box:hover {
-  border-color: var(--med-accent-border);
+  border-color: var(--med-primary-border);
   box-shadow: var(--shadow-sm);
 }
 
+/* Nhãn ngắn -> giữ in hoa */
 .med-metric-label {
-  font-size: 11.5px;
-  font-weight: 700;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
   color: var(--med-text-sub);
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-bottom: 4px;
+  letter-spacing: var(--tracking-label);
+  margin-bottom: var(--space-1);
 }
 
 .med-metric-val {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: var(--fs-metric);
+  font-weight: var(--fw-bold);
   color: var(--med-teal-dark);
   line-height: 1.15;
 }
 
 .med-metric-note {
-  font-size: 12px;
+  font-size: var(--fs-caption);
   color: var(--med-text-muted);
-  margin-top: 4px;
+  margin-top: var(--space-1);
 }
 
 /* ========================================================
    FORM VÀ ĐIỀU KHIỂN NHẬP LIỆU
    ======================================================== */
 .med-form-group {
-  margin-bottom: 18px;
+  margin-bottom: var(--space-5);
 }
 
 .med-label {
   display: block;
-  font-size: 12.5px;
-  font-weight: 700;
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-semibold);
   color: var(--med-teal-dark);
   margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .med-input, .med-select, .med-textarea {
   width: 100%;
   padding: 10px 14px;
-  font-size: 14.5px;
+  font-family: inherit;
+  font-size: var(--fs-body); /* 16px: tránh iOS tự phóng to khi focus */
   color: var(--med-text-main);
-  background-color: #ffffff;
-  border: 1px solid var(--med-border);
+  background-color: var(--med-white);
+  border: 1px solid var(--med-border-strong);
   border-radius: var(--radius-sm);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .med-input:focus, .med-select:focus, .med-textarea:focus {
   outline: none;
-  border-color: var(--med-accent);
-  box-shadow: 0 0 0 3px rgba(242, 122, 89, 0.18);
+  border-color: var(--med-primary);
+  box-shadow: var(--shadow-focus);
 }
 
 /* ========================================================
-   CHÂN TRANG CHUẨN MEDICLOUD (DEEP TEAL FOOTER)
+   SÓNG ÂM (WAVEFORM) — dùng chung cho result & session-detail
+   ======================================================== */
+.med-waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 56px;
+  padding: var(--space-2);
+  background: var(--med-white);
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+}
+
+.med-waveform span {
+  width: var(--space-1);
+  background: var(--med-border-hover);
+  border-radius: 1px;
+}
+
+.med-waveform span.mark {
+  background: var(--med-highlight);
+}
+
+/* ========================================================
+   KHỐI MIỄN TRỪ Y KHOA (DISCLAIMER)
+   ======================================================== */
+.med-disclaimer-box {
+  background: var(--med-white);
+  border: 1px solid var(--med-border);
+  border-left: 4px solid var(--med-teal-dark);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  font-size: var(--fs-body-sm);
+  color: var(--med-text-muted);
+  line-height: var(--lh-base);
+}
+
+/* ========================================================
+   CHÂN TRANG (DEEP TEAL FOOTER)
    ======================================================== */
 .med-footer {
   background: var(--med-teal-dark);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.78);
   border-top: 3px solid var(--med-accent);
-  padding: 36px 0 24px;
-  font-size: 13.5px;
+  padding: var(--space-9) 0 var(--space-6);
+  font-size: var(--fs-meta);
 }
 
 .med-footer a {
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .med-footer a:hover {
-  color: var(--med-accent);
+  color: var(--med-white);
+  text-decoration: underline;
+}
+
+/* Footer nền tối -> chữ muted của Bootstrap phải sáng lên */
+.med-footer .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .med-footer-status {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 4px 12px;
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-pill);
-  font-size: 11.5px;
-  color: #4ade80;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: var(--fs-label);
+  color: var(--med-online);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 
 /* ========================================================
@@ -536,34 +723,676 @@ a {
    ======================================================== */
 .step-tracker {
   display: flex;
-  background: #ffffff;
+  background: var(--med-white);
   border: 1px solid var(--med-border);
   border-radius: var(--radius-sm);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-6);
   overflow: hidden;
 }
 
 .step-item {
   flex: 1;
   text-align: center;
-  padding: 12px 14px;
-  font-size: 13px;
-  font-weight: 600;
+  padding: var(--space-3) 14px;
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-medium);
   color: var(--med-navy-soft);
   border-bottom: 3px solid transparent;
-  background: #ffffff;
-  transition: all 0.2s ease;
+  background: var(--med-white);
+  transition: var(--transition-base);
 }
 
 .step-item.active {
-  color: var(--med-teal-dark);
-  border-bottom-color: var(--med-accent);
-  background: var(--med-accent-light);
-  font-weight: 700;
+  color: var(--med-primary-dark);
+  border-bottom-color: var(--med-primary);
+  background: var(--med-primary-light);
+  font-weight: var(--fw-semibold);
 }
 
 .step-item.done {
-  color: #15803d;
-  background: #f0fdf4;
+  color: var(--med-success);
+  background: var(--med-success-bg);
 }
 
+/* ========================================================
+   KHUNG ỨNG DỤNG: THANH ĐIỀU HƯỚNG NGANG + BOTTOM NAV (MOBILE)
+   (các trang sau đăng nhập, body.app-body)
+   ======================================================== */
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -100px;
+  z-index: 2000;
+  background: var(--med-primary);
+  color: var(--med-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  top: var(--space-2);
+  color: var(--med-white);
+}
+
+/* Khung nội dung chung cho topbar và thanh điều hướng ngang */
+.app-bar-inner {
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: 0 var(--container-gutter);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell > main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  background: var(--med-white);
+  border-bottom: 1px solid var(--med-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.app-header .app-bar-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  min-height: var(--app-header-height);
+}
+
+.app-header .med-brand {
+  flex: none;
+  padding: var(--space-2) 0;
+}
+
+/* Menu ngang (desktop >= 992px) */
+.app-topnav {
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+}
+
+.app-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-1);
+}
+
+.app-nav > li {
+  display: flex;
+}
+
+.app-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-medium);
+  color: var(--med-navy-soft);
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.app-nav-link:hover {
+  color: var(--med-primary);
+}
+
+/* Mục đang chọn: chữ đậm + vạch dưới chạm mép thanh menu (không chỉ dựa vào màu) */
+.app-nav-link.active {
+  color: var(--med-primary-dark);
+  font-weight: var(--fw-semibold);
+}
+
+.app-nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: var(--med-primary);
+}
+
+.app-user {
+  margin-left: auto;
+}
+
+/* Nút tài khoản: chỉ avatar tròn, vùng bấm 44×44px */
+.app-user-toggle {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.app-avatar {
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--med-accent);
+  box-shadow: 0 0 0 2px var(--med-white), 0 0 0 3px var(--med-border);
+  transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.app-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.app-avatar-icon {
+  width: 22px;
+  height: 22px;
+  fill: var(--med-white);
+}
+
+.app-user-toggle:hover .app-avatar,
+.app-user-toggle[aria-expanded="true"] .app-avatar {
+  background: var(--med-accent-hover);
+}
+
+/* Đang ở trang Hồ sơ / Cài đặt: vòng viền đậm */
+.app-user-toggle.active .app-avatar {
+  box-shadow: 0 0 0 2px var(--med-white), 0 0 0 4px var(--med-accent);
+}
+
+.app-user-menu {
+  --bs-dropdown-font-size: var(--fs-body-sm);
+  --bs-dropdown-link-color: var(--med-text-main);
+  --bs-dropdown-link-hover-bg: var(--med-primary-light);
+  --bs-dropdown-link-active-bg: var(--med-primary-light);
+  --bs-dropdown-link-active-color: var(--med-primary-dark);
+  --bs-dropdown-border-color: var(--med-border);
+  min-width: 240px;
+  padding: var(--space-2) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.app-user-menu .dropdown-item.active {
+  font-weight: var(--fw-semibold);
+}
+
+.app-user-info {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) var(--space-4) var(--space-1);
+}
+
+.app-user-info-name {
+  font-weight: var(--fw-semibold);
+  color: var(--med-teal-dark);
+}
+
+.app-user-info-id {
+  font-size: var(--fs-caption);
+  color: var(--med-text-sub);
+}
+
+.app-bottom-nav {
+  display: none;
+}
+
+/* ========================================================
+   BẢNG CUỘN NGANG, LƯỚI METRIC, NHÓM NÚT
+   ======================================================== */
+.med-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.med-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.med-metric-item > a,
+.med-metric-item .med-metric-box {
+  height: 100%;
+}
+
+/* ========================================================
+   ACCESSIBILITY
+   ======================================================== */
+
+/* Viền focus rõ ràng cho người dùng bàn phím (không hiện khi bấm chuột) */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+.btn-med-primary:focus-visible,
+.btn-med-secondary:focus-visible,
+.btn-med-teal:focus-visible,
+.btn-clinical-record:focus-visible,
+.dropdown-item:focus-visible {
+  outline: 3px solid var(--med-primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px var(--med-white);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--med-primary);
+  outline-offset: 1px;
+}
+
+/* Nền tối: đổi viền focus sang trắng */
+.med-footer a:focus-visible,
+.how-it-works-teal a:focus-visible {
+  outline-color: var(--med-white);
+  box-shadow: none;
+}
+
+/* Section nhận focus qua link neo: không cần viền */
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Vùng bấm tối thiểu 44×44px cho các điều khiển đứng riêng */
+.med-nav-link,
+.app-user-toggle,
+.dropdown-item,
+.med-footer li a {
+  min-height: 44px;
+}
+
+.med-nav-link,
+.dropdown-item,
+.med-footer li a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.dropdown-item {
+  display: flex;
+}
+
+.med-brand {
+  min-height: 44px;
+}
+
+/* Link / nút dạng chữ đứng riêng (không nằm trong đoạn văn) */
+.med-link-target,
+.med-link-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-1);
+}
+
+.med-link-btn {
+  background: none;
+  border: 0;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Checkbox / radio: cả dòng nhãn là vùng bấm */
+.med-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--med-primary);
+  cursor: pointer;
+}
+
+/* Accordion dùng thẻ <details> gốc: bàn phím & trình đọc màn hình hỗ trợ sẵn */
+.med-accordion {
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-md);
+  background: var(--med-white);
+}
+
+.med-accordion + .med-accordion {
+  margin-top: var(--space-2);
+}
+
+.med-accordion > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 48px;
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--fw-semibold);
+  color: var(--med-teal-dark);
+  cursor: pointer;
+  list-style: none;
+}
+
+.med-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Dấu +/− bằng chữ, không phải icon */
+.med-accordion > summary::after {
+  content: "+";
+  flex: none;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--med-primary-light);
+  color: var(--med-primary-dark);
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+}
+
+.med-accordion[open] > summary::after {
+  content: "−";
+}
+
+.med-accordion[open] > summary {
+  border-bottom: 1px solid var(--med-border-subtle);
+}
+
+.med-accordion > :not(summary) {
+  margin: 0;
+  padding: var(--space-3) var(--space-4) var(--space-4);
+  color: var(--med-text-muted);
+}
+
+/* Giảm chuyển động theo cài đặt hệ điều hành */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn-med-primary:hover,
+  .btn-med-secondary:hover,
+  .btn-med-teal:hover,
+  .btn-clinical-record:hover,
+  .med-card-hover:hover {
+    transform: none;
+  }
+}
+
+/* ========================================================
+   UTILITIES — thay cho style="" trong HTML
+   (đặt cuối file để ghi đè .container của Bootstrap và .med-container)
+   ======================================================== */
+
+/* Độ rộng container */
+.med-w-xs  { max-width: var(--container-xs); }
+.med-w-sm  { max-width: var(--container-sm); }
+.med-w-md  { max-width: var(--container-md); }
+.med-w-lg  { max-width: var(--container-lg); }
+.med-w-xl  { max-width: var(--container-xl); }
+.med-w-2xl { max-width: var(--container-2xl); }
+
+/* Màu chữ thương hiệu */
+.text-teal   { color: var(--med-teal-dark) !important; }
+.text-navy   { color: var(--med-navy) !important; }
+.text-accent { color: var(--med-accent) !important; }
+
+/* Cỡ chữ */
+.text-xs { font-size: var(--fs-label) !important; }
+.text-sm { font-size: var(--fs-caption) !important; }
+.text-md { font-size: var(--fs-body-sm) !important; }
+
+/* Nhãn ngắn in hoa (dùng cho nhãn mục nhỏ, không dùng cho câu dài) */
+.med-eyebrow {
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--med-text-sub);
+}
+
+/* Chiều cao dòng (Bootstrap đã có .lh-1, .lh-sm, .lh-base, .lh-lg) */
+.lh-tight   { line-height: var(--lh-tight) !important; }
+.lh-relaxed { line-height: var(--lh-relaxed) !important; }
+.lh-loose   { line-height: var(--lh-loose) !important; }
+
+/* Độ rộng cột bảng (Bootstrap đã có .w-25, .w-50, .w-75, .w-100) */
+.w-20 { width: 20% !important; }
+.w-30 { width: 30% !important; }
+.w-35 { width: 35% !important; }
+
+/* ========================================================
+   RESPONSIVE
+   desktop >= 992px | tablet 576–991px | mobile <= 575px | rất nhỏ < 360px
+   Nguyên tắc: nội dung tự co giãn / xuống dòng / cuộn trong khối riêng,
+   không dùng overflow-x: hidden để che phần tràn.
+   ======================================================== */
+
+/* ---------- TABLET & MOBILE (< 992px): menu ngang chuyển xuống bottom nav ---------- */
+@media (max-width: 991.98px) {
+  .app-topnav {
+    display: none;
+  }
+
+  .app-header .med-brand-sub {
+    display: none;
+  }
+
+  .app-body {
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .app-bottom-nav {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 1030;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    height: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--med-white);
+    border-top: 1px solid var(--med-border);
+    box-shadow: 0 -4px 16px rgba(27, 45, 69, 0.06);
+  }
+
+  .app-bottom-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--space-1);
+    text-align: center;
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+    color: var(--med-text-sub);
+  }
+
+  .app-bottom-link.active {
+    color: var(--med-primary-dark);
+    font-weight: var(--fw-bold);
+  }
+
+  /* Vạch chỉ báo mục đang mở (không dùng icon) */
+  .app-bottom-link.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    height: 3px;
+    border-radius: 0 0 3px 3px;
+    background: var(--med-primary);
+  }
+
+  .med-metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .med-container {
+    padding: var(--space-6) var(--container-gutter) var(--space-12);
+  }
+}
+
+/* ---------- TABLET NHỎ & MOBILE (< 768px): rút gọn thanh trên ---------- */
+@media (max-width: 767.98px) {
+  .med-topbar {
+    display: none;
+  }
+
+
+  .med-nav-list {
+    gap: 0;
+  }
+
+  .med-nav-link {
+    padding: var(--space-2) 10px;
+  }
+
+  /* Header trang công khai: logo và menu được phép xuống dòng thay vì tràn */
+  .med-navbar .container > .d-flex {
+    flex-wrap: wrap;
+    column-gap: var(--space-3);
+  }
+}
+
+/* ---------- MOBILE (<= 575px) ---------- */
+@media (max-width: 575.98px) {
+  .med-container {
+    padding: var(--space-5) var(--container-gutter) var(--space-8);
+  }
+
+  .med-card {
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .med-card-header {
+    align-items: flex-start;
+  }
+
+  .med-metric-box {
+    padding: 14px;
+  }
+
+  .med-metric-val {
+    font-size: 1.375rem;
+  }
+
+  /* Nhóm nút: một cột, rộng 100% */
+  .med-actions,
+  .profile-action-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-2) !important;
+    width: 100%;
+  }
+
+  .med-actions > *,
+  .profile-action-group > * {
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .btn-med-primary,
+  .btn-med-secondary,
+  .btn-med-teal {
+    white-space: normal;
+  }
+
+  .btn-clinical-record {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+  }
+
+  /* Bảng nhiều cột: giữ độ rộng tối thiểu và cuộn ngang trong khung */
+  .med-table-wrap {
+    border: 1px solid var(--med-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .med-table-wrap-wide > .med-table {
+    min-width: 34rem;
+  }
+
+  .med-table th,
+  .med-table td {
+    padding: var(--space-2) 10px;
+  }
+
+  .med-disclaimer-box {
+    padding: var(--space-3) 14px;
+  }
+
+  .med-footer {
+    padding: var(--space-6) 0 var(--space-5);
+  }
+}
+
+/* ---------- ĐIỆN THOẠI HẸP (<= 399px) ---------- */
+@media (max-width: 399.98px) {
+  .app-bottom-link {
+    padding: 0 2px;
+    font-size: var(--fs-label);
+    white-space: nowrap;
+  }
+}
+
+/* ---------- MÀN HÌNH RẤT NHỎ (< 360px) ---------- */
+@media (max-width: 359.98px) {
+  .med-metric-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ========================================================
+   GLOBAL PRINT UTILITIES
+   ======================================================== */
+@media print {
+  .no-print,
+  .skip-link,
+  .app-header,
+  .app-bottom-nav,
+  .med-topbar,
+  .med-footer {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

@@ -1,0 +1,74 @@
+/* ========================================================
+   SETTINGS PAGE STYLES (settings.css)
+   Kiểu .account-* dùng chung nằm trong profile.css
+   ======================================================== */
+fieldset.med-form-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.settings-actions {
+  list-style: none;
+  margin: var(--space-4) 0 0;
+  padding: 0;
+}
+
+.settings-action {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--med-border);
+}
+
+.settings-action-title {
+  font-weight: var(--fw-semibold);
+  color: var(--med-teal-dark);
+}
+
+.settings-action-desc {
+  font-size: var(--fs-body-sm);
+  color: var(--med-text-muted);
+}
+
+.settings-action-danger .settings-action-title {
+  color: var(--med-danger);
+}
+
+/* Nút nguy hiểm: viền + chữ đỏ, chỉ tô đỏ khi hover */
+.btn-med-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--med-danger);
+  background: var(--med-white);
+  color: var(--med-danger);
+  font: inherit;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.btn-med-danger:hover {
+  background: var(--med-danger);
+  color: var(--med-white);
+}
+
+.btn-med-danger:focus-visible {
+  outline: 3px solid var(--med-danger);
+  outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .settings-action .btn-med-secondary,
+  .settings-action .btn-med-danger {
+    width: 100%;
+  }
+}

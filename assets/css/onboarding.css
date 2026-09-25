@@ -2,12 +2,12 @@
    ONBOARDING PAGE STYLES (onboarding.css)
    ======================================================== */
 .onboarding-container {
-  max-width: 720px;
+  max-width: var(--container-md);
   margin: 0 auto;
 }
 
 .onboarding-choice-box {
-  background: #f8fafc;
+  background: var(--med-bg);
   border: 1px solid var(--med-border);
   padding: 14px;
   border-radius: var(--radius-sm);

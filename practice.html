@@ -4,137 +4,167 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Phòng Thu Âm &amp; Đo Lường Lâm Sàng</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/practice.css" rel="stylesheet">
 </head>
-<body>
+<body class="app-body">
 
-<!-- THANH TIÊU CHUẨN Y KHOA TRÊN CÙNG -->
-<div class="med-topbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <span>PHÒNG THU ÂM HỌC &amp; ĐO LƯỜNG LÂM SÀNG</span>
-        <span class="separator">|</span>
-        <span>MÃ BÀI ĐỌC: SLP-EX-04</span>
-      </div>
-      <div>
-        <span>TẦNG 1: STUTTERNET WAV2VEC2</span>
-        <span class="separator">|</span>
-        <span>KHỬ NHIỄU TỰ ĐỘNG</span>
-      </div>
-    </div>
-  </div>
-</div>
+<a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
 
-<!-- THANH ĐIỀU HƯỚNG CHUẨN Y TẾ -->
-<header class="med-navbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <a class="med-brand" href="index.html">
-        <span class="med-brand-title">FLUENTA</span>
-        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+<div class="app-shell">
+  <!-- THANH ĐIỀU HƯỚNG NGANG: LOGO + MENU + AVATAR HỒ SƠ -->
+  <header class="app-header">
+    <div class="app-bar-inner">
+      <a class="med-brand" href="index.html" aria-label="Fluenta - Trang chủ">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
 
-      <nav>
-        <ul class="med-nav-list">
-          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
-          <li><a class="med-nav-link active" href="practice.html">PHÒNG TẬP</a></li>
-          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
-          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
-          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
-          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
-          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
-          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+      <nav class="app-topnav" aria-label="Điều hướng chính">
+        <ul class="app-nav">
+          <li><a class="app-nav-link" href="index.html">Tổng quan</a></li>
+          <li><a class="app-nav-link active" href="practice.html" aria-current="page">Luyện tập</a></li>
+          <li><a class="app-nav-link" href="progress.html">Tiến trình</a></li>
+          <li><a class="app-nav-link" href="library.html">Thư viện</a></li>
+          <li><a class="app-nav-link" href="specialist-connect.html">Kết nối</a></li>
         </ul>
       </nav>
-    </div>
-  </div>
-</header>
 
-<main class="med-container" style="max-width: 860px;">
-
-  <!-- THÔNG TIN PHIÊN ĐO LƯỜNG -->
-  <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
-    <div>
-      <h1 class="h5 fw-bold mb-0 text-dark">PHIÊN THU ÂM &amp; ĐO LƯỜNG PHÁT ÂM</h1>
-      <div class="text-muted small">Thời lượng ghi âm tiêu chuẩn: 15 — 30 giây</div>
-    </div>
-    <div class="d-flex align-items-center gap-2">
-      <span class="med-badge med-badge-primary" id="practiceTechniqueBadge">Kỹ thuật: Easy Onset</span>
-      <a href="library.html" class="btn-med-secondary py-1 px-3" style="font-size:12.5px;">ĐỔI BÀI TẬP →</a>
-      <a href="progress.html" class="btn-med-secondary py-1 px-3" style="font-size:12.5px;">LỊCH SỬ →</a>
-    </div>
-  </div>
-
-  <!-- VĂN BẢN MẪU CHỈ ĐỊNH ĐỌC KIỂM TRA -->
-  <section class="med-card">
-    <div class="med-card-header">
-      <span class="med-card-title">VĂN BẢN MẪU CHỈ ĐỊNH (NGỮ LIỆU ĐÁNH GIÁ)</span>
-      <span class="med-badge med-badge-neutral" id="practiceCodeBadge">Mã số: TXT-01</span>
-    </div>
-
-    <div class="p-4 bg-light border rounded mb-3" id="practicePassage" style="font-size: 21px; line-height: 1.85; color: var(--med-navy); font-weight: 500;">
-      "Sáng nay trời trong xanh, tôi ra công viên đi bộ và nghe chim hót. Không khí mát mẻ khiến tôi cảm thấy dễ chịu và tràn đầy năng lượng."
-    </div>
-
-    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div class="small text-muted" id="practiceInstruction">
-        <strong>Chỉ định kỹ thuật:</strong> Áp dụng kỹ thuật thở ra nhẹ trước âm xát /s/ ở từ "Sáng" và tiếp xúc nhẹ nhàng môi ở âm tắc /b/ trong từ "bộ".
+      <div class="dropdown app-user">
+        <button class="app-user-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Tài khoản: Nguyễn Văn Minh">
+          <span class="app-avatar"><svg class="app-avatar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5z"/></svg></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end app-user-menu">
+          <li class="app-user-info">
+            <span class="app-user-info-name">Nguyễn Văn Minh</span>
+            <span class="app-user-info-id">Mã hồ sơ: FL-2026-0842</span>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+          <li><a class="dropdown-item" href="settings.html">Cài đặt</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Đăng xuất</a></li>
+        </ul>
       </div>
-      <a href="library.html" class="small fw-bold text-primary text-decoration-underline">Tra cứu cơ chế trong Thư viện phác đồ</a>
     </div>
-  </section>
+  </header>
 
-  <!-- KHU VỰC ĐIỀU KHIỂN GHI ÂM CHUẨN LÂM SÀNG -->
-  <section class="med-card text-center py-5">
-    <div class="mb-3">
-      <button class="btn-clinical-record" id="recBtn" onclick="toggleRecord()">
-        BẮT ĐẦU GHI ÂM
-      </button>
+<main id="main-content" class="med-container">
+
+  <!-- TIÊU ĐỀ PHIÊN (ẩn bớt khi đang ghi âm) -->
+  <div class="practice-head">
+    <div>
+      <h1 class="med-page-title mb-1">Phòng tập</h1>
+      <p class="practice-head-sub mb-0">Đọc to đoạn văn với tốc độ tự nhiên trong khoảng 15–30 giây.</p>
     </div>
-
-    <div class="fw-bold fs-6 mt-3" id="recStatus" style="color: var(--med-navy);">
-      Trạng thái: Sẵn sàng tiếp nhận tín hiệu âm học
+    <div class="practice-head-actions practice-distraction">
+      <span class="med-badge med-badge-primary" id="practiceTechniqueBadge">Kỹ thuật: Easy Onset</span>
+      <a href="library.html" class="btn-med-secondary btn-med-sm">Đổi bài tập</a>
     </div>
+  </div>
 
-    <div class="text-muted small mt-1" id="recSubStatus">
-      Nhấn nút trên để thu âm. Sau khi đọc xong, nhấn lần nữa để chuyển sang Tầng 1 phân tích mô hình AI.
-    </div>
-  </section>
+  <div class="practice-layout">
 
-  <!-- QUY TRÌNH THỰC HIỆN 3 BƯỚC -->
-  <section class="med-card">
-    <div class="med-card-header">
-      <span class="med-card-title">HƯỚNG DẪN THỰC HÀNH CHUẨN TRỊ LIỆU</span>
-    </div>
+    <!-- CỘT TRÁI: ĐOẠN ĐỌC -->
+    <section class="med-card practice-reading" aria-labelledby="passageTitle">
+      <div class="med-card-header">
+        <h2 class="med-card-title" id="passageTitle">Đoạn văn cần đọc</h2>
+        <span class="med-badge med-badge-neutral" id="practiceCodeBadge">Mã số: TXT-01</span>
+      </div>
 
-    <table class="med-table">
-      <tbody>
-        <tr>
-          <td style="width: 20%;" class="fw-bold">Bước 1: Tư thế</td>
-          <td>Ngồi thẳng lưng, thả lỏng hoàn toàn cơ vai, cơ hàm dưới và vùng cổ họng.</td>
-        </tr>
-        <tr>
-          <td class="fw-bold">Bước 2: Hô hấp</td>
-          <td>Hít một hơi sâu bằng cơ hoành (bụng nở ra), không nâng vai khi lấy hơi.</td>
-        </tr>
-        <tr>
-          <td class="fw-bold">Bước 3: Phát âm</td>
-          <td>Bắt đầu cất tiếng ngay khi luồng hơi bắt đầu đi ra, duy trì tốc độ đọc đều đặn.</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+      <p class="practice-text-display" id="practicePassage">
+        "<mark class="focus-word">Sáng<span class="focus-num" aria-hidden="true">1</span></mark> nay trời trong xanh, tôi ra công viên đi <mark class="focus-word">bộ<span class="focus-num" aria-hidden="true">2</span></mark> và nghe chim hót. <mark class="focus-word">Không<span class="focus-num" aria-hidden="true">3</span></mark> khí mát mẻ khiến tôi cảm thấy dễ chịu và tràn đầy năng lượng."
+      </p>
+
+      <div class="focus-legend">
+        <h3 class="focus-legend-title">Từ cần chú ý <span class="focus-legend-hint">(được tô nền và gạch chân trong đoạn văn)</span></h3>
+        <ol class="focus-list" id="practiceFocusList">
+          <li><strong>Sáng</strong> — thở ra nhẹ trước âm xát /s/, không đóng chặt thanh môn.</li>
+          <li><strong>bộ</strong> — chạm môi thật nhẹ ở âm tắc /b/.</li>
+          <li><strong>Không</strong> — khởi âm êm dịu, để hơi đi ra trước khi phát âm.</li>
+        </ol>
+      </div>
+
+      <!-- HƯỚNG DẪN TƯ THẾ & HÔ HẤP (ACCORDION) -->
+      <div class="practice-guide practice-distraction">
+        <h3 class="focus-legend-title">Chuẩn bị trước khi đọc</h3>
+        <details class="med-accordion">
+          <summary>Tư thế</summary>
+          <p>Ngồi thẳng lưng, hai chân chạm sàn. Thả lỏng vai, hàm dưới và vùng cổ họng. Đặt điện thoại hoặc micro cách miệng khoảng 20–30 cm.</p>
+        </details>
+        <details class="med-accordion">
+          <summary>Hô hấp</summary>
+          <p>Hít sâu bằng cơ hoành (bụng nở ra), không nâng vai. Thở ra chậm 2–3 lần trước khi bắt đầu để ổn định nhịp thở.</p>
+        </details>
+        <details class="med-accordion">
+          <summary>Khi phát âm</summary>
+          <p>Bắt đầu cất tiếng ngay khi luồng hơi đi ra. Giữ tốc độ đều, khoảng 110–140 từ/phút. Nếu vấp, dừng lại, thở nhẹ và tiếp tục — không cần đọc lại từ đầu.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CỘT PHẢI: ĐIỀU KHIỂN THU ÂM -->
+    <aside class="med-card recorder-panel" aria-labelledby="recorderTitle">
+      <h2 class="med-card-title recorder-title" id="recorderTitle">Thu âm</h2>
+
+      <div class="recorder-timer-wrap">
+        <div class="recorder-timer" id="recTimer" aria-label="Thời gian đã ghi">00:00</div>
+        <div class="recorder-target" id="recTarget">Mục tiêu: 15–30 giây</div>
+      </div>
+
+      <div class="recorder-meter">
+        <div class="recorder-row">
+          <span>Mức micro</span>
+          <span id="micLevelText">Chưa bật</span>
+        </div>
+        <div class="recorder-meter-track" id="micMeter" role="meter" aria-label="Mức micro" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="recorder-meter-fill" id="micMeterFill"></div>
+        </div>
+      </div>
+
+      <div class="recorder-env" id="envStatus" data-state="idle">
+        <span class="recorder-env-icon" id="envIcon" aria-hidden="true">?</span>
+        <span id="envText">Môi trường: sẽ kiểm tra khi bắt đầu ghi</span>
+      </div>
+
+      <button type="button" class="btn-clinical-record" id="recBtn" aria-pressed="false">Bắt đầu ghi âm</button>
+
+      <!-- Sau khi hoàn thành: chỉ một CTA nổi bật -->
+      <div class="recorder-done" id="recDone" hidden>
+        <p class="recorder-done-summary" id="recDoneSummary">Đã ghi xong.</p>
+        <a href="processing.html" class="btn-med-primary recorder-cta" id="recResultBtn">Xem kết quả</a>
+        <button type="button" class="recorder-retry" id="recRetry">Ghi âm lại</button>
+      </div>
+
+      <p class="recorder-status" id="recStatus" role="status" aria-live="polite">Sẵn sàng. Nhấn “Bắt đầu ghi âm” rồi đọc đoạn văn.</p>
+    </aside>
+
+  </div>
 
 </main>
 
-<footer class="med-footer">
-  <div class="container" style="max-width: 980px;">
-    <div>FLUENTA CLINICAL SYSTEM © 2026 — QUY TRÌNH THU ÂM CHUẨN LÂM SÀNG</div>
-  </div>
-</footer>
+  <footer class="med-footer">
+    <div class="container med-w-xl">
+      <div>Fluenta Clinical System © 2026 — quy trình thu âm chuẩn lâm sàng</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ĐIỀU HƯỚNG DƯỚI ĐÁY (MOBILE & TABLET < 992px) -->
+<nav class="app-bottom-nav" aria-label="Điều hướng chính">
+  <a class="app-bottom-link" href="index.html">Tổng quan</a>
+  <a class="app-bottom-link active" href="practice.html" aria-current="page">Luyện tập</a>
+  <a class="app-bottom-link" href="progress.html">Tiến trình</a>
+  <a class="app-bottom-link" href="library.html">Thư viện</a>
+  <a class="app-bottom-link" href="specialist-connect.html">Kết nối</a>
+</nav>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/practice.js"></script>

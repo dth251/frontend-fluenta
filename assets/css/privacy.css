@@ -2,14 +2,14 @@
    PRIVACY POLICY STYLES (privacy.css)
    ======================================================== */
 .privacy-section-title {
-  color: var(--med-navy);
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  color: var(--med-teal-dark);
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-2);
 }
 
 .privacy-content-text {
-  font-size: 13.5px;
-  line-height: 1.8;
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-loose);
   color: var(--med-text-muted);
 }

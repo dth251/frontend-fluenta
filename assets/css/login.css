@@ -2,7 +2,7 @@
    LOGIN PAGE STYLES (login.css)
    ======================================================== */
 .login-box {
-  max-width: 520px;
+  max-width: var(--container-xs);
   margin: 0 auto;
 }
 

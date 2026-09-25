@@ -2,29 +2,140 @@
    REPORTS PAGE STYLES (reports.css)
    ======================================================== */
 .report-sheet-card {
-  border: 2px solid var(--med-navy);
-  background: #ffffff;
-  padding: 32px 24px;
+  border: 1px solid var(--med-border);
+  box-shadow: var(--shadow-sm);
+  background: var(--med-white);
 }
 
 .report-header-emblem {
-  letter-spacing: 1px;
-  color: var(--med-navy);
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
+  color: var(--med-teal-dark);
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.02em;
 }
 
+/* ========================================================
+   CHUẨN IN ẤN VÀ XUẤT PDF Y KHOA (A4 PRINT ENGINE)
+   ======================================================== */
 @media print {
-  .med-topbar, .med-navbar, .med-footer, .btn-med-primary, .btn-med-secondary {
-    display: none !important;
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
   }
+
+  /* 1. Ẩn triệt để toàn bộ thành phần điều hướng, topbar, bottom nav và nút bấm */
+  .no-print,
+  .skip-link,
+  .med-topbar,
+  .app-header,
+  .med-navbar,
+  .app-bottom-nav,
+  .med-footer,
+  .med-actions,
+  button,
+  .btn-med-primary,
+  .btn-med-secondary {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 2. Reset layout bao ngoài để nội dung không bị dính fixed / sticky */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .app-shell,
+  .app-body,
+  #main-content,
   .med-container {
+    display: block !important;
     max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
   }
+
+  /* 3. Phiếu báo cáo y khoa phẳng, rõ ràng */
   .report-sheet-card {
-    border: none !important;
+    border: 1.5px solid #1e293b !important;
     box-shadow: none !important;
+    padding: 18px 24px !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    border-radius: 4px !important;
+  }
+
+  .report-header-emblem {
+    color: #0f172a !important;
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+  }
+
+  /* 4. Định dạng bảng dữ liệu lâm sàng sắc nét */
+  .med-table-wrap {
+    overflow: visible !important;
+    margin: 0 !important;
+    border: none !important;
+  }
+
+  .med-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 9pt !important;
+    margin-bottom: 12px !important;
+  }
+
+  .med-table th,
+  .med-table td {
+    padding: 6px 10px !important;
+    border: 1px solid #94a3b8 !important;
+    color: #0f172a !important;
+  }
+
+  .med-table thead th {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    font-weight: 700 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 5. Chống rớt dòng và cắt đôi trang (Page-break rules) */
+  tr {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .mb-4,
+  .mb-3 {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 14px !important;
+  }
+
+  .border-bottom {
+    border-bottom: 1px solid #cbd5e1 !important;
+  }
+
+  /* Giữ màu chữ chẩn đoán nổi bật trên giấy in */
+  .text-success {
+    color: #15803d !important;
+    font-weight: 700 !important;
+  }
+
+  .text-primary {
+    color: #b93f28 !important;
+    font-weight: 700 !important;
+  }
+
+  .text-muted {
+    color: #475569 !important;
   }
 }

@@ -2,16 +2,16 @@
    SPECIALIST CONNECT STYLES (specialist-connect.css)
    ======================================================== */
 .specialist-card-box {
-  background: #ffffff;
+  background: var(--med-white);
   border: 1px solid var(--med-border);
-  padding: 24px;
+  padding: var(--space-6);
   border-radius: var(--radius-sm);
 }
 
 .specialist-security-note {
   border-left: 3px solid var(--med-primary);
-  background: #f8fafc;
-  padding: 12px 16px;
-  font-size: 13px;
+  background: var(--med-bg);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--fs-body-sm);
   color: var(--med-text-muted);
 }

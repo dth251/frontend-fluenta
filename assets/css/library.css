@@ -2,19 +2,50 @@
    LIBRARY PAGE STYLES (library.css)
    ======================================================== */
 .library-filter-wrap {
-  background: #ffffff;
+  background: var(--med-white);
   border: 1px solid var(--med-border);
-  padding: 12px;
+  padding: var(--space-3);
   border-radius: var(--radius-sm);
-  margin-bottom: 20px;
+  margin-bottom: var(--space-5);
 }
 
 .med-lib-btn.active {
   background: var(--med-primary) !important;
-  color: #ffffff !important;
+  color: var(--med-white) !important;
   border-color: var(--med-primary-dark) !important;
 }
 
 .library-item {
   transition: all 0.15s ease;
+}
+
+.library-card-title {
+  font-size: 1.125rem;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--med-teal-dark);
+  margin-bottom: var(--space-2);
+}
+
+.library-card-desc {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--med-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.library-keywords-box {
+  padding: var(--space-2) var(--space-3);
+  background: var(--med-bg);
+  border: 1px solid var(--med-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-meta);
+  color: var(--med-text-main);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-3);
+}
+
+.library-cta-card {
+  background: var(--med-mint-bg);
+  border: 1px solid var(--med-mint-border);
 }

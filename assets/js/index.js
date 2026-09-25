@@ -2,6 +2,11 @@
 // DASHBOARD INDEX LOGIC (index.js)
 // ========================================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Khởi tạo các thông số hồ sơ lâm sàng
-  console.log('Fluenta Dashboard initialized for patient #FL-2026-0842');
+  // Lời chào theo giờ trong ngày
+  const greetingEl = document.getElementById('dashboardGreeting');
+  if (greetingEl) {
+    const hour = new Date().getHours();
+    const period = hour < 11 ? 'Chào buổi sáng' : hour < 14 ? 'Chào buổi trưa' : hour < 18 ? 'Chào buổi chiều' : 'Chào buổi tối';
+    greetingEl.textContent = `${period}, Minh`;
+  }
 });

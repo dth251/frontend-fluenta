@@ -1,25 +1,327 @@
 /* ========================================================
    PRACTICE ROOM STYLES (practice.css)
+   Bố cục 2 cột: đoạn đọc (trái) + điều khiển thu âm (phải)
    ======================================================== */
-.practice-reading-box {
-  background: #ffffff;
-  border: 1px solid var(--med-border);
-  border-radius: var(--radius-sm);
-  padding: 24px;
-  margin-bottom: 20px;
+.practice-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
 }
 
+.practice-head-sub {
+  color: var(--med-text-muted);
+}
+
+.practice-head-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.practice-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.practice-layout > .med-card {
+  margin-bottom: 0;
+}
+
+/* ---------- Đoạn đọc ---------- */
 .practice-text-display {
-  font-size: 21px;
-  line-height: 1.85;
+  font-size: 1.3125rem;
+  line-height: 1.9;
   color: var(--med-navy);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--space-5);
 }
 
-.practice-record-console {
-  background: #ffffff;
-  border: 1px solid var(--med-border);
+/* Từ cần chú ý: nền + gạch chân + số thứ tự (không chỉ dựa vào màu) */
+.focus-word {
+  padding: 0 2px;
+  border-radius: 3px;
+  background: var(--med-accent-light);
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--med-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.focus-num {
+  display: inline-block;
+  margin-left: 2px;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  vertical-align: super;
+  color: var(--med-accent-dark);
+}
+
+.focus-legend {
+  padding: var(--space-4);
   border-radius: var(--radius-sm);
-  padding: 36px 16px;
+  background: var(--med-bg);
+  border: 1px solid var(--med-border);
+}
+
+.focus-legend-title {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.focus-legend-hint {
+  font-weight: var(--fw-regular);
+  color: var(--med-text-sub);
+}
+
+.focus-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: var(--fs-body-sm);
+  color: var(--med-text-muted);
+}
+
+.focus-list li + li {
+  margin-top: var(--space-1);
+}
+
+.practice-guide {
+  margin-top: var(--space-5);
+}
+
+/* ---------- Bảng điều khiển thu âm ---------- */
+.recorder-panel {
+  position: sticky;
+  top: calc(var(--app-header-height) + var(--space-4));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.recorder-timer-wrap {
   text-align: center;
+}
+
+.recorder-timer {
+  font-size: 2.75rem;
+  font-weight: var(--fw-bold);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  color: var(--med-teal-dark);
+}
+
+.recorder-target {
+  font-size: var(--fs-meta);
+  color: var(--med-text-sub);
+}
+
+.recorder-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-meta);
+  color: var(--med-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.recorder-meter-track {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--med-surface-muted);
+  border: 1px solid var(--med-border);
+  overflow: hidden;
+}
+
+.recorder-meter-fill {
+  height: 100%;
+  background: var(--med-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.08s linear;
+}
+
+.recorder-env {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--med-border);
+  background: var(--med-bg);
+  font-size: var(--fs-meta);
+  color: var(--med-text-muted);
+}
+
+.recorder-env-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-bold);
+  background: var(--med-border-strong);
+  color: var(--med-text-main);
+}
+
+.recorder-env[data-state="quiet"] {
+  border-color: var(--med-success-border);
+  background: var(--med-success-bg);
+}
+
+.recorder-env[data-state="quiet"] .recorder-env-icon {
+  background: var(--med-success);
+  color: var(--med-white);
+}
+
+.recorder-env[data-state="moderate"],
+.recorder-env[data-state="noisy"] {
+  border-color: var(--med-warning-border);
+  background: var(--med-warning-bg);
+}
+
+.recorder-env[data-state="moderate"] .recorder-env-icon,
+.recorder-env[data-state="noisy"] .recorder-env-icon {
+  background: var(--med-warning);
+  color: var(--med-white);
+}
+
+.recorder-panel .btn-clinical-record {
+  width: 100%;
+}
+
+.recorder-status {
+  margin: 0;
+  font-size: var(--fs-meta);
+  color: var(--med-text-muted);
+  text-align: center;
+}
+
+.recorder-done {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.recorder-done-summary {
+  margin: 0;
+  font-size: var(--fs-body-sm);
+  color: var(--med-text-main);
+}
+
+.recorder-cta {
+  width: 100%;
+  padding: 14px var(--space-6);
+  font-size: var(--fs-body);
+}
+
+/* Liên kết phụ, không cạnh tranh với CTA chính */
+.recorder-retry {
+  align-self: center;
+  min-height: 44px;
+  padding: 0 var(--space-3);
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: var(--fs-body-sm);
+  color: var(--med-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.recorder-retry:hover {
+  color: var(--med-teal-dark);
+}
+
+/* ---------- Khi đang ghi âm: giảm nội dung gây phân tâm ---------- */
+.is-recording .practice-distraction {
+  display: none;
+}
+
+/* Chỉ làm mờ nội dung, giữ nền đặc để header dính không bị nhìn xuyên */
+.is-recording .med-topbar > *,
+.is-recording .app-header .app-bar-inner > *,
+.is-recording .med-footer > * {
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+.is-recording .app-header:hover .app-bar-inner > *,
+.is-recording .app-header:focus-within .app-bar-inner > * {
+  opacity: 1;
+}
+
+.is-recording .practice-reading {
+  border-color: var(--med-primary-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991.98px) {
+  .practice-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .recorder-panel {
+    position: static;
+  }
+
+  /* Đang ghi trên mobile/tablet: thanh điều khiển gọn dính đáy, ẩn bottom nav */
+  .is-recording .app-bottom-nav {
+    display: none;
+  }
+
+  .is-recording.app-body {
+    padding-bottom: 0;
+  }
+
+  .is-recording .recorder-panel {
+    position: sticky;
+    bottom: 0;
+    z-index: 1025;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    padding: var(--space-3) var(--space-4) calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    box-shadow: 0 -6px 20px rgba(27, 45, 69, 0.12);
+  }
+
+  .is-recording .recorder-title,
+  .is-recording .recorder-target,
+  .is-recording .recorder-env,
+  .is-recording .recorder-status {
+    display: none;
+  }
+
+  .is-recording .recorder-timer {
+    font-size: 1.75rem;
+  }
+
+  .is-recording .recorder-panel .btn-clinical-record {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .practice-text-display {
+    font-size: 1.1875rem;
+    line-height: 1.85;
+  }
+
+  .recorder-timer {
+    font-size: 2.25rem;
+  }
 }

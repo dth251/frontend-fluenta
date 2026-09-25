@@ -4,380 +4,208 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Nền Tảng Âm Ngữ Trị Liệu &amp; Phục Hồi Lời Nói AI</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/landing.css" rel="stylesheet">
 </head>
 <body>
 
-<!-- TOPBAR -->
-<div class="med-topbar">
-  <div class="container" style="max-width: 1040px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <span>FLUENTA TELEHEALTH SAAS — NỀN TẢNG ÂM NGỮ TRỊ LIỆU LÂM SÀNG</span>
-        <span class="separator">|</span>
-        <span>CHUẨN ASHA QUỐC TẾ</span>
-      </div>
-      <div>
-        <a href="login.html" class="fw-bold me-3">ĐĂNG NHẬP</a>
-        <a href="onboarding.html" class="fw-bold" style="color:var(--med-accent);">ĐÁNH GIÁ ĐẦU VÀO</a>
-      </div>
-    </div>
-  </div>
-</div>
+<a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
 
-<!-- NAVBAR MEDICLOUD STYLE -->
 <header class="med-navbar">
-  <div class="container" style="max-width: 1040px;">
+  <div class="container med-w-2xl">
     <div class="d-flex justify-content-between align-items-center">
-      <a class="med-brand" href="landing.html">
-        <span class="med-brand-mark">F</span>
-        <div>
-          <span class="med-brand-title">FLUENTA</span>
-          <span class="med-brand-sub">TELEHEALTH SPEECH PLATFORM</span>
-        </div>
+      <a class="med-brand" href="landing.html" aria-label="Fluenta">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
 
-      <nav class="d-none d-md-block">
+      <nav class="d-none d-lg-block" aria-label="Điều hướng trang giới thiệu">
         <ul class="med-nav-list align-items-center">
-          <li><a class="med-nav-link" href="#features">TÍNH NĂNG</a></li>
-          <li><a class="med-nav-link" href="#how-it-works">QUY TRÌNH 3 BƯỚC</a></li>
-          <li><a class="med-nav-link" href="library.html">PHÁC ĐỒ ASHA</a></li>
-          <li><a class="med-nav-link" href="#advisors">CỐ VẤN Y KHOA</a></li>
-          <li><a class="med-nav-link" href="#faq">HỎI ĐÁP</a></li>
-          <li class="ms-3 d-flex align-items-center gap-2">
-            <a href="login.html" class="btn-med-secondary py-1 px-3">ĐĂNG NHẬP</a>
-            <a href="register.html" class="btn-med-primary py-1 px-3">BẮT ĐẦU NGAY</a>
-          </li>
+          <li><a class="med-nav-link" href="#features">Lợi ích</a></li>
+          <li><a class="med-nav-link" href="#how-it-works">Cách hoạt động</a></li>
+          <li><a class="med-nav-link" href="#advisors">Chuyên gia</a></li>
+          <li><a class="med-nav-link" href="#faq">Hỏi đáp</a></li>
         </ul>
       </nav>
+
+      <div class="d-flex gap-2">
+        <a href="login.html" class="btn-med-secondary btn-med-sm">Đăng nhập</a>
+        <a href="register.html" class="btn-med-primary btn-med-sm d-none d-sm-inline-flex">Bắt đầu đánh giá</a>
+      </div>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
-  <!-- HERO SECTION CHUẨN MEDICLOUD (HÌNH ẢNH THẬT + 3 THẺ NỔI LƠ LỬNG) -->
+  <!-- HERO: 2 CTA -->
   <section class="hero-medicloud">
-    <div class="container" style="max-width: 1040px;">
-      <div class="row align-items-center g-5">
-        
-        <!-- Cột trái: Văn bản & Dual CTA -->
+    <div class="container med-w-2xl">
+      <div class="row align-items-center g-4 g-xl-5">
+
         <div class="col-lg-6">
-          <span class="med-badge med-badge-teal mb-3">
-            HIPAA COMPLIANT &amp; SECURE · TIÊU CHUẨN ASHA
-          </span>
+          <span class="med-badge med-badge-teal mb-3">Luyện nói tại nhà cho người nói lắp</span>
 
-          <h1 class="display-5 fw-bold mb-3" style="color:var(--med-teal-dark); line-height:1.2;">
-            Phục Hồi Giọng Nói Tự Nhiên Với Trợ Lý Trị Liệu AI
-          </h1>
+          <h1 class="hero-title">Nói trôi chảy hơn mỗi ngày, với 15 phút luyện tập tại nhà</h1>
 
-          <p class="lead text-muted mb-4" style="font-size:16px; line-height:1.75;">
-            Nền tảng âm ngữ trị liệu lâm sàng tất cả trong một dành cho người nói lắp tại nhà. Kết hợp mô hình Deep Learning đo lường âm học khách quan (Tầng 1) và trợ lý LLM hướng dẫn kỹ thuật cá nhân hóa (Tầng 2).
+          <p class="hero-lead">
+            Đọc to một đoạn văn ngắn, Fluenta cho bạn biết chính xác mình vấp ở đâu và gợi ý bài tập phù hợp cho lần sau. Không phán xét, không cần đến phòng khám.
           </p>
 
-          <div class="d-flex flex-wrap gap-2">
-            <a href="register.html" class="btn-med-primary">ĐĂNG KÝ HỒ SƠ (BƯỚC 1)</a>
-            <a href="onboarding.html" class="btn-med-secondary">KHẢO SÁT NHANH</a>
-            <a href="practice.html" class="btn-med-secondary">THỬ PHÒNG TẬP</a>
+          <div class="d-flex flex-wrap gap-2 med-actions">
+            <a href="register.html" class="btn-med-primary hero-cta">Bắt đầu đánh giá</a>
+            <a href="#how-it-works" class="btn-med-secondary hero-cta">Xem cách hoạt động</a>
           </div>
 
-          <div class="mt-4 pt-2 small text-muted">
-            <span class="fw-bold text-dark">Tiêu chí lâm sàng:</span> Không phán xét · Dữ liệu bảo mật đầu cuối · Đo lường %SS định lượng
-          </div>
+          <p class="hero-note">Miễn phí buổi đánh giá đầu tiên · Khoảng 10 phút · Dùng micro sẵn có trên điện thoại</p>
         </div>
 
-        <!-- Cột phải: Hình ảnh thực tế + 3 thẻ nổi chuyển động lơ lửng -->
+        <!-- Xem trước giao diện Phòng tập: đúng trải nghiệm của người dùng tại nhà -->
         <div class="col-lg-6">
-          <div class="hero-image-wrap">
-            <img src="assets/images/hero_speech_telehealth.jpg" alt="Chuyên viên âm ngữ trị liệu Fluenta phân tích phổ âm thanh trên thiết bị y tế">
-
-            <!-- Thẻ nổi 1 (Trái trên - Float Slow) -->
-            <div class="floating-badge hero-floating-1">
-              <div class="floating-pill">
-                EHR ÂM HỌC ĐIỆN TỬ
-              </div>
+          <figure class="hero-preview" aria-label="Xem trước màn hình Phòng tập">
+            <div class="hero-preview-bar">
+              <span class="hero-preview-title">Phòng tập</span>
+              <span class="hero-preview-timer"><span class="hero-preview-dot" aria-hidden="true"></span>00:12</span>
             </div>
-
-            <!-- Thẻ nổi 2 (Trái dưới - Float Delay) -->
-            <div class="floating-badge-delayed hero-floating-2">
-              <div class="floating-pill">
-                ĐO LƯỜNG TỶ LỆ VẤP %SS
+            <p class="hero-preview-text">
+              “<mark class="focus-word">Sáng</mark> nay trời trong xanh, tôi ra công viên đi <mark class="focus-word">bộ</mark> và nghe chim hót.”
+            </p>
+            <div class="hero-preview-meter" aria-hidden="true"><span></span></div>
+            <div class="hero-preview-result">
+              <div>
+                <div class="hero-preview-label">Độ trôi chảy</div>
+                <div class="hero-preview-value">88%</div>
               </div>
+              <div class="hero-preview-verdict"><span aria-hidden="true">↑</span> Cải thiện so với tuần trước</div>
             </div>
-
-            <!-- Thẻ nổi 3 (Phải trên - Float Slow Deep Teal) -->
-            <div class="floating-badge hero-floating-3">
-              <div class="floating-pill-teal">
-                PHÁC ĐỒ EASY ONSET ASHA
-              </div>
-            </div>
-          </div>
+            <figcaption class="visually-hidden">Ví dụ: người dùng đọc đoạn văn có các từ cần chú ý được tô, đồng hồ ghi âm chạy 12 giây, kết quả độ trôi chảy 88%.</figcaption>
+          </figure>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- SOCIAL PROOF / TRUSTED BY STRIP (CHUẨN Y TẾ) -->
-  <section class="trusted-strip">
-    <div class="container" style="max-width: 1040px;">
-      <div class="row align-items-center gy-3">
-        <div class="col-lg-3">
-          <div class="small fw-bold text-uppercase" style="color:var(--med-teal-dark); letter-spacing:0.6px;">
-            ĐƯỢC THẨM ĐỊNH BỞI:
-          </div>
-        </div>
-        <div class="col-lg-9">
-          <div class="row g-2">
-            <div class="col-6 col-md-3">
-              <div class="partner-box">HIỆP HỘI ASHA</div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="partner-box">VIỆN THẦN KINH NGÔN NGỮ</div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="partner-box">PHỤC HỒI CHỨC NĂNG TW</div>
-            </div>
-            <div class="col-6 col-md-3">
-              <div class="partner-box">SPEECH DSP LAB</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Chỉ hiển thị chứng nhận / đối tác đã được xác minh.
+       Dải đối tác cũ đã được gỡ vì chưa có xác minh; thêm lại khi có văn bản hợp tác. -->
 
-  <!-- 6 TÍNH NĂNG CỐT LÕI (3x2 GRID CHUẨN MEDICLOUD VỚI MED-CARD-HOVER) -->
+  <!-- 3 NHÓM LỢI ÍCH -->
   <section class="med-container" id="features">
-    <div class="text-center mb-5">
-      <span class="med-badge med-badge-accent mb-2">TÍNH NĂNG NỀN TẢNG</span>
-      <h2 class="h3 fw-bold" style="color:var(--med-teal-dark);">Hệ Thống Công Nghệ Âm Ngữ Trị Liệu Toàn Diện</h2>
-      <p class="text-muted small mx-auto" style="max-width:620px;">
-        Được thiết kế dựa trên nhu cầu thực tiễn của người nói lắp tại Việt Nam và phác đồ can thiệp phục hồi giọng nói quốc tế.
-      </p>
+    <div class="landing-section-head">
+      <h2 class="landing-section-title">Fluenta giúp bạn điều gì?</h2>
+      <p class="landing-section-sub">Ba điều người nói lắp cần nhất khi tự luyện tập tại nhà.</p>
     </div>
 
-    <div class="row g-4">
-      <!-- Feature 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="med-card med-card-hover h-100">
-          <span class="med-badge med-badge-primary mb-3">TẦNG 1: DEEP LEARNING</span>
-          <h3 class="h6 fw-bold text-dark mb-2">Phân Tích Tín Hiệu Âm Học</h3>
-          <p class="small text-muted mb-0" style="line-height:1.7;">
-            Mô hình wav2vec2 và StutterNet tự động nhận diện và bóc tách tọa độ thời gian các điểm nghẽn âm thanh môn (Block), lặp từ và kéo dài âm.
-          </p>
-        </div>
-      </div>
+    <div class="benefit-grid">
+      <article class="med-card benefit-card">
+        <span class="benefit-num" aria-hidden="true">1</span>
+        <h3 class="benefit-title">Biết chính xác mình vấp ở đâu</h3>
+        <p class="benefit-text">Mô hình AI đánh dấu từng điểm nghẽn, lặp âm hay kéo dài âm trong bản ghi, và đo tỷ lệ vấp (%SS) để bạn thấy tiến bộ qua từng tuần.</p>
+      </article>
 
-      <!-- Feature 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="med-card med-card-hover h-100">
-          <span class="med-badge med-badge-accent mb-3">TẦNG 2: LLM GUIDANCE</span>
-          <h3 class="h6 fw-bold text-dark mb-2">Trợ Lý Can Thiệp Tức Thì</h3>
-          <p class="small text-muted mb-0" style="line-height:1.7;">
-            Đối chiếu kiểu ngắt quãng với tri thức chuyên khoa để sinh ra lời hướng dẫn sửa lỗi và danh sách từ vựng cá nhân hóa theo từng âm khó.
-          </p>
-        </div>
-      </div>
+      <article class="med-card benefit-card">
+        <span class="benefit-num" aria-hidden="true">2</span>
+        <h3 class="benefit-title">Bài tập dành riêng cho bạn</h3>
+        <p class="benefit-text">Sau mỗi phiên, bạn nhận một bài tập phù hợp với kiểu vấp của mình — như khởi âm êm dịu hay chạm nhẹ cấu âm — kèm danh sách từ để luyện.</p>
+      </article>
 
-      <!-- Feature 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="med-card med-card-hover h-100 d-flex flex-column justify-content-between">
-          <div>
-            <span class="med-badge med-badge-teal mb-3">HỒ SƠ BỆNH ÁN</span>
-            <h3 class="h6 fw-bold text-dark mb-2">Bệnh Án Điện Tử (Acoustic EHR)</h3>
-            <p class="small text-muted mb-0" style="line-height:1.7;">
-              Lưu trữ mốc đo lường ban đầu (Baseline Test) và toàn bộ lịch sử các bài tập dạng sóng âm nén bảo mật cao.
-            </p>
-          </div>
-          <div class="pt-3">
-            <a href="library.html" class="small fw-bold text-primary">Xem thư viện phác đồ →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="med-card med-card-hover h-100 d-flex flex-column justify-content-between">
-          <div>
-            <span class="med-badge med-badge-success mb-3">ĐỊNH LƯỢNG LÂM SÀNG</span>
-            <h3 class="h6 fw-bold text-dark mb-2">Theo Dõi Tỷ Lệ Vấp (%SS)</h3>
-            <p class="small text-muted mb-0" style="line-height:1.7;">
-              Đo lường sự thuyên giảm tần suất ngắt quãng qua từng tuần (từ 19.0% xuống 12.0%) với biểu đồ xu hướng trực quan.
-            </p>
-          </div>
-          <div class="pt-3">
-            <a href="progress.html" class="small fw-bold text-success">Xem bảng tiến trình →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="med-card med-card-hover h-100 d-flex flex-column justify-content-between">
-          <div>
-            <span class="med-badge med-badge-warning mb-3">KẾT NỐI CHUYÊN KHOA</span>
-            <h3 class="h6 fw-bold text-dark mb-2">Xuất Báo Cáo Y Khoa</h3>
-            <p class="small text-muted mb-0" style="line-height:1.7;">
-              Tạo phiếu báo cáo âm học chính thức chuẩn ASHA chỉ với một thao tác, dễ dàng in ấn hoặc chia sẻ trực tiếp với bác sĩ điều trị.
-            </p>
-          </div>
-          <div class="pt-3">
-            <a href="reports.html" class="small fw-bold text-warning">Xem mẫu báo cáo ASHA →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Feature 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="med-card med-card-hover h-100 d-flex flex-column justify-content-between">
-          <div>
-            <span class="med-badge med-badge-neutral mb-3">TIÊU CHUẨN HIPAA</span>
-            <h3 class="h6 fw-bold text-dark mb-2">Bảo Mật Dữ Liệu Âm Thanh</h3>
-            <p class="small text-muted mb-0" style="line-height:1.7;">
-              Khử định danh danh tính và mã hóa tệp âm thanh đầu cuối, cam kết đạo đức dữ liệu y tế không thương mại hóa trái phép.
-            </p>
-          </div>
-          <div class="pt-3">
-            <a href="privacy.html" class="small fw-bold text-secondary">Đọc chính sách bảo mật →</a>
-          </div>
-        </div>
-      </div>
+      <article class="med-card benefit-card">
+        <span class="benefit-num" aria-hidden="true">3</span>
+        <h3 class="benefit-title">Chia sẻ an toàn với chuyên gia</h3>
+        <p class="benefit-text">Xuất báo cáo định lượng khi đi tái khám hoặc gửi trực tiếp cho chuyên viên. Bản ghi được mã hóa và chỉ người bạn cấp quyền mới xem được.</p>
+      </article>
     </div>
   </section>
 
-  <!-- QUY TRÌNH 3 BƯỚC TOÀN MÀN HÌNH (DEEP TEAL SECTION ĐẶC TRƯNG MEDICLOUD) -->
-  <section class="how-it-works-teal" id="how-it-works">
-    <div class="container" style="max-width: 1040px;">
-      <div class="text-center mb-5">
-        <span class="step-number-pill">QUY TRÌNH CAN THIỆP TẠI NHÀ</span>
-        <h2 class="h3 fw-bold text-white mb-2">Ba Bước Đơn Giản Lấy Lại Giọng Nói Tự Tin</h2>
-        <p class="small text-white-50 mx-auto" style="max-width:580px;">
-          Không áp lực phán xét. Bạn hoàn toàn chủ động thời gian luyện tập trong không gian riêng tư.
-        </p>
+  <!-- QUY TRÌNH 3 BƯỚC -->
+  <section class="how-it-works-teal" id="how-it-works" tabindex="-1">
+    <div class="container med-w-2xl">
+      <div class="landing-section-head">
+        <h2 class="landing-section-title text-white">Cách Fluenta hoạt động</h2>
+        <p class="landing-section-sub text-white-75">Bạn chủ động thời gian, luyện tập trong không gian riêng tư.</p>
       </div>
 
-      <div class="row g-4">
-        <!-- Bước 1 -->
-        <div class="col-md-4">
-          <div class="step-card-teal">
-            <span class="step-number-pill">BƯỚC 01</span>
-            <h3 class="h6 fw-bold text-white mb-2">Thu Âm Mẫu Đọc Tự Nhiên</h3>
-            <p class="small text-white-50 mb-0" style="line-height:1.7;">
-              Mở phòng tập tương tác, đọc to đoạn văn bản chỉ định trong 15 — 30 giây với tốc độ thoải mái thường ngày của bạn.
-            </p>
-          </div>
-        </div>
-
-        <!-- Bước 2 -->
-        <div class="col-md-4">
-          <div class="step-card-teal">
-            <span class="step-number-pill">BƯỚC 02</span>
-            <h3 class="h6 fw-bold text-white mb-2">AI Phân Tích &amp; Bóc Tách Tọa Độ</h3>
-            <p class="small text-white-50 mb-0" style="line-height:1.7;">
-              Hệ thống Deep Learning Tầng 1 nhận diện tức thì các điểm nghẽn hơi thanh quản (Block), lặp âm và đo lường tỷ lệ %SS.
-            </p>
-          </div>
-        </div>
-
-        <!-- Bước 3 -->
-        <div class="col-md-4">
-          <div class="step-card-teal">
-            <span class="step-number-pill">BƯỚC 03</span>
-            <h3 class="h6 fw-bold text-white mb-2">Nhận Phác Đồ &amp; Luyện Bài Tập Mới</h3>
-            <p class="small text-white-50 mb-0" style="line-height:1.7;">
-              Tầng 2 sinh ra hướng dẫn kỹ thuật Easy Onset / Light Contact kèm danh sách từ vựng cá nhân hóa để thực hành sửa đổi ngay.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-5">
-        <a href="onboarding.html" class="btn-med-primary px-4 py-2">BẮT ĐẦU BUỔI ĐÁNH GIÁ ĐẦU TIÊN</a>
-      </div>
+      <ol class="step-list">
+        <li class="step-card-teal">
+          <span class="step-number-pill">Bước 1</span>
+          <h3 class="step-title">Đọc to một đoạn văn</h3>
+          <p class="step-text">Đọc đoạn văn ngắn trong 15–30 giây với tốc độ nói thường ngày.</p>
+        </li>
+        <li class="step-card-teal">
+          <span class="step-number-pill">Bước 2</span>
+          <h3 class="step-title">Xem mình vấp ở đâu</h3>
+          <p class="step-text">AI đánh dấu vị trí vấp trên bản ghi và tính tỷ lệ trôi chảy.</p>
+        </li>
+        <li class="step-card-teal">
+          <span class="step-number-pill">Bước 3</span>
+          <h3 class="step-title">Luyện bài được đề xuất</h3>
+          <p class="step-text">Nhận bài tập kỹ thuật phù hợp và theo dõi tiến bộ qua từng tuần.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ĐỘI NGŨ CỐ VẤN Y KHOA (ADVISORY BOARD / TESTIMONIALS) -->
+  <!-- CHUYÊN GIA -->
+  <!-- CẦN XÁC MINH trước khi phát hành: danh tính, chứng chỉ và sự đồng ý sử dụng hình ảnh của các cố vấn. -->
   <section class="med-container" id="advisors">
-    <div class="text-center mb-5">
-      <span class="med-badge med-badge-accent mb-2">BAN CỐ VẤN CHUYÊN MÔN</span>
-      <h2 class="h3 fw-bold" style="color:var(--med-teal-dark);">Thẩm Định Bởi Chuyên Viên Âm Ngữ Trị Liệu (SLP)</h2>
+    <div class="landing-section-head">
+      <h2 class="landing-section-title">Được xây dựng cùng chuyên gia</h2>
+      <p class="landing-section-sub">Nội dung bài tập và cách đánh giá được góp ý bởi chuyên viên âm ngữ trị liệu và bác sĩ phục hồi chức năng.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="med-card med-card-hover p-4 h-100">
-          <div class="small fw-bold text-uppercase text-muted mb-2">CHUYÊN GIA TRỊ LIỆU ÂM NGỮ</div>
-          <p class="fst-italic text-muted small mb-3" style="line-height:1.8;">
-            "Fluenta giải quyết chính xác bài toán thiếu hụt chuyên gia tại Việt Nam. Bằng việc định lượng tỷ lệ vấp %SS và chỉ định kỹ thuật Easy Onset đúng cơ chế tắc thanh môn, học viên duy trì phản xạ thư giãn lời nói mỗi ngày một cách an tâm."
-          </p>
-          <div class="border-top pt-2">
-            <div class="fw-bold text-dark">ThS. Sarah Jenkins (SLP-CCC)</div>
-            <div class="small text-muted">Trưởng ban Chuyên môn Trị liệu Âm ngữ ASHA</div>
-          </div>
-        </div>
-      </div>
+    <div class="expert-grid">
+      <figure class="med-card expert-card">
+        <img class="expert-photo" src="assets/images/doctor_sarah.jpg" width="896" height="1200" loading="lazy" alt="Chân dung chuyên viên Sarah Jenkins">
+        <figcaption>
+          <blockquote class="expert-quote">“Đo được tỷ lệ vấp mỗi ngày giúp người tập thấy tiến bộ rõ ràng, nhờ đó họ kiên trì với kỹ thuật lâu hơn.”</blockquote>
+          <div class="expert-name">Sarah Jenkins</div>
+          <div class="expert-role">Chuyên viên âm ngữ trị liệu (SLP)</div>
+        </figcaption>
+      </figure>
 
-      <div class="col-md-6">
-        <div class="med-card med-card-hover p-4 h-100">
-          <div class="small fw-bold text-uppercase text-muted mb-2">CỐ VẤN THẦN KINH LÂM SÀNG</div>
-          <p class="fst-italic text-muted small mb-3" style="line-height:1.8;">
-            "Sự kết hợp giữa xử lý tín hiệu âm thanh Deep Learning và mô hình hướng dẫn LLM tạo ra bước tiến lớn trong trị liệu giọng nói cá nhân hóa. Báo cáo định lượng trích xuất từ Fluenta là nguồn dữ liệu vô giá khi người bệnh đến tái khám."
-          </p>
-          <div class="border-top pt-2">
-            <div class="fw-bold text-dark">TS. BS. Bryce Butler</div>
-            <div class="small text-muted">Cố vấn Phục hồi Chức năng &amp; Vận động Thần kinh Ngôn ngữ</div>
-          </div>
-        </div>
-      </div>
+      <figure class="med-card expert-card">
+        <img class="expert-photo" src="assets/images/doctor_bryce.jpg" width="896" height="1200" loading="lazy" alt="Chân dung bác sĩ Bryce Butler">
+        <figcaption>
+          <blockquote class="expert-quote">“Báo cáo định lượng từ các buổi tập tại nhà là dữ liệu hữu ích khi người bệnh quay lại tái khám.”</blockquote>
+          <div class="expert-name">Bryce Butler</div>
+          <div class="expert-role">Bác sĩ phục hồi chức năng thần kinh – ngôn ngữ</div>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- HỎI ĐÁP FAQ ACCORDION KIỂU MEDICLOUD -->
+  <!-- HỎI ĐÁP -->
   <section class="med-container pt-0" id="faq">
-    <div class="text-center mb-4">
-      <span class="med-badge med-badge-teal mb-2">HỎI ĐÁP Y KHOA</span>
-      <h2 class="h4 fw-bold" style="color:var(--med-teal-dark);">Các Câu Hỏi Thường Gặp Về Quá Trình Luyện Tập</h2>
+    <div class="landing-section-head">
+      <h2 class="landing-section-title">Câu hỏi thường gặp</h2>
     </div>
 
-    <div style="max-width:800px; margin:0 auto;">
-      
-      <!-- FAQ 1 -->
-      <div class="faq-box">
-        <div class="faq-header">
-          <span>1. Tôi có cần phải có thiết bị micro chuyên nghiệp để luyện tập không?</span>
-          <span class="faq-toggle-state">[+]</span>
-        </div>
-        <div class="faq-body" style="display:none;">
-          Không. Hệ thống Fluenta tích hợp bộ lọc nhiễu tự động trong mô hình wav2vec2, cho phép sử dụng micro tích hợp sẵn trên điện thoại hoặc máy tính xách tay thông thường trong không gian phòng yên tĩnh.
-        </div>
-      </div>
+    <div class="med-w-md mx-auto">
+      <details class="med-accordion">
+        <summary>Tôi có cần micro chuyên nghiệp không?</summary>
+        <p>Không. Micro sẵn có trên điện thoại hoặc máy tính xách tay là đủ, miễn là bạn luyện tập trong phòng yên tĩnh. Phòng tập sẽ báo nếu môi trường quá ồn.</p>
+      </details>
+      <details class="med-accordion">
+        <summary>Mất bao lâu để thấy cải thiện?</summary>
+        <p>Tùy mỗi người. Luyện tập đều đặn 10–15 phút mỗi ngày giúp bạn theo dõi tỷ lệ vấp thay đổi qua từng tuần trên trang Tiến trình.</p>
+      </details>
+      <details class="med-accordion">
+        <summary>Giọng nói của tôi có bị chia sẻ công khai không?</summary>
+        <p>Không. Bản ghi được mã hóa đầu cuối. Chỉ bạn và chuyên viên mà bạn chủ động cấp quyền mới xem được báo cáo. Xem chi tiết trong <a href="privacy.html">chính sách bảo mật</a>.</p>
+      </details>
+      <details class="med-accordion">
+        <summary>Fluenta có thay thế được chuyên viên trị liệu không?</summary>
+        <p>Không. Fluenta là công cụ hỗ trợ luyện tập tại nhà, không thay thế chẩn đoán và điều trị trực tiếp của bác sĩ hoặc chuyên viên âm ngữ trị liệu.</p>
+      </details>
+    </div>
 
-      <!-- FAQ 2 -->
-      <div class="faq-box">
-        <div class="faq-header">
-          <span>2. Mất bao lâu để thấy sự cải thiện về độ lưu loát?</span>
-          <span class="faq-toggle-state">[+]</span>
-        </div>
-        <div class="faq-body" style="display:none;">
-          Dữ liệu lâm sàng cho thấy học viên kiên trì luyện tập 10 — 15 phút mỗi ngày với kỹ thuật Easy Onset thường ghi nhận mức giảm tỷ lệ ngắt quãng (%SS) từ 19% xuống 12% rõ rệt sau 4 tuần liên tục.
-        </div>
-      </div>
-
-      <!-- FAQ 3 -->
-      <div class="faq-box">
-        <div class="faq-header">
-          <span>3. Giọng nói của tôi có bị chia sẻ công khai không?</span>
-          <span class="faq-toggle-state">[+]</span>
-        </div>
-        <div class="faq-body" style="display:none;">
-          Tuyệt đối không. Toàn bộ tệp âm thanh được khử định danh và mã hóa theo tiêu chuẩn HIPAA. Chỉ có tài khoản của bạn và chuyên viên y tế bạn chủ động cấp quyền mới có thể truy cập báo cáo.
-        </div>
-      </div>
-
+    <div class="landing-final-cta">
+      <a href="register.html" class="btn-med-primary hero-cta">Bắt đầu đánh giá</a>
     </div>
   </section>
 
@@ -385,14 +213,14 @@
 
 <!-- CHÂN TRANG CHUẨN MEDICLOUD (DEEP TEAL & SYSTEM STATUS) -->
 <footer class="med-footer">
-  <div class="container" style="max-width: 1040px;">
+  <div class="container med-w-2xl">
     <div class="row g-4 mb-4">
       <div class="col-md-5">
         <div class="d-flex align-items-center gap-2 mb-2">
           <span class="med-brand-mark">F</span>
-          <span class="fw-bold text-white fs-5">FLUENTA CLINICAL</span>
+          <span class="fw-bold text-white fs-5">Fluenta Clinical</span>
         </div>
-        <p class="small text-white-50 mb-3" style="line-height:1.7;">
+        <p class="small text-white-50 mb-3 lh-relaxed">
           Nền tảng hỗ trợ phục hồi giọng nói và âm ngữ trị liệu trực tuyến ứng dụng công nghệ Deep Learning và phác đồ ASHA chuẩn mực.
         </p>
         <div class="med-footer-status">
@@ -402,26 +230,26 @@
 
       <div class="col-md-3">
         <div class="fw-bold text-white text-uppercase small mb-3">CHỨC NĂNG HỆ THỐNG</div>
-        <ul class="list-unstyled small" style="line-height:2;">
-          <li><a href="onboarding.html">Đo Mốc Ban Đầu (Baseline)</a></li>
-          <li><a href="practice.html">Phòng Luyện Tập Tương Tác</a></li>
-          <li><a href="library.html">Thư Viện Phác Đồ Can Thiệp</a></li>
-          <li><a href="reports.html">Mẫu Báo Cáo Lâm Sàng</a></li>
+        <ul class="list-unstyled small lh-lg">
+          <li><a href="onboarding.html">Đo mốc ban đầu (Baseline)</a></li>
+          <li><a href="practice.html">Phòng luyện tập tương tác</a></li>
+          <li><a href="library.html">Thư viện phác đồ can thiệp</a></li>
+          <li><a href="reports.html">Mẫu báo cáo lâm sàng</a></li>
         </ul>
       </div>
 
       <div class="col-md-4">
         <div class="fw-bold text-white text-uppercase small mb-3">QUY ĐỊNH &amp; PHÁP LÝ</div>
-        <ul class="list-unstyled small" style="line-height:2;">
-          <li><a href="privacy.html">Chính Sách Bảo Mật Dữ Liệu Âm Thanh</a></li>
-          <li><a href="privacy.html">Tiêu Chuẩn Đạo Đức Dữ Liệu Y Tế</a></li>
-          <li><a href="specialist-connect.html">Kênh Chuyển Giao Bác Sĩ SLP</a></li>
+        <ul class="list-unstyled small lh-lg">
+          <li><a href="privacy.html">Chính sách bảo mật dữ liệu âm thanh</a></li>
+          <li><a href="privacy.html">Tiêu chuẩn đạo đức dữ liệu y tế</a></li>
+          <li><a href="specialist-connect.html">Kênh chuyển giao bác sĩ SLP</a></li>
         </ul>
       </div>
     </div>
 
     <div class="pt-3 border-top border-secondary text-center small text-white-50">
-      FLUENTA CLINICAL TELEHEALTH SAAS © 2026 — DÀNH CHO MỤC ĐÍCH HỖ TRỢ LUYỆN TẬP ÂM NGỮ TẠI NHÀ
+      Fluenta Clinical Telehealth SaaS © 2026 — dành cho mục đích hỗ trợ luyện tập âm ngữ tại nhà
     </div>
   </div>
 </footer>

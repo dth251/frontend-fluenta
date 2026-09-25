@@ -1,12 +1,394 @@
 /* ========================================================
    PROGRESS TRACKING STYLES (progress.css)
+   Line chart %SS, dải 7 ngày, danh sách phiên dạng hàng
    ======================================================== */
-.progress-calendar-table th, 
-.progress-calendar-table td {
-  text-align: center;
-  vertical-align: middle;
+.progress-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
 }
 
-.progress-highlight-row td {
-  background-color: #f0fdf4;
+.progress-head-sub {
+  color: var(--med-text-muted);
+}
+
+/* ---------- Line chart ---------- */
+.ss-chart {
+  margin: 0;
+}
+
+.ss-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ss-target {
+  fill: var(--med-success-bg);
+  stroke: var(--med-success-border);
+}
+
+.ss-target-label {
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  fill: var(--med-success);
+}
+
+.ss-grid line {
+  stroke: var(--med-border-subtle);
+}
+
+.ss-baseline-axis {
+  stroke: var(--med-border-strong);
+}
+
+.ss-axis text {
+  font-size: 12px;
+  fill: var(--med-text-sub);
+}
+
+.ss-ref {
+  stroke: var(--med-text-sub);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+}
+
+.ss-ref-label {
+  font-size: 12px;
+  font-weight: var(--fw-semibold);
+  fill: var(--med-text-muted);
+}
+
+.ss-line {
+  fill: none;
+  stroke: var(--med-accent);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.ss-point circle:not(.ss-hit) {
+  fill: var(--med-accent);
+  stroke: var(--med-white);
+  stroke-width: 2;
+}
+
+.ss-point-current circle:not(.ss-hit) {
+  fill: var(--med-teal-dark);
+}
+
+.ss-hit {
+  fill: transparent;
+}
+
+.ss-point:hover .ss-hit,
+.ss-point:focus-visible .ss-hit {
+  fill: var(--med-primary-light);
+  stroke: var(--med-primary);
+}
+
+.ss-point:focus-visible {
+  outline: none;
+}
+
+.ss-current-label {
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  fill: var(--med-teal-dark);
+}
+
+.ss-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+}
+
+.ss-summary > div {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--med-bg);
+  border: 1px solid var(--med-border);
+}
+
+.ss-summary dt {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  color: var(--med-text-sub);
+}
+
+.ss-summary dd {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: var(--fw-bold);
+  color: var(--med-teal-dark);
+}
+
+/* ---------- 7 ô trạng thái ---------- */
+.week-count {
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--med-teal-dark);
+}
+
+.week-strip {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 2px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--med-border);
+  background: var(--med-white);
+  text-align: center;
+}
+
+.week-day-name {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--med-text-muted);
+}
+
+.week-day-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: var(--fw-bold);
+  background: var(--med-surface-muted);
+  color: var(--med-text-sub);
+}
+
+.week-day-status {
+  font-size: var(--fs-label);
+  color: var(--med-text-muted);
+}
+
+.week-day[data-status="done"] {
+  background: var(--med-success-bg);
+  border-color: var(--med-success-border);
+}
+
+.week-day[data-status="done"] .week-day-icon {
+  background: var(--med-success);
+  color: var(--med-white);
+}
+
+.week-day[data-status="today"] {
+  border: 2px solid var(--med-accent);
+  background: var(--med-accent-light);
+}
+
+.week-day[data-status="today"] .week-day-icon {
+  background: var(--med-accent);
+  color: var(--med-white);
+}
+
+.week-day[data-status="upcoming"] {
+  border-style: dashed;
+}
+
+/* ---------- Phiên gần đây ---------- */
+.session-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.session-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--med-border-subtle);
+}
+
+.session-row:first-child {
+  padding-top: 0;
+}
+
+.session-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.session-row-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.session-row-time {
+  font-weight: var(--fw-semibold);
+  color: var(--med-teal-dark);
+}
+
+.session-row-sub {
+  font-size: var(--fs-meta);
+  color: var(--med-text-sub);
+}
+
+.session-row-score {
+  font-size: 1.125rem;
+  font-weight: var(--fw-bold);
+  color: var(--med-teal-dark);
+  text-align: right;
+  line-height: 1.2;
+}
+
+.session-row-score span {
+  display: block;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-regular);
+  color: var(--med-text-sub);
+}
+
+.session-toggle {
+  display: none;
+}
+
+.session-row-detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-4);
+}
+
+.session-facts {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.session-facts dt {
+  font-size: var(--fs-label);
+  font-weight: var(--fw-regular);
+  color: var(--med-text-sub);
+}
+
+.session-row-detail .btn-med-sm,
+.session-facts dt {
+  white-space: nowrap;
+}
+
+.session-facts dd {
+  white-space: nowrap;
+  margin: 0;
+  font-size: var(--fs-body-sm);
+  font-weight: var(--fw-semibold);
+}
+
+/* ---------- Chia sẻ ---------- */
+.progress-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--med-teal-light);
+  border: 1px solid var(--med-teal-border);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px) {
+  /* Chỉ hiện dữ liệu quan trọng; chi tiết mở khi bấm (khi JS sẵn sàng) */
+  .session-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .session-row-main {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+
+  .js-collapsible .session-toggle {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 var(--space-3);
+    border: 1px solid var(--med-border-strong);
+    border-radius: var(--radius-pill);
+    background: var(--med-white);
+    font: inherit;
+    font-size: var(--fs-meta);
+    font-weight: var(--fw-medium);
+    color: var(--med-teal-dark);
+    cursor: pointer;
+  }
+
+  .js-collapsible .session-toggle[aria-expanded="true"] {
+    background: var(--med-primary-light);
+    border-color: var(--med-primary);
+  }
+
+  .js-collapsible .session-row-detail {
+    display: none;
+  }
+
+  .js-collapsible .session-row.is-open .session-row-detail {
+    display: flex;
+  }
+
+  .session-row-detail {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    background: var(--med-bg);
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* SVG co theo khung -> tăng chữ theo đơn vị viewBox */
+  .ss-axis text,
+  .ss-target-label,
+  .ss-ref-label {
+    font-size: 21px;
+  }
+
+  .ss-current-label {
+    font-size: 22px;
+  }
+
+  .ss-summary dd {
+    font-size: 1.0625rem;
+  }
+
+  .progress-share {
+    padding: var(--space-4);
+  }
+}
+
+@media (max-width: 399.98px) {
+  .week-strip {
+    gap: 4px;
+  }
+
+  /* Chữ trạng thái chỉ ẩn khỏi mắt, trình đọc màn hình vẫn đọc; biểu tượng ✓ ● – vẫn phân biệt */
+  .week-day-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }

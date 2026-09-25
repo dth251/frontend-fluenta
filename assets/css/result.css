@@ -1,39 +1,302 @@
 /* ========================================================
    RESULT PAGE STYLES (result.css)
+   Kết luận -> 3 chỉ số -> waveform có marker -> phân tích (thu gọn) -> 1 CTA
    ======================================================== */
-.result-waveform-box {
-  background: #f8fafc;
-  border: 1px solid var(--med-border);
-  padding: 12px;
-  border-radius: var(--radius-sm);
+
+/* ---------- Kết luận ---------- */
+.result-hero {
+  margin-bottom: var(--space-6);
 }
 
-.med-waveform {
+.result-verdict-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--med-success-bg);
+  border: 1px solid var(--med-success-border);
+  color: var(--med-success);
+  font-size: var(--fs-meta);
+  font-weight: var(--fw-semibold);
+}
+
+.result-hero-text {
+  max-width: 62ch;
+  margin: var(--space-3) 0 var(--space-2);
+  font-size: 1.0625rem;
+  color: var(--med-text-main);
+}
+
+.result-hero-meta {
+  margin: 0;
+  font-size: var(--fs-meta);
+  color: var(--med-text-sub);
+}
+
+.result-hero-meta a {
+  color: var(--med-primary);
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Chỉ số ---------- */
+.result-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.result-unit {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  color: var(--med-text-muted);
+}
+
+.result-delta {
   display: flex;
-  align-items: flex-end;
-  gap: 3px;
-  height: 56px;
-  padding: 8px;
-  background: #ffffff;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+  font-size: var(--fs-caption);
+  color: var(--med-text-muted);
+}
+
+.result-delta-good span {
+  color: var(--med-success);
+  font-weight: var(--fw-bold);
+}
+
+/* ---------- Waveform ---------- */
+.result-wave {
+  margin: 0 0 var(--space-4);
+}
+
+.result-wave svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.wave-bar {
+  fill: var(--med-teal-soft);
+  opacity: 0.55;
+}
+
+.wave-block-zone {
+  fill: var(--med-accent-light);
+  stroke: var(--med-accent-border);
+  stroke-width: 1;
+}
+
+.wave-axis {
+  stroke: var(--med-border-strong);
+}
+
+.wave-tick {
+  font-size: 11px;
+  fill: var(--med-text-sub);
+}
+
+.wave-marker-line {
+  stroke: var(--med-accent);
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+
+.wave-marker-dot {
+  fill: var(--med-accent);
+  stroke: var(--med-white);
+  stroke-width: 2;
+}
+
+.wave-marker-num {
+  font-size: 12px;
+  font-weight: var(--fw-bold);
+  fill: var(--med-white);
+}
+
+.wave-marker {
+  cursor: default;
+}
+
+.wave-marker:hover .wave-marker-dot,
+.wave-marker:focus-visible .wave-marker-dot {
+  fill: var(--med-accent-hover);
+  stroke: var(--med-teal-dark);
+}
+
+.wave-marker:focus-visible {
+  outline: none;
+}
+
+.result-wave-caption {
+  margin-top: var(--space-2);
+  font-size: var(--fs-meta);
+  color: var(--med-text-sub);
+}
+
+.event-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.event-item {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3);
   border: 1px solid var(--med-border);
   border-radius: var(--radius-sm);
+  background: var(--med-bg);
 }
 
-.med-waveform span {
-  width: 4px;
-  background: #94a3b8;
-  border-radius: 1px;
+.event-num {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--med-accent);
+  color: var(--med-white);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-bold);
 }
 
-.med-waveform span.mark {
-  background: #d97706;
+.event-word {
+  font-weight: var(--fw-semibold);
+  color: var(--med-teal-dark);
 }
 
-.result-tag-pill {
+.event-desc {
+  font-size: var(--fs-meta);
+  color: var(--med-text-muted);
+}
+
+/* ---------- Phân tích chuyên môn ---------- */
+.result-expert {
+  margin-bottom: var(--space-6);
+}
+
+.result-expert-title {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semibold);
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.result-expert-note {
+  margin: var(--space-2) 0 var(--space-5);
+  font-size: var(--fs-meta);
+  color: var(--med-text-sub);
+}
+
+.result-word-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
+  padding: 0;
+}
+
+.result-word-list li {
+  padding: 6px var(--space-3);
   border: 1px solid var(--med-border);
   border-radius: var(--radius-sm);
-  padding: 6px 12px;
-  font-size: 13.5px;
-  background: #ffffff;
-  font-weight: 600;
+  background: var(--med-white);
+  font-weight: var(--fw-semibold);
+}
+
+.result-expert-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+  margin: 0;
+}
+
+.result-expert-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--med-primary);
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- CTA cuối trang ---------- */
+.result-next {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--med-primary-light);
+  border: 1px solid var(--med-primary-border);
+}
+
+.result-next-title {
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-1);
+}
+
+.result-next-text {
+  margin: 0;
+  color: var(--med-text-muted);
+}
+
+.result-next-cta {
+  padding: 14px var(--space-8);
+  font-size: var(--fs-body);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 767.98px) {
+  .event-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .result-metrics {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+
+  .result-metrics .med-metric-box {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    column-gap: var(--space-3);
+  }
+
+  .result-metrics .med-metric-val {
+    grid-row: 1 / 3;
+    grid-column: 2;
+    align-self: center;
+  }
+
+  /* SVG co lại -> tăng chữ theo đơn vị viewBox */
+  .wave-tick {
+    font-size: 20px;
+  }
+
+  .result-next {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .result-next-cta {
+    width: 100%;
+  }
 }

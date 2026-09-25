@@ -4,166 +4,173 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Báo Cáo Lâm Sàng Cho Chuyên Gia SLP</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/reports.css" rel="stylesheet">
 </head>
-<body>
+<body class="app-body">
 
-<!-- THANH TIÊU CHUẨN Y KHOA TRÊN CÙNG -->
-<div class="med-topbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <span>TRUNG TÂM DỮ LIỆU ÂM NGỮ TRỊ LIỆU LÂM SÀNG</span>
-        <span class="separator">|</span>
-        <span>HỒ SƠ BỆNH ÁN: FL-2026-0842</span>
-      </div>
-      <div>
-        <span>ĐỊNH DẠNG BÁO CÁO CHUẨN ASHA</span>
-      </div>
-    </div>
-  </div>
-</div>
+<a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
 
-<!-- THANH ĐIỀU HƯỚNG CHUẨN Y TẾ -->
-<header class="med-navbar">
-  <div class="container" style="max-width: 980px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <a class="med-brand" href="index.html">
-        <span class="med-brand-title">FLUENTA</span>
-        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+<div class="app-shell">
+  <!-- THANH ĐIỀU HƯỚNG NGANG: LOGO + MENU + AVATAR HỒ SƠ -->
+  <header class="app-header">
+    <div class="app-bar-inner">
+      <a class="med-brand" href="index.html" aria-label="Fluenta - Trang chủ">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
 
-      <nav>
-        <ul class="med-nav-list">
-          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
-          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
-          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
-          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
-          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
-          <li><a class="med-nav-link active" href="reports.html">BÁO CÁO</a></li>
-          <li><a class="med-nav-link" href="specialist-connect.html">KẾT NỐI BS</a></li>
-          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+      <nav class="app-topnav" aria-label="Điều hướng chính">
+        <ul class="app-nav">
+          <li><a class="app-nav-link" href="index.html">Tổng quan</a></li>
+          <li><a class="app-nav-link" href="practice.html">Luyện tập</a></li>
+          <li><a class="app-nav-link active" href="progress.html" aria-current="page">Tiến trình</a></li>
+          <li><a class="app-nav-link" href="library.html">Thư viện</a></li>
+          <li><a class="app-nav-link" href="specialist-connect.html">Kết nối</a></li>
         </ul>
       </nav>
+
+      <div class="dropdown app-user">
+        <button class="app-user-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Tài khoản: Nguyễn Văn Minh">
+          <span class="app-avatar"><svg class="app-avatar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5z"/></svg></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end app-user-menu">
+          <li class="app-user-info">
+            <span class="app-user-info-name">Nguyễn Văn Minh</span>
+            <span class="app-user-info-id">Mã hồ sơ: FL-2026-0842</span>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+          <li><a class="dropdown-item" href="settings.html">Cài đặt</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Đăng xuất</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main class="med-container" style="max-width: 860px;">
+<main id="main-content" class="med-container med-w-lg">
 
-  <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex justify-content-between align-items-center mb-3 no-print">
     <div>
-      <h1 class="h5 fw-bold mb-0 text-dark">BÁO CÁO DỮ LIỆU ĐO LƯỜNG ÂM NGỮ ĐỊNH LƯỢNG</h1>
+      <h1 class="med-page-title mb-0">Báo cáo dữ liệu đo lường âm ngữ định lượng</h1>
       <div class="text-muted small">Phục vụ tham vấn chuyên môn với Bác sĩ &amp; Chuyên viên Âm ngữ trị liệu (SLP)</div>
     </div>
-    <div class="d-flex gap-2">
-      <button class="btn-med-primary" onclick="window.print()">IN BÁO CÁO (PDF)</button>
-      <a href="specialist-connect.html" class="btn-med-secondary">CHUYỂN GIAO CHO CHUYÊN GIA</a>
+    <div class="d-flex gap-2 med-actions">
+      <button class="btn-med-primary" onclick="window.print()">In báo cáo (PDF)</button>
+      <a href="specialist-connect.html" class="btn-med-secondary">Chuyển giao cho chuyên gia</a>
     </div>
   </div>
 
   <!-- PHIẾU BÁO CÁO Y KHOA CHUẨN HÓA -->
-  <section class="med-card" style="border: 2px solid var(--med-navy);">
+  <section class="med-card report-sheet-card">
     
     <!-- TIÊU ĐỀ BÁO CÁO CHÍNH THỨC -->
     <div class="text-center pb-3 mb-4 border-bottom">
-      <div class="fw-bold text-uppercase" style="letter-spacing: 1px; color: var(--med-navy); font-size: 13px;">
-        HỆ THỐNG PHÂN TÍCH ÂM HỌC VÀ TRỊ LIỆU LỜI NÓI FLUENTA
+      <div class="fw-bold report-header-emblem">
+        Hệ thống phân tích âm học và trị liệu lời nói Fluenta
       </div>
-      <h2 class="h5 fw-bold text-dark mt-2 mb-1">BẢNG TỔNG HỢP CHỈ SỐ ÂM NGỮ ĐỊNH LƯỢNG TẠI NHÀ</h2>
+      <h2 class="h5 fw-bold text-dark mt-2 mb-1">Bảng tổng hợp chỉ số âm ngữ định lượng tại nhà</h2>
       <div class="text-muted small">Mã số theo dõi: FL-2026-0842 | Ngày xuất báo cáo: 25/09/2026</div>
     </div>
 
     <!-- PHẦN 1: THÔNG TIN HỌC VIÊN / BỆNH NHÂN -->
     <div class="mb-4">
-      <div class="fw-bold text-uppercase small text-dark mb-2 pb-1 border-bottom">
-        I. THÔNG TIN HỌC VIÊN
+      <div class="fw-bold small text-dark mb-2 pb-1 border-bottom">
+        I. Thông tin học viên
       </div>
-      <table class="med-table">
-        <tbody>
-          <tr>
-            <td style="width: 25%;" class="fw-bold">Họ và tên:</td>
-            <td style="width: 35%;">Nguyễn Văn Minh</td>
-            <td style="width: 20%;" class="fw-bold">Tuổi:</td>
-            <td>24</td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Chẩn đoán phân loại:</td>
-            <td>Nói lắp thể co cứng (Block)</td>
-            <td class="fw-bold">Kỳ đánh giá:</td>
-            <td>30 ngày liên tục</td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Đơn vị theo dõi:</td>
-            <td colspan="3">Nền tảng Âm ngữ Trị liệu Fluenta (Thu thập dữ liệu Audio-only)</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="med-table-wrap med-table-wrap-wide">
+        <table class="med-table">
+          <tbody>
+            <tr>
+              <td class="fw-bold w-25">Họ và tên:</td>
+              <td class="w-35">Nguyễn Văn Minh</td>
+              <td class="fw-bold w-20">Tuổi:</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Chẩn đoán phân loại:</td>
+              <td>Nói lắp thể co cứng (Block)</td>
+              <td class="fw-bold">Kỳ đánh giá:</td>
+              <td>30 ngày liên tục</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Đơn vị theo dõi:</td>
+              <td colspan="3">Nền tảng Âm ngữ Trị liệu Fluenta (Thu thập dữ liệu Audio-only)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- PHẦN 2: CHỈ SỐ ĐO LƯỜNG ĐỊNH LƯỢNG SO SÁNH -->
     <div class="mb-4">
-      <div class="fw-bold text-uppercase small text-dark mb-2 pb-1 border-bottom">
-        II. CHỈ SỐ ĐỊNH LƯỢNG LÂM SÀNG (ĐỐI CHIẾU 30 NGÀY)
+      <div class="fw-bold small text-dark mb-2 pb-1 border-bottom">
+        II. Chỉ số định lượng lâm sàng (đối chiếu 30 ngày)
       </div>
-      <table class="med-table">
-        <thead>
-          <tr>
-            <th>THÔNG SỐ ÂM HỌC</th>
-            <th>MỐC BAN ĐẦU (TUẦN 1)</th>
-            <th>HIỆN TẠI (TUẦN 4)</th>
-            <th>MỨC ĐỘ THAY ĐỔI</th>
-            <th>KHOẢNG THAM CHIẾU</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="fw-bold">Tỷ lệ vấp (%SS)</td>
-            <td>19.0%</td>
-            <td class="text-success fw-bold">12.0%</td>
-            <td class="text-success fw-bold">Giảm 7.0%</td>
-            <td>Dưới 5% (Mức bình thường)</td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Số buổi luyện tập hoàn thành</td>
-            <td>—</td>
-            <td class="fw-bold">28 / 30 ngày</td>
-            <td>Tỷ lệ 93.3%</td>
-            <td>Tối thiểu 80%</td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Thời lượng nghẽn trung bình</td>
-            <td>0.68 giây</td>
-            <td class="fw-bold">0.38 giây</td>
-            <td>Giảm 0.30 giây</td>
-            <td>Dưới 0.50 giây</td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Tốc độ phát âm</td>
-            <td>96 từ/phút</td>
-            <td class="fw-bold">118 từ/phút</td>
-            <td>Tăng 22 từ/phút</td>
-            <td>110 — 140 từ/phút</td>
-          </tr>
-          <tr>
-            <td class="fw-bold">Tuân thủ kỹ thuật Easy Onset</td>
-            <td>42%</td>
-            <td class="fw-bold text-primary">86%</td>
-            <td>Tăng 44%</td>
-            <td>Trên 80%</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="med-table-wrap med-table-wrap-wide">
+        <table class="med-table">
+          <thead>
+            <tr>
+              <th>Thông số âm học</th>
+              <th>Mốc ban đầu (tuần 1)</th>
+              <th>Hiện tại (tuần 4)</th>
+              <th>Mức độ thay đổi</th>
+              <th>Khoảng tham chiếu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="fw-bold">Tỷ lệ vấp (%SS)</td>
+              <td>19.0%</td>
+              <td class="text-success fw-bold">12.0%</td>
+              <td class="text-success fw-bold">Giảm 7.0%</td>
+              <td>Dưới 5% (Mức bình thường)</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Số buổi luyện tập hoàn thành</td>
+              <td>—</td>
+              <td class="fw-bold">28 / 30 ngày</td>
+              <td>Tỷ lệ 93.3%</td>
+              <td>Tối thiểu 80%</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Thời lượng nghẽn trung bình</td>
+              <td>0.68 giây</td>
+              <td class="fw-bold">0.38 giây</td>
+              <td>Giảm 0.30 giây</td>
+              <td>Dưới 0.50 giây</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Tốc độ phát âm</td>
+              <td>96 từ/phút</td>
+              <td class="fw-bold">118 từ/phút</td>
+              <td>Tăng 22 từ/phút</td>
+              <td>110 — 140 từ/phút</td>
+            </tr>
+            <tr>
+              <td class="fw-bold">Tuân thủ kỹ thuật Easy Onset</td>
+              <td>42%</td>
+              <td class="fw-bold text-primary">86%</td>
+              <td>Tăng 44%</td>
+              <td>Trên 80%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- PHẦN 3: GHI NHẬN CỦA MÔ HÌNH DEEP LEARNING (TẦNG 1) -->
     <div class="mb-4">
-      <div class="fw-bold text-uppercase small text-dark mb-2 pb-1 border-bottom">
-        III. KẾT LUẬN ÂM HỌC TỪ MÔ HÌNH AI (DEEP LEARNING TẦNG 1)
+      <div class="fw-bold small text-dark mb-2 pb-1 border-bottom">
+        III. Kết luận âm học từ mô hình AI (Deep Learning tầng 1)
       </div>
-      <div class="small text-muted" style="line-height: 1.8;">
+      <div class="small text-muted lh-loose">
         1. <strong>Đặc điểm ngắt quãng nổi bật:</strong> Hiện tượng tắc nghẽn nếp thanh âm (Laryngeal Block) chủ yếu xuất hiện ở các âm xát và âm tắc bật hơi đầu câu (/s/, /tr/).<br>
         2. <strong>Đáp ứng kỹ thuật:</strong> Học viên phản xạ tốt với kỹ thuật Khởi âm êm dịu (Easy Onset); biên độ dao động sóng âm đầu câu không còn biểu hiện giật cục hay ngắt quãng đột ngột.<br>
         3. <strong>Hành vi thứ phát:</strong> Không ghi nhận tình trạng chêm từ (interjection) vô nghĩa hay hiện tượng lặp lại toàn bộ câu.
@@ -172,24 +179,24 @@
 
     <!-- PHẦN 4: KHUYẾN NGHỊ CAN THIỆP TIẾP THEO -->
     <div class="mb-3">
-      <div class="fw-bold text-uppercase small text-dark mb-2 pb-1 border-bottom">
-        IV. KHUYẾN NGHỊ PHÁC ĐỒ ĐIỀU TRỊ TIẾP THEO (TẦNG 2: LLM GUIDANCE)
+      <div class="fw-bold small text-dark mb-2 pb-1 border-bottom">
+        IV. Khuyến nghị phác đồ điều trị tiếp theo (tầng 2: LLM Guidance)
       </div>
-      <div class="small text-muted" style="line-height: 1.8;">
+      <div class="small text-muted lh-loose">
         • Tiếp tục duy trì bài tập Easy Onset cấp độ đoạn văn ngắn 30 giây.<br>
         • Bổ sung bài tập Chạm nhẹ cấu âm (Light Articulatory Contact) cho các phụ âm môi (/b/, /p/).<br>
         • Khuyến nghị tái đánh giá trực tiếp cùng chuyên viên SLP sau 4 tuần tiếp theo.
       </div>
     </div>
 
-    <div class="pt-3 border-top mt-4 d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div class="d-flex flex-wrap gap-2">
-        <a href="progress.html" class="btn-med-secondary">QUAY LẠI TIẾN TRÌNH</a>
-        <a href="practice.html" class="btn-med-secondary">VÀO PHÒNG TẬP TIẾP</a>
+    <div class="pt-3 border-top mt-4 d-flex flex-wrap justify-content-between align-items-center gap-2 no-print">
+      <div class="d-flex flex-wrap gap-2 med-actions">
+        <a href="progress.html" class="btn-med-secondary">Quay lại tiến trình</a>
+        <a href="practice.html" class="btn-med-secondary">Vào phòng tập tiếp</a>
       </div>
-      <div class="d-flex flex-wrap gap-2">
-        <button class="btn-med-secondary" onclick="window.print()">IN BÁO CÁO (PDF)</button>
-        <a href="specialist-connect.html" class="btn-med-primary">GỬI CHO CHUYÊN GIA SLP</a>
+      <div class="d-flex flex-wrap gap-2 med-actions">
+        <button class="btn-med-secondary" onclick="window.print()">In báo cáo (PDF)</button>
+        <a href="specialist-connect.html" class="btn-med-primary">Gửi cho chuyên gia SLP</a>
       </div>
     </div>
 
@@ -197,11 +204,23 @@
 
 </main>
 
-<footer class="med-footer">
-  <div class="container" style="max-width: 980px;">
-    <div>FLUENTA CLINICAL SYSTEM © 2026 — BÁO CÁO BẢO MẬT THEO TIÊU CHUẨN Y TẾ</div>
-  </div>
-</footer>
+  <footer class="med-footer">
+    <div class="container med-w-xl">
+      <div>Fluenta Clinical System © 2026 — báo cáo bảo mật theo tiêu chuẩn y tế</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ĐIỀU HƯỚNG DƯỚI ĐÁY (MOBILE & TABLET < 992px) -->
+<nav class="app-bottom-nav" aria-label="Điều hướng chính">
+  <a class="app-bottom-link" href="index.html">Tổng quan</a>
+  <a class="app-bottom-link" href="practice.html">Luyện tập</a>
+  <a class="app-bottom-link active" href="progress.html" aria-current="page">Tiến trình</a>
+  <a class="app-bottom-link" href="library.html">Thư viện</a>
+  <a class="app-bottom-link" href="specialist-connect.html">Kết nối</a>
+</nav>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/reports.js"></script>

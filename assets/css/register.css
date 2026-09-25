@@ -2,15 +2,15 @@
    REGISTER PAGE STYLES (register.css)
    ======================================================== */
 .register-box {
-  max-width: 580px;
+  max-width: var(--container-sm);
   margin: 0 auto;
 }
 
 .register-consent-box {
-  background: #f8fafc;
+  background: var(--med-bg);
   border: 1px solid var(--med-border);
-  padding: 12px;
+  padding: var(--space-3);
   border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: var(--fs-body-sm);
   color: var(--med-text-muted);
 }

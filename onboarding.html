@@ -4,33 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Khảo Sát Ban Đầu &amp; Hồ Sơ Bệnh Học</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/onboarding.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="med-topbar">
-  <div class="container" style="max-width: 720px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <span>QUY TRÌNH THIẾT LẬP HỒ SƠ BAN ĐẦU (ONBOARDING)</span>
-      <span>HỒ SƠ MÃ: FL-2026-0842</span>
-    </div>
-  </div>
-</div>
 
 <header class="med-navbar">
-  <div class="container" style="max-width: 720px;">
+  <div class="container med-w-md">
     <div class="text-center py-2">
-      <a class="med-brand d-inline-block" href="landing.html">
-        <span class="med-brand-title">FLUENTA</span>
-        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+      <a class="med-brand d-inline-block" href="landing.html" aria-label="Fluenta">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
     </div>
   </div>
 </header>
 
-<main class="med-container" style="max-width: 720px;">
+<main class="med-container med-w-md">
 
   <!-- TRACKER 3 BƯỚC -->
   <div class="step-tracker">
@@ -41,16 +37,15 @@
 
   <section class="med-card">
     <div class="med-card-header">
-      <h1 class="med-card-title">PHIẾU THU THẬP TIỀN SỬ &amp; MỤC TIÊU PHỤC HỒI</h1>
-      <span class="med-badge med-badge-primary">Bước 2 / 3</span>
+      <h1 class="med-page-title">Phiếu thu thập tiền sử &amp; mục tiêu phục hồi</h1>
     </div>
 
     <form id="onboardingForm">
       
       <!-- CÂU 1: MỨC ĐỘ TỰ ĐÁNH GIÁ -->
       <div class="med-form-group">
-        <label class="med-label">1. Mức độ nói lắp bạn tự nhận thấy trong giao tiếp hàng ngày:</label>
-        <select class="med-select" required>
+        <label for="onboarding-field-6" class="med-label">1. Mức độ nói lắp bạn tự nhận thấy trong giao tiếp hàng ngày:</label>
+        <select id="onboarding-field-6" class="med-select" required>
           <option value="mild">Nhẹ — Thỉnh thoảng vấp ở từ đầu câu, giao tiếp cơ bản bình thường</option>
           <option value="moderate" selected>Trung bình — Hay bị nghẽn hơi hoặc lặp từ khi thuyết trình, căng thẳng</option>
           <option value="severe">Nặng — Thường xuyên kẹt âm, khó khăn khi bắt đầu mọi câu nói</option>
@@ -62,21 +57,21 @@
         <label class="med-label">2. Dạng ngắt quãng bạn thường gặp nhất:</label>
         <div class="p-3 bg-light border rounded">
           <div class="mb-2">
-            <label><input type="checkbox" checked> <strong>Block (Nghẽn âm):</strong> Cảm giác bị cứng cơ họng, muốn nói nhưng không ra hơi</label>
+            <label class="med-check" for="onboarding-field-5"><input id="onboarding-field-5" type="checkbox" checked> <strong>Block (Nghẽn âm):</strong> Cảm giác bị cứng cơ họng, muốn nói nhưng không ra hơi</label>
           </div>
           <div class="mb-2">
-            <label><input type="checkbox"> <strong>Lặp âm / từ:</strong> Lặp lại âm đầu câu (ví dụ: "t... t... tôi")</label>
+            <label class="med-check" for="onboarding-field-4"><input id="onboarding-field-4" type="checkbox"> <strong>Lặp âm / từ:</strong> Lặp lại âm đầu câu (ví dụ: "t... t... tôi")</label>
           </div>
           <div>
-            <label><input type="checkbox"> <strong>Kéo dài âm:</strong> Kéo dãn trường độ một nguyên âm hoặc phụ âm</label>
+            <label class="med-check" for="onboarding-field-3"><input id="onboarding-field-3" type="checkbox"> <strong>Kéo dài âm:</strong> Kéo dãn trường độ một nguyên âm hoặc phụ âm</label>
           </div>
         </div>
       </div>
 
       <!-- CÂU 3: CHUYÊN GIA ĐỒNG HÀNH -->
       <div class="med-form-group">
-        <label class="med-label">3. Bạn hiện có đang điều trị trực tiếp với Bác sĩ hoặc Chuyên gia Âm ngữ trị liệu (SLP) nào không?</label>
-        <select class="med-select" required>
+        <label for="onboarding-field-2" class="med-label">3. Bạn hiện có đang điều trị trực tiếp với Bác sĩ hoặc Chuyên gia Âm ngữ trị liệu (SLP) nào không?</label>
+        <select id="onboarding-field-2" class="med-select" required>
           <option value="no">Chưa từng thăm khám chuyên khoa — Tự luyện tập tại nhà</option>
           <option value="past">Đã từng thăm khám trước đây nhưng hiện tại ngưng</option>
           <option value="yes" selected>Đang theo dõi định kỳ với chuyên viên SLP</option>
@@ -85,8 +80,8 @@
 
       <!-- CÂU 4: MỤC TIÊU -->
       <div class="med-form-group">
-        <label class="med-label">4. Mục tiêu luyện tập chính cùng Fluenta:</label>
-        <select class="med-select" required>
+        <label for="onboarding-field-1" class="med-label">4. Mục tiêu luyện tập chính cùng Fluenta:</label>
+        <select id="onboarding-field-1" class="med-select" required>
           <option value="smooth" selected>Làm chủ kỹ thuật Khởi âm êm dịu (Easy Onset) để giảm nghẽn âm</option>
           <option value="confidence">Tăng sự tự tin khi nói chuyện trước đám đông</option>
           <option value="report">Đo lường dữ liệu khách quan để trao đổi với bác sĩ điều trị</option>
@@ -94,13 +89,13 @@
       </div>
 
       <div class="pt-3 border-top d-flex flex-wrap justify-content-between align-items-center gap-2">
-        <div class="d-flex gap-2">
-          <a href="register.html" class="btn-med-secondary">QUAY LẠI BƯỚC 1</a>
-          <a href="landing.html" class="btn-med-secondary">VỀ TRANG CHỦ</a>
+        <div class="d-flex gap-2 med-actions">
+          <a href="register.html" class="btn-med-secondary">Quay lại bước 1</a>
+          <a href="landing.html" class="btn-med-secondary">Về trang chủ</a>
         </div>
-        <div class="d-flex gap-2">
-          <a href="baseline-test.html" class="btn-med-secondary">BỎ QUA (ĐO MỐC NGAY)</a>
-          <button type="submit" class="btn-med-primary">TIẾP TỤC ĐẾN BÀI ĐO MỐC</button>
+        <div class="d-flex gap-2 med-actions">
+          <a href="baseline-test.html" class="btn-med-secondary">Bỏ qua (đo mốc ngay)</a>
+          <button type="submit" class="btn-med-primary">Tiếp tục đến bài đo mốc</button>
         </div>
       </div>
     </form>
@@ -110,7 +105,7 @@
 
 <footer class="med-footer">
   <div class="container text-center">
-    <div>FLUENTA CLINICAL SYSTEM © 2026 — QUY TRÌNH THU THẬP BỆNH SỬ CHUẨN ASHA</div>
+    <div>Fluenta Clinical System © 2026 — quy trình thu thập bệnh sử chuẩn ASHA</div>
   </div>
 </footer>
 

@@ -1,16 +1,137 @@
 /* ========================================================
    PROFILE PAGE STYLES (profile.css)
+   Kiểu .account-* dùng chung cho Hồ sơ cá nhân và Cài đặt
    ======================================================== */
-.profile-info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
+.account-head {
+  margin-bottom: var(--space-5);
 }
 
-.profile-action-group {
+.account-head-sub,
+.account-text {
+  color: var(--med-text-muted);
+}
+
+.account-head-sub a,
+.account-text a {
+  color: var(--med-primary);
+  font-weight: var(--fw-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.account-form-footer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 14px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
   border-top: 1px solid var(--med-border);
+}
+
+.account-status {
+  flex: 1;
+  margin: 0;
+  font-size: var(--fs-body-sm);
+  color: var(--med-success);
+}
+
+.account-status:empty {
+  display: none;
+}
+
+@media (max-width: 575.98px) {
+  .account-form-footer .btn-med-primary {
+    width: 100%;
+  }
+}
+
+.profile-avatar-lg {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--med-white);
+  box-shadow: 0 0 0 1px var(--med-border), var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+/* ---------- KHU VỰC TẢI ẢNH ĐẠI DIỆN ---------- */
+.profile-avatar-uploader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-bottom: var(--space-5);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px solid var(--med-border);
+}
+
+.profile-avatar-frame {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--med-accent);
+  border: 2px solid var(--med-white);
+  box-shadow: 0 0 0 1px var(--med-border), var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--med-accent);
+}
+
+.profile-avatar-svg {
+  width: 44px;
+  height: 44px;
+  fill: var(--med-white);
+}
+
+.profile-avatar-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-avatar-hint {
+  font-size: var(--fs-caption);
+  color: var(--med-text-muted);
+  line-height: var(--lh-tight);
+}
+
+.btn-med-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: var(--fs-caption);
+  color: var(--med-text-sub);
+}
+
+.btn-med-link-btn:hover {
+  color: var(--med-danger) !important;
+}
+
+@media (max-width: 575.98px) {
+  .profile-avatar-uploader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
 }

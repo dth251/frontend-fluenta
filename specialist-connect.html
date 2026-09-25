@@ -4,65 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fluenta — Kết Nối &amp; Chuyển Giao Báo Cáo Cho Chuyên Gia SLP</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/css/common.css" rel="stylesheet">
   <link href="assets/css/specialist-connect.css" rel="stylesheet">
 </head>
-<body>
+<body class="app-body">
 
-<!-- TOPBAR -->
-<div class="med-topbar">
-  <div class="container" style="max-width: 900px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <span>CỔNG KẾT NỐI CHUYÊN VIÊN ÂM NGỮ TRỊ LIỆU (SLP PORTAL)</span>
-      <span>GIAO THỨC CHIA SẺ BẢO MẬT DỮ LIỆU</span>
-    </div>
-  </div>
-</div>
+<a class="skip-link" href="#main-content">Bỏ qua đến nội dung chính</a>
 
-<!-- NAVBAR -->
-<header class="med-navbar">
-  <div class="container" style="max-width: 900px;">
-    <div class="d-flex justify-content-between align-items-center">
-      <a class="med-brand" href="index.html">
-        <span class="med-brand-title">FLUENTA</span>
-        <span class="med-brand-sub">SPEECH-LANGUAGE PATHOLOGY PLATFORM</span>
+<div class="app-shell">
+  <!-- THANH ĐIỀU HƯỚNG NGANG: LOGO + MENU + AVATAR HỒ SƠ -->
+  <header class="app-header">
+    <div class="app-bar-inner">
+      <a class="med-brand" href="index.html" aria-label="Fluenta - Trang chủ">
+        <img class="med-brand-logo" src="assets/images/logo_fluenta.png" alt="Fluenta Healthcare Solutions">
       </a>
 
-      <nav>
-        <ul class="med-nav-list">
-          <li><a class="med-nav-link" href="index.html">TỔNG QUAN</a></li>
-          <li><a class="med-nav-link" href="practice.html">PHÒNG TẬP</a></li>
-          <li><a class="med-nav-link" href="library.html">THƯ VIỆN</a></li>
-          <li><a class="med-nav-link" href="result.html">KẾT QUẢ</a></li>
-          <li><a class="med-nav-link" href="progress.html">TIẾN TRÌNH</a></li>
-          <li><a class="med-nav-link" href="reports.html">BÁO CÁO</a></li>
-          <li><a class="med-nav-link active" href="specialist-connect.html">KẾT NỐI BS</a></li>
-          <li><a class="med-nav-link" href="profile.html">HỒ SƠ</a></li>
+      <nav class="app-topnav" aria-label="Điều hướng chính">
+        <ul class="app-nav">
+          <li><a class="app-nav-link" href="index.html">Tổng quan</a></li>
+          <li><a class="app-nav-link" href="practice.html">Luyện tập</a></li>
+          <li><a class="app-nav-link" href="progress.html">Tiến trình</a></li>
+          <li><a class="app-nav-link" href="library.html">Thư viện</a></li>
+          <li><a class="app-nav-link active" href="specialist-connect.html" aria-current="page">Kết nối</a></li>
         </ul>
       </nav>
-    </div>
-  </div>
-</header>
 
-<main class="med-container" style="max-width: 860px;">
+      <div class="dropdown app-user">
+        <button class="app-user-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Tài khoản: Nguyễn Văn Minh">
+          <span class="app-avatar"><svg class="app-avatar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5z"/></svg></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end app-user-menu">
+          <li class="app-user-info">
+            <span class="app-user-info-name">Nguyễn Văn Minh</span>
+            <span class="app-user-info-id">Mã hồ sơ: FL-2026-0842</span>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="profile.html">Hồ sơ cá nhân</a></li>
+          <li><a class="dropdown-item" href="settings.html">Cài đặt</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="login.html">Đăng xuất</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+<main id="main-content" class="med-container med-w-lg">
 
   <div class="d-flex justify-content-between align-items-center mb-3">
     <div>
-      <h1 class="h5 fw-bold mb-0 text-dark">KẾT NỐI VÀ CHUYỂN GIAO BÁO CÁO CHO CHUYÊN GIA</h1>
+      <h1 class="med-page-title mb-0">Kết nối và chuyển giao báo cáo cho chuyên gia</h1>
       <div class="text-muted small">Cung cấp dữ liệu âm học định lượng hỗ trợ bác sĩ điều chỉnh phác đồ can thiệp</div>
     </div>
-    <div class="d-flex gap-2">
-      <a href="progress.html" class="btn-med-secondary">TIẾN TRÌNH</a>
-      <a href="reports.html" class="btn-med-secondary">XEM BẢN IN BÁO CÁO</a>
+    <div class="d-flex gap-2 med-actions">
+      <a href="progress.html" class="btn-med-secondary">Tiến trình</a>
+      <a href="reports.html" class="btn-med-secondary">Xem bản in báo cáo</a>
     </div>
   </div>
 
-  <div id="connectAlert" class="alert alert-success py-2 mb-3 small" style="display:none;"></div>
+  <div id="connectAlert" class="alert alert-success py-2 mb-3 small" role="status" aria-live="polite" hidden></div>
 
   <section class="med-card">
     <div class="med-card-header">
-      <h2 class="med-card-title">PHIẾU CHUYỂN TIẾP HỒ SƠ ÂM HỌC ĐIỆN TỬ</h2>
+      <h2 class="med-card-title">Phiếu chuyển tiếp hồ sơ âm học điện tử</h2>
       <span class="med-badge med-badge-primary">Mã hồ sơ: FL-2026-0842</span>
     </div>
 
@@ -70,8 +79,8 @@
       
       <!-- CHỌN CHUYÊN GIA -->
       <div class="med-form-group">
-        <label class="med-label">1. Chọn Chuyên gia Âm ngữ Trị liệu tiếp nhận:</label>
-        <select class="med-select" required>
+        <label for="specialist-connect-field-4" class="med-label">1. Chọn Chuyên gia Âm ngữ Trị liệu tiếp nhận:</label>
+        <select id="specialist-connect-field-4" class="med-select" required>
           <option value="doc1" selected>TS. BS. Nguyễn Minh Anh — Khoa Phục hồi Chức năng &amp; Âm ngữ Trị liệu</option>
           <option value="doc2">ThS. Sarah Jenkins (SLP) — Ban Cố vấn Chuyên môn ASHA</option>
           <option value="doc3">TS. BS. Bryce Butler — Cố vấn Thần kinh Vận động Lời nói</option>
@@ -84,18 +93,18 @@
         <label class="med-label">2. Kỳ dữ liệu âm học đính kèm:</label>
         <div class="p-3 bg-light border rounded">
           <div class="mb-2">
-            <label><input type="radio" name="reportRange" checked> <strong>Toàn bộ 30 ngày gần nhất:</strong> Gồm 28 buổi tập, biểu đồ giảm %SS (19% $\rightarrow$ 12%), dữ liệu phổ Block đầu câu.</label>
+            <label class="med-check" for="specialist-connect-field-3"><input id="specialist-connect-field-3" type="radio" name="reportRange" checked> <strong>Toàn bộ 30 ngày gần nhất:</strong> Gồm 28 buổi tập, biểu đồ giảm %SS (19% → 12%), dữ liệu phổ Block đầu câu.</label>
           </div>
           <div>
-            <label><input type="radio" name="reportRange"> <strong>Chỉ 7 ngày gần nhất:</strong> Phản ánh tiến độ thích nghi với kỹ thuật Khởi âm êm dịu (Easy Onset).</label>
+            <label class="med-check" for="specialist-connect-field-2"><input id="specialist-connect-field-2" type="radio" name="reportRange"> <strong>Chỉ 7 ngày gần nhất:</strong> Phản ánh tiến độ thích nghi với kỹ thuật Khởi âm êm dịu (Easy Onset).</label>
           </div>
         </div>
       </div>
 
       <!-- LỜI NHẮN CỦA HỌC VIÊN -->
       <div class="med-form-group">
-        <label class="med-label">3. Ghi chú cá nhân gửi Chuyên gia (nếu có):</label>
-        <textarea class="med-textarea" rows="4" placeholder="Ví dụ: Em cảm thấy đã đỡ nghẽn hơi ở các từ mở đầu bằng 'S', nhưng khi đọc từ ghép dài vẫn còn hồi hộp..."></textarea>
+        <label for="specialist-connect-field-1" class="med-label">3. Ghi chú cá nhân gửi Chuyên gia (nếu có):</label>
+        <textarea id="specialist-connect-field-1" class="med-textarea" rows="4" placeholder="Ví dụ: Em cảm thấy đã đỡ nghẽn hơi ở các từ mở đầu bằng 'S', nhưng khi đọc từ ghép dài vẫn còn hồi hộp..."></textarea>
       </div>
 
       <div class="med-disclaimer-box mb-4">
@@ -103,22 +112,34 @@
       </div>
 
       <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3 border-top">
-        <div class="d-flex gap-2">
-          <a href="reports.html" class="btn-med-secondary">QUAY LẠI BÁO CÁO</a>
-          <a href="index.html" class="btn-med-secondary">VỀ TỔNG QUAN</a>
+        <div class="d-flex gap-2 med-actions">
+          <a href="reports.html" class="btn-med-secondary">Quay lại báo cáo</a>
+          <a href="index.html" class="btn-med-secondary">Về tổng quan</a>
         </div>
-        <button type="submit" class="btn-med-primary">XÁC NHẬN GỬI MÃ HÓA HỒ SƠ Y TẾ</button>
+        <button type="submit" class="btn-med-primary">Xác nhận gửi mã hóa hồ sơ y tế</button>
       </div>
     </form>
   </section>
 
 </main>
 
-<footer class="med-footer">
-  <div class="container text-center">
-    <div>FLUENTA CLINICAL SYSTEM © 2026 — KẾT NỐI BÁC SĨ &amp; CHUYÊN VIÊN ÂM NGỮ TRỊ LIỆU</div>
-  </div>
-</footer>
+  <footer class="med-footer">
+    <div class="container text-center">
+      <div>Fluenta Clinical System © 2026 — kết nối bác sĩ &amp; chuyên viên âm ngữ trị liệu</div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ĐIỀU HƯỚNG DƯỚI ĐÁY (MOBILE & TABLET < 992px) -->
+<nav class="app-bottom-nav" aria-label="Điều hướng chính">
+  <a class="app-bottom-link" href="index.html">Tổng quan</a>
+  <a class="app-bottom-link" href="practice.html">Luyện tập</a>
+  <a class="app-bottom-link" href="progress.html">Tiến trình</a>
+  <a class="app-bottom-link" href="library.html">Thư viện</a>
+  <a class="app-bottom-link active" href="specialist-connect.html" aria-current="page">Kết nối</a>
+</nav>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/specialist-connect.js"></script>

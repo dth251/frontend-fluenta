@@ -5,7 +5,7 @@ function sendSpecialistReport(event) {
   if (event) event.preventDefault();
   const alertBox = document.getElementById('connectAlert');
   if (alertBox) {
-    alertBox.style.display = 'block';
+    alertBox.hidden = false;
     alertBox.innerHTML = `
       <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
         <span>Hồ sơ mã bệnh án #FL-2026-0842 đã được gửi mã hóa an toàn tới Bác sĩ / Chuyên viên SLP chỉ định.</span>
